@@ -160,6 +160,45 @@ body.view-only .admin-only { display: none !important; }
 body.locked #app,
 body.locked .app-header .tabs { visibility: hidden; }
 
+/* ---------- Pagination ---------- */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.pager[hidden] { display: none !important; }
+.pager .pager-btn {
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.pager .pager-btn:hover:not(:disabled) { border-color: var(--primary); }
+.pager .pager-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.pager .pager-info { color: var(--muted); font-size: 13px; }
+
+/* ---------- Inline edit (team / player names) ---------- */
+.name-edit-row { display: flex; align-items: center; gap: 6px; }
+.name-edit-row input {
+  width: auto; flex: 1; min-width: 120px; padding: 6px 8px; font-size: 14px;
+}
+.icon-btn {
+  background: none; border: none; cursor: pointer; font-size: 15px;
+  padding: 2px 6px; border-radius: 6px; line-height: 1;
+}
+.icon-btn.edit { color: var(--muted); }
+.icon-btn.edit:hover { color: var(--primary); }
+.icon-btn.save { color: var(--success); }
+.icon-btn.cancel { color: var(--danger); }
+.team-head .icon-btn.edit { margin-left: 6px; }
+.player-name-cell { display: flex; align-items: center; gap: 6px; }
+
 /* ---------- Spinner wheel ---------- */
 .spinner-card { margin-top: 18px; }
 .spinner-header { display: flex; justify-content: space-between; align-items: baseline; }

@@ -234,6 +234,61 @@
     return (Math.round(n * 100) / 100).toString();
   }
 
+  /* -------------------- Pagination -------------------- */
+  var PAGE_SIZES = { players: 8, teams: 6 };
+  var pageState = { players: 0, teams: 0 };
+
+  // Clamp a page index against the total item count and page size.
+  function clampPage(view, total) {
+    var size = PAGE_SIZES[view];
+    var pages = Math.max(1, Math.ceil(total / size));
+    if (pageState[view] > pages - 1) pageState[view] = pages - 1;
+    if (pageState[view] < 0) pageState[view] = 0;
+    return pageState[view];
+  }
+
+  // Return the slice of items for the current page of a view.
+  function paginate(view, items) {
+    var size = PAGE_SIZES[view];
+    var page = clampPage(view, items.length);
+    return items.slice(page * size, page * size + size);
+  }
+
+  // Render a pager control into the element with the given id.
+  function renderPager(pagerId, view, total, onChange) {
+    var pager = $(pagerId);
+    if (!pager) return;
+    var size = PAGE_SIZES[view];
+    var pages = Math.max(1, Math.ceil(total / size));
+    if (total <= size) { pager.hidden = true; pager.innerHTML = ''; return; }
+
+    pager.hidden = false;
+    pager.innerHTML = '';
+    var page = clampPage(view, total);
+
+    var prev = el('button', 'pager-btn', 'Prev');
+    prev.disabled = page === 0;
+    prev.addEventListener('click', function () {
+      pageState[view] = Math.max(0, page - 1);
+      onChange();
+    });
+
+    var start = page * size + 1;
+    var end = Math.min(total, page * size + size);
+    var info = el('span', 'pager-info', start + '-' + end + ' of ' + total + '  (page ' + (page + 1) + '/' + pages + ')');
+
+    var next = el('button', 'pager-btn', 'Next');
+    next.disabled = page >= pages - 1;
+    next.addEventListener('click', function () {
+      pageState[view] = Math.min(pages - 1, page + 1);
+      onChange();
+    });
+
+    pager.appendChild(prev);
+    pager.appendChild(info);
+    pager.appendChild(next);
+  }
+
   var toastTimer = null;
   function toast(msg, type) {
     var t = $('toast');
@@ -546,18 +601,58 @@
   /* ==========================================================
      TEAMS DASHBOARD
      ========================================================== */
+  // Tracks which team card is currently in name-edit mode (id or null).
+  var editingTeamId = null;
+
   function renderTeams() {
     var grid = $('teamsGrid');
     grid.innerHTML = '';
-    state.teams.forEach(function (team) {
+
+    var pageTeams = paginate('teams', state.teams);
+
+    pageTeams.forEach(function (team) {
       var spent = state.purse - team.purse;
       var card = el('div', 'card team-card');
 
       var head = el('div', 'team-head');
-      head.appendChild(el('h3', null, team.name));
-      var need = Math.max(0, state.minSquad - team.players.length);
-      var badge = el('span', 'muted', need > 0 ? ('needs ' + need + ' more') : 'squad complete');
-      head.appendChild(badge);
+      if (!VIEW_ONLY && editingTeamId === team.id) {
+        // Inline edit mode for the team name.
+        var editRow = el('div', 'name-edit-row');
+        var input = el('input');
+        input.type = 'text';
+        input.value = team.name;
+        var saveT = el('button', 'icon-btn save', '\u2713');
+        saveT.title = 'Save';
+        var cancelT = el('button', 'icon-btn cancel', '\u2715');
+        cancelT.title = 'Cancel';
+        var commit = function () { saveTeamName(team.id, input.value); };
+        saveT.addEventListener('click', commit);
+        cancelT.addEventListener('click', function () { editingTeamId = null; renderTeams(); });
+        input.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') commit();
+          if (e.key === 'Escape') { editingTeamId = null; renderTeams(); }
+        });
+        editRow.appendChild(input);
+        editRow.appendChild(saveT);
+        editRow.appendChild(cancelT);
+        head.appendChild(editRow);
+        setTimeout(function () { input.focus(); input.select(); }, 20);
+      } else {
+        var titleWrap = el('span');
+        titleWrap.style.display = 'inline-flex';
+        titleWrap.style.alignItems = 'center';
+        titleWrap.appendChild(el('h3', null, team.name));
+        if (!VIEW_ONLY) {
+          var editT = el('button', 'icon-btn edit', '\u270e');
+          editT.title = 'Edit team name';
+          editT.addEventListener('click', function () { editingTeamId = team.id; renderTeams(); });
+          titleWrap.appendChild(editT);
+        }
+        head.appendChild(titleWrap);
+        var need = Math.max(0, state.minSquad - team.players.length);
+        var badge = el('span', 'muted', need > 0 ? ('needs ' + need + ' more') : 'squad complete');
+        head.appendChild(badge);
+      }
       card.appendChild(head);
 
       var stats = el('div', 'team-stats');
@@ -585,6 +680,27 @@
       card.appendChild(roster);
       grid.appendChild(card);
     });
+
+    renderPager('teamsPager', 'teams', state.teams.length, renderTeams);
+  }
+
+  function saveTeamName(id, newName) {
+    var name = (newName || '').trim();
+    if (!name) return toast('Team name cannot be empty', 'error');
+    // Enforce uniqueness (case-insensitive), ignoring the team being edited.
+    var dup = state.teams.some(function (t) {
+      return t.id !== id && t.name.toLowerCase() === name.toLowerCase();
+    });
+    if (dup) return toast('Another team already has that name', 'error');
+
+    var team = getTeam(id);
+    if (!team) return;
+    team.name = name;
+    editingTeamId = null;
+    save();
+    renderTeams();
+    renderAuction();   // purse panel + bid buttons show team names
+    toast('Team renamed', 'success');
   }
 
   function statBox(label, value) {
@@ -597,12 +713,54 @@
   /* ==========================================================
      PLAYERS POOL
      ========================================================== */
+  // Tracks which player row is currently in name-edit mode (id or null).
+  var editingPlayerId = null;
+
   function renderPlayers() {
     var tbody = $('playersTbody');
     tbody.innerHTML = '';
-    state.players.forEach(function (p) {
+
+    var all = state.players;
+    var pagePlayers = paginate('players', all);
+
+    pagePlayers.forEach(function (p) {
       var tr = el('tr');
-      tr.appendChild(el('td', null, p.name));
+
+      // --- Name cell (inline-editable when not view-only) ---
+      var nameTd = el('td');
+      var cell = el('div', 'player-name-cell');
+      if (!VIEW_ONLY && editingPlayerId === p.id) {
+        var input = el('input');
+        input.type = 'text';
+        input.value = p.name;
+        var saveP = el('button', 'icon-btn save', '\u2713');
+        saveP.title = 'Save';
+        var cancelP = el('button', 'icon-btn cancel', '\u2715');
+        cancelP.title = 'Cancel';
+        var commit = function () { savePlayerName(p.id, input.value); };
+        saveP.addEventListener('click', commit);
+        cancelP.addEventListener('click', function () { editingPlayerId = null; renderPlayers(); });
+        input.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') commit();
+          if (e.key === 'Escape') { editingPlayerId = null; renderPlayers(); }
+        });
+        cell.appendChild(input);
+        cell.appendChild(saveP);
+        cell.appendChild(cancelP);
+        nameTd.appendChild(cell);
+        setTimeout(function () { input.focus(); input.select(); }, 20);
+      } else {
+        cell.appendChild(el('span', null, p.name));
+        if (!VIEW_ONLY) {
+          var editP = el('button', 'icon-btn edit', '\u270e');
+          editP.title = 'Edit name';
+          editP.addEventListener('click', function () { editingPlayerId = p.id; renderPlayers(); });
+          cell.appendChild(editP);
+        }
+        nameTd.appendChild(cell);
+      }
+      tr.appendChild(nameTd);
+
       tr.appendChild(el('td', null, p.category));
       tr.appendChild(el('td', null, fmt(p.base)));
 
@@ -631,6 +789,22 @@
       tr.appendChild(actionTd);
       tbody.appendChild(tr);
     });
+
+    renderPager('playersPager', 'players', all.length, renderPlayers);
+  }
+
+  function savePlayerName(id, newName) {
+    var name = (newName || '').trim();
+    if (!name) return toast('Player name cannot be empty', 'error');
+    var p = getPlayer(id);
+    if (!p) return;
+    p.name = name;
+    editingPlayerId = null;
+    save();
+    renderPlayers();
+    renderWheel();        // wheel labels reflect the new name
+    renderAuction();      // in case this player is on the block
+    toast('Player renamed', 'success');
   }
 
   function addPlayer() {
