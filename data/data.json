@@ -19,12 +19,13 @@
     {
       "id": "t1",
       "name": "Don",
-      "purse": 89000,
+      "purse": 39000,
       "players": [
         "p1788959095535",
         "p1788959053353",
         "p1788959015727",
-        "p1788959029039"
+        "p1788959029039",
+        "p1788957413463"
       ]
     },
     {
@@ -52,9 +53,9 @@
       "name": "Glady",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 50000
     },
     {
       "id": "p1788958852432",
@@ -319,12 +320,11 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788957413463",
-    "currentBid": 50000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
-      "p1788957413463",
       "p1788958852432",
       "p1788958859913",
       "p1788958867561",
