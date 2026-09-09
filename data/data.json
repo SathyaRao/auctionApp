@@ -7,10 +7,11 @@
     {
       "id": "t0",
       "name": "Ananth Mallya",
-      "purse": 98000,
+      "purse": 67000,
       "players": [
         "p1788959021232",
-        "p1788958945696"
+        "p1788958945696",
+        "p1788958918216"
       ]
     },
     {
@@ -125,9 +126,9 @@
       "name": "Nithin",
       "category": "Bowler",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 31000
     },
     {
       "id": "p1788958927919",
@@ -311,9 +312,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958918216",
-    "currentBid": 31000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -325,7 +326,6 @@
       "p1788958895850",
       "p1788958902391",
       "p1788958909760",
-      "p1788958918216",
       "p1788958927919",
       "p1788958933808",
       "p1788958938367",
