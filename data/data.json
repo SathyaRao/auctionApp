@@ -15,8 +15,10 @@
     {
       "id": "t1",
       "name": "Don",
-      "purse": 100000,
-      "players": []
+      "purse": 99000,
+      "players": [
+        "p1788959095535"
+      ]
     },
     {
       "id": "t2",
@@ -298,15 +300,15 @@
       "name": "Ananth Nayak",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 1000
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959095535",
-    "currentBid": 1000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -335,8 +337,7 @@
       "p1788959040464",
       "p1788959047103",
       "p1788959053353",
-      "p1788959074680",
-      "p1788959095535"
+      "p1788959074680"
     ]
   }
 }
