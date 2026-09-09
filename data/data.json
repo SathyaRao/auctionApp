@@ -33,10 +33,11 @@
     {
       "id": "t2",
       "name": "Nagaraj Bhat",
-      "purse": 67000,
+      "purse": 66000,
       "players": [
         "p1788958979351",
-        "p1788958895850"
+        "p1788958895850",
+        "p1788958971815"
       ]
     },
     {
@@ -200,9 +201,9 @@
       "name": "Sudha",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 1000
     },
     {
       "id": "p1788958979351",
@@ -323,9 +324,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958971815",
+    "currentPlayerId": "p1788958927919",
     "currentBid": 1000,
-    "leadingTeamId": "t2",
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788958852432",
@@ -337,7 +338,6 @@
       "p1788958933808",
       "p1788958938367",
       "p1788958952071",
-      "p1788958971815",
       "p1788958989623",
       "p1788959074680"
     ]
