@@ -7,9 +7,10 @@
     {
       "id": "t0",
       "name": "Ananth Mallya",
-      "purse": 99000,
+      "purse": 98000,
       "players": [
-        "p1788959021232"
+        "p1788959021232",
+        "p1788958945696"
       ]
     },
     {
@@ -157,9 +158,9 @@
       "name": "Mahesh Patil",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 1000
     },
     {
       "id": "p1788958952071",
@@ -307,9 +308,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958945696",
-    "currentBid": 1000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -325,7 +326,6 @@
       "p1788958927919",
       "p1788958933808",
       "p1788958938367",
-      "p1788958945696",
       "p1788958952071",
       "p1788958960367",
       "p1788958971815",
