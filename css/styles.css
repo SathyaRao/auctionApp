@@ -160,6 +160,81 @@ body.view-only .admin-only { display: none !important; }
 body.locked #app,
 body.locked .app-header .tabs { visibility: hidden; }
 
+/* ---------- Spinner wheel ---------- */
+.spinner-card { margin-top: 18px; }
+.spinner-header { display: flex; justify-content: space-between; align-items: baseline; }
+.spinner-header h3 { margin: 0; }
+.spinner-body {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 14px;
+}
+.wheel-wrap {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  margin: 0 auto;
+}
+#wheelCanvas {
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px var(--card-2), var(--shadow);
+  transition: transform 4s cubic-bezier(0.15, 0.9, 0.25, 1);
+}
+.wheel-pointer {
+  position: absolute;
+  top: -6px; left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 24px solid var(--danger);
+  z-index: 3;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
+}
+.wheel-result {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10, 14, 22, 0.85);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  text-align: center;
+  max-width: 220px;
+  z-index: 2;
+}
+.spinner-side { display: flex; flex-direction: column; gap: 12px; }
+.spinner-side .btn { width: 100%; }
+.spin-hint { margin: 0; }
+.wheel-manage { margin-top: 6px; }
+.wheel-add-row { display: flex; gap: 8px; margin-bottom: 8px; }
+.wheel-add-row select { flex: 1; }
+.wheel-add-row .btn { width: auto; }
+.wheel-bulk { display: flex; gap: 8px; margin-bottom: 10px; }
+.wheel-bulk .btn { flex: 1; font-size: 13px; padding: 8px 10px; }
+.wheel-list { list-style: none; margin: 0; padding: 0; max-height: 220px; overflow-y: auto; }
+.wheel-list li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px;
+  margin-bottom: 6px; font-size: 14px; background: var(--card-2);
+}
+.wheel-list .wl-remove {
+  background: none; border: none; color: var(--danger);
+  cursor: pointer; font-size: 18px; line-height: 1; padding: 0 4px;
+}
+.wheel-list-empty { color: var(--muted); font-size: 13px; font-style: italic; }
+
+@media (max-width: 860px) {
+  .spinner-body { grid-template-columns: 1fr; }
+  .wheel-wrap, #wheelCanvas { width: 300px; height: 300px; }
+}
+
 
 main { padding: 22px; max-width: 1200px; margin: 0 auto; }
 

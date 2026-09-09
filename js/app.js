@@ -116,27 +116,28 @@
   };
 
   /* -------------------- Seed player pool -------------------- */
+  var BASE_PRICE = 1000; // every player starts at this base price
   var SEED_PLAYERS = [
-    ['Virat Kohli', 'Batsman', 15],
-    ['Rohit Sharma', 'Batsman', 14],
-    ['Jasprit Bumrah', 'Bowler', 13],
-    ['Ravindra Jadeja', 'All-rounder', 12],
-    ['MS Dhoni', 'Wicket-keeper', 12],
-    ['KL Rahul', 'Wicket-keeper', 11],
-    ['Hardik Pandya', 'All-rounder', 12],
-    ['Rashid Khan', 'Bowler', 12],
-    ['Suryakumar Yadav', 'Batsman', 10],
-    ['Shubman Gill', 'Batsman', 10],
-    ['Mohammed Shami', 'Bowler', 9],
-    ['Rishabh Pant', 'Wicket-keeper', 11],
-    ['Yuzvendra Chahal', 'Bowler', 8],
-    ['Shreyas Iyer', 'Batsman', 9],
-    ['Bhuvneshwar Kumar', 'Bowler', 7],
-    ['Axar Patel', 'All-rounder', 8],
-    ['Ishan Kishan', 'Wicket-keeper', 8],
-    ['Deepak Chahar', 'Bowler', 6],
-    ['Washington Sundar', 'All-rounder', 6],
-    ['Prithvi Shaw', 'Batsman', 5]
+    ['Virat Kohli', 'Batsman', BASE_PRICE],
+    ['Rohit Sharma', 'Batsman', BASE_PRICE],
+    ['Jasprit Bumrah', 'Bowler', BASE_PRICE],
+    ['Ravindra Jadeja', 'All-rounder', BASE_PRICE],
+    ['MS Dhoni', 'Wicket-keeper', BASE_PRICE],
+    ['KL Rahul', 'Wicket-keeper', BASE_PRICE],
+    ['Hardik Pandya', 'All-rounder', BASE_PRICE],
+    ['Rashid Khan', 'Bowler', BASE_PRICE],
+    ['Suryakumar Yadav', 'Batsman', BASE_PRICE],
+    ['Shubman Gill', 'Batsman', BASE_PRICE],
+    ['Mohammed Shami', 'Bowler', BASE_PRICE],
+    ['Rishabh Pant', 'Wicket-keeper', BASE_PRICE],
+    ['Yuzvendra Chahal', 'Bowler', BASE_PRICE],
+    ['Shreyas Iyer', 'Batsman', BASE_PRICE],
+    ['Bhuvneshwar Kumar', 'Bowler', BASE_PRICE],
+    ['Axar Patel', 'All-rounder', BASE_PRICE],
+    ['Ishan Kishan', 'Wicket-keeper', BASE_PRICE],
+    ['Deepak Chahar', 'Bowler', BASE_PRICE],
+    ['Washington Sundar', 'All-rounder', BASE_PRICE],
+    ['Prithvi Shaw', 'Batsman', BASE_PRICE]
   ];
 
   /* -------------------- State -------------------- */
@@ -155,7 +156,8 @@
         currentPlayerId: null,
         currentBid: 0,
         leadingTeamId: null,
-        increment: 1000
+        increment: 1000,
+        wheelIds: null   // null = "not initialized"; [] = explicitly empty
       }
     };
   }
@@ -339,6 +341,18 @@
     return state.players.filter(function (p) { return p.status === 'available'; });
   }
 
+  // Put a specific available player onto the auction block.
+  function putPlayerOnBlock(playerId) {
+    var pick = getPlayer(playerId);
+    if (!pick || pick.status !== 'available') return false;
+    state.auction.currentPlayerId = pick.id;
+    state.auction.currentBid = pick.base;
+    state.auction.leadingTeamId = null;
+    save();
+    renderAuction();
+    return true;
+  }
+
   function bringNextPlayer() {
     var pool = availablePlayers();
     if (pool.length === 0) {
@@ -346,11 +360,7 @@
       return;
     }
     var pick = pool[Math.floor(Math.random() * pool.length)];
-    state.auction.currentPlayerId = pick.id;
-    state.auction.currentBid = pick.base;
-    state.auction.leadingTeamId = null;
-    save();
-    renderAuction();
+    putPlayerOnBlock(pick.id);
   }
 
   function canTeamBid(team, nextBid) {
@@ -637,7 +647,7 @@
     });
     save();
     $('newPlayerName').value = '';
-    $('newPlayerBase').value = '2';
+    $('newPlayerBase').value = String(BASE_PRICE);
     $('addPlayerForm').hidden = true;
     renderPlayers();
     renderAuction();
@@ -691,6 +701,7 @@
     renderAuction();
     renderTeams();
     renderPlayers();
+    renderWheel();
   }
 
   /* ==========================================================
@@ -806,6 +817,19 @@
       $('addPlayerForm').hidden = true;
     });
 
+    // Spinner wheel
+    var spinBtn = $('spinBtn');
+    if (spinBtn) spinBtn.addEventListener('click', spinWheel);
+    var wheelAddBtn = $('wheelAddBtn');
+    if (wheelAddBtn) wheelAddBtn.addEventListener('click', function () {
+      var sel = $('wheelAddSelect');
+      if (sel && sel.value) addToWheel(sel.value);
+    });
+    var wheelAddAllBtn = $('wheelAddAllBtn');
+    if (wheelAddAllBtn) wheelAddAllBtn.addEventListener('click', addAllAvailableToWheel);
+    var wheelClearBtn = $('wheelClearBtn');
+    if (wheelClearBtn) wheelClearBtn.addEventListener('click', clearWheel);
+
     // Settings
     $('saveSettingsBtn').addEventListener('click', saveSettings);
     $('testConnBtn').addEventListener('click', testConnection);
@@ -914,6 +938,235 @@
         toast('Admin password updated', 'success');
       });
     });
+  }
+
+  /* ==========================================================
+     SPINNER WHEEL
+     ----------------------------------------------------------
+     state.auction.wheelIds holds the player ids currently on the wheel.
+     null => not initialized yet (auto-fill with all available players).
+     The wheel only ever shows still-available players.
+     ========================================================== */
+  var WHEEL_COLORS = [
+    '#2f7bff', '#33d1a6', '#e0a129', '#e05353', '#8b5cf6',
+    '#22b8cf', '#f06595', '#82c91e', '#fd7e14', '#4dabf7'
+  ];
+  var spinning = false;
+  var wheelRotation = 0; // accumulated degrees
+
+  function ensureWheelInit() {
+    var a = state.auction;
+    if (a.wheelIds === null || a.wheelIds === undefined) {
+      a.wheelIds = availablePlayers().map(function (p) { return p.id; });
+    }
+  }
+
+  // Players currently on the wheel AND still available.
+  function wheelPlayers() {
+    ensureWheelInit();
+    var ids = state.auction.wheelIds || [];
+    return ids
+      .map(function (id) { return getPlayer(id); })
+      .filter(function (p) { return p && p.status === 'available'; });
+  }
+
+  // Drop sold/unsold/removed players from the wheel id list (keep it clean).
+  function pruneWheel() {
+    var a = state.auction;
+    if (!a.wheelIds) return;
+    a.wheelIds = a.wheelIds.filter(function (id) {
+      var p = getPlayer(id);
+      return p && p.status === 'available';
+    });
+  }
+
+  function drawWheel() {
+    var canvas = $('wheelCanvas');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var cx = W / 2, cy = H / 2, r = Math.min(cx, cy) - 4;
+    ctx.clearRect(0, 0, W, H);
+
+    var players = wheelPlayers();
+    var n = players.length;
+
+    if (n === 0) {
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = '#232e45';
+      ctx.fill();
+      ctx.fillStyle = '#8ea0bd';
+      ctx.font = '15px "Segoe UI", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('No players on the wheel', cx, cy);
+      return;
+    }
+
+    var seg = (Math.PI * 2) / n;
+    for (var i = 0; i < n; i++) {
+      var start = i * seg - Math.PI / 2; // start at top
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, r, start, start + seg);
+      ctx.closePath();
+      ctx.fillStyle = WHEEL_COLORS[i % WHEEL_COLORS.length];
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(15,20,32,0.55)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Label
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(start + seg / 2);
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#0f1420';
+      ctx.font = 'bold ' + (n > 16 ? 10 : n > 10 ? 12 : 13) + 'px "Segoe UI", sans-serif';
+      var label = players[i].name;
+      if (label.length > 16) label = label.slice(0, 15) + '\u2026';
+      ctx.fillText(label, r - 12, 0);
+      ctx.restore();
+    }
+
+    // Hub
+    ctx.beginPath();
+    ctx.arc(cx, cy, 22, 0, Math.PI * 2);
+    ctx.fillStyle = '#161d2e';
+    ctx.fill();
+    ctx.strokeStyle = '#33d1a6';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+  }
+
+  function spinWheel() {
+    if (spinning) return;
+    if (state.auction.currentPlayerId) {
+      return toast('Finish the current player first (sell or mark unsold).', 'error');
+    }
+    var players = wheelPlayers();
+    if (players.length === 0) {
+      return toast('Add players to the wheel first.', 'error');
+    }
+
+    spinning = true;
+    var canvas = $('wheelCanvas');
+    var resultBox = $('wheelResult');
+    if (resultBox) resultBox.hidden = true;
+
+    var n = players.length;
+    var seg = 360 / n;
+    var winnerIndex = Math.floor(Math.random() * n);
+
+    // The pointer sits at the top (12 o'clock). Segment i is centered at
+    // angle (i*seg + seg/2) measured clockwise from the top. To bring that
+    // center under the pointer we rotate by -(center) plus full spins.
+    var spins = 5; // full rotations for effect
+    var center = winnerIndex * seg + seg / 2;
+    var target = spins * 360 + (360 - center);
+
+    // Accumulate so each spin continues from the last angle.
+    wheelRotation += target;
+    if (canvas) canvas.style.transform = 'rotate(' + wheelRotation + 'deg)';
+
+    var winner = players[winnerIndex];
+    var spinBtn = $('spinBtn');
+    if (spinBtn) spinBtn.disabled = true;
+
+    // CSS transition is 4s; reveal + place the player when it settles.
+    setTimeout(function () {
+      spinning = false;
+      if (spinBtn) spinBtn.disabled = false;
+      if (resultBox) {
+        resultBox.hidden = false;
+        resultBox.textContent = winner.name;
+      }
+      putPlayerOnBlock(winner.id);
+      toast(winner.name + ' is on the block!', 'success');
+    }, 4100);
+  }
+
+  function renderWheelManage() {
+    // Count
+    var players = wheelPlayers();
+    var countEl = $('wheelCount');
+    if (countEl) countEl.textContent = players.length + (players.length === 1 ? ' player on the wheel' : ' players on the wheel');
+
+    // Manage list
+    var list = $('wheelList');
+    if (list) {
+      list.innerHTML = '';
+      if (players.length === 0) {
+        list.appendChild(el('li', 'wheel-list-empty', 'Wheel is empty. Add available players below.'));
+      } else {
+        players.forEach(function (p) {
+          var li = el('li');
+          li.appendChild(el('span', null, p.name));
+          var rm = el('button', 'wl-remove', '\u00d7');
+          rm.title = 'Remove from wheel';
+          rm.addEventListener('click', function () { removeFromWheel(p.id); });
+          li.appendChild(rm);
+          list.appendChild(li);
+        });
+      }
+    }
+
+    // Add-select: available players NOT already on the wheel
+    var select = $('wheelAddSelect');
+    if (select) {
+      var onWheel = {};
+      (state.auction.wheelIds || []).forEach(function (id) { onWheel[id] = true; });
+      var addable = availablePlayers().filter(function (p) { return !onWheel[p.id]; });
+      select.innerHTML = '';
+      var ph = el('option', null, addable.length ? 'Add a player to the wheel...' : 'All available players are on the wheel');
+      ph.value = '';
+      select.appendChild(ph);
+      addable.forEach(function (p) {
+        var opt = el('option', null, p.name);
+        opt.value = p.id;
+        select.appendChild(opt);
+      });
+      select.disabled = addable.length === 0;
+    }
+  }
+
+  function renderWheel() {
+    pruneWheel();
+    drawWheel();
+    renderWheelManage();
+  }
+
+  function addToWheel(playerId) {
+    if (!playerId) return;
+    ensureWheelInit();
+    if (state.auction.wheelIds.indexOf(playerId) === -1) {
+      state.auction.wheelIds.push(playerId);
+      save();
+      renderWheel();
+    }
+  }
+
+  function removeFromWheel(playerId) {
+    ensureWheelInit();
+    state.auction.wheelIds = state.auction.wheelIds.filter(function (id) { return id !== playerId; });
+    save();
+    renderWheel();
+  }
+
+  function addAllAvailableToWheel() {
+    state.auction.wheelIds = availablePlayers().map(function (p) { return p.id; });
+    save();
+    renderWheel();
+    toast('Added all available players to the wheel', 'success');
+  }
+
+  function clearWheel() {
+    state.auction.wheelIds = [];
+    save();
+    renderWheel();
+    toast('Wheel cleared');
   }
 
   /* ==========================================================

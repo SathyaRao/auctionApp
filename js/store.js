@@ -83,7 +83,7 @@ const Store = {
       maxSquad: 8,
       teams: [],
       players: [],
-      auction: { currentPlayerId: null, currentBid: 0, leadingTeamId: null, increment: 1000 }
+      auction: { currentPlayerId: null, currentBid: 0, leadingTeamId: null, increment: 1000, wheelIds: null }
     };
   },
 

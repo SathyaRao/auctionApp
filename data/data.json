@@ -44,6 +44,7 @@
     "currentPlayerId": null,
     "currentBid": 0,
     "leadingTeamId": null,
-    "increment": 1000
+    "increment": 1000,
+    "wheelIds": null
   }
 }

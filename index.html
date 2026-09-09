@@ -158,6 +158,41 @@
           </div>
         </aside>
       </div>
+
+      <!-- ===== Random spinner wheel ===== -->
+      <div class="card spinner-card">
+        <div class="spinner-header">
+          <h3>Spinner wheel</h3>
+          <span class="muted" id="wheelCount">0 players on the wheel</span>
+        </div>
+
+        <div class="spinner-body">
+          <div class="wheel-wrap">
+            <div class="wheel-pointer"></div>
+            <canvas id="wheelCanvas" width="360" height="360"></canvas>
+            <div class="wheel-result" id="wheelResult" hidden></div>
+          </div>
+
+          <div class="spinner-side">
+            <button class="btn primary admin-only" id="spinBtn">Spin the wheel</button>
+            <p class="muted spin-hint" id="spinHint">Spin to pick a random player for the block.</p>
+
+            <div class="wheel-manage admin-only">
+              <div class="wheel-add-row">
+                <select id="wheelAddSelect">
+                  <option value="">Add a player to the wheel...</option>
+                </select>
+                <button class="btn ghost" id="wheelAddBtn">Add</button>
+              </div>
+              <div class="wheel-bulk">
+                <button class="btn ghost" id="wheelAddAllBtn">Add all available</button>
+                <button class="btn ghost" id="wheelClearBtn">Clear wheel</button>
+              </div>
+              <ul class="wheel-list" id="wheelList"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============ TEAMS VIEW ============ -->
@@ -181,7 +216,7 @@
             <option>All-rounder</option>
             <option>Wicket-keeper</option>
           </select>
-          <input id="newPlayerBase" type="number" min="0" step="0.5" value="2" placeholder="Base price" />
+          <input id="newPlayerBase" type="number" min="0" step="100" value="1000" placeholder="Base price" />
           <button class="btn success" id="savePlayerBtn">Save</button>
           <button class="btn ghost" id="cancelPlayerBtn">Cancel</button>
         </div>
