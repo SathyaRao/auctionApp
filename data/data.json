@@ -7,13 +7,14 @@
     {
       "id": "t0",
       "name": "Ananth Mallya",
-      "purse": 32000,
+      "purse": 29000,
       "players": [
         "p1788959021232",
         "p1788958945696",
         "p1788958918216",
         "p1788958902391",
-        "p1788959040464"
+        "p1788959040464",
+        "p1788958960367"
       ]
     },
     {
@@ -190,9 +191,9 @@
       "name": "Prashanth Bolje",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 3000
     },
     {
       "id": "p1788958971815",
@@ -322,9 +323,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958960367",
-    "currentBid": 3000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788958852432",
@@ -336,7 +337,6 @@
       "p1788958933808",
       "p1788958938367",
       "p1788958952071",
-      "p1788958960367",
       "p1788958971815",
       "p1788958989623",
       "p1788959074680"
