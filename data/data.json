@@ -287,7 +287,7 @@
       "name": "Karthik Gym",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
+      "status": "unsold",
       "soldTo": null,
       "price": 0
     },
@@ -302,8 +302,8 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959090383",
-    "currentBid": 1000,
+    "currentPlayerId": null,
+    "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
@@ -335,7 +335,6 @@
       "p1788959047103",
       "p1788959053353",
       "p1788959074680",
-      "p1788959090383",
       "p1788959095535"
     ]
   }
