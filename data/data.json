@@ -15,9 +15,10 @@
     {
       "id": "t1",
       "name": "Don",
-      "purse": 99000,
+      "purse": 94000,
       "players": [
-        "p1788959095535"
+        "p1788959095535",
+        "p1788959053353"
       ]
     },
     {
@@ -273,9 +274,9 @@
       "name": "Hanuma",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 5000
     },
     {
       "id": "p1788959074680",
@@ -306,9 +307,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959053353",
-    "currentBid": 5000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -336,7 +337,6 @@
       "p1788959029039",
       "p1788959040464",
       "p1788959047103",
-      "p1788959053353",
       "p1788959074680"
     ]
   }
