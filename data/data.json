@@ -1,9 +1,34 @@
 {
-  "configured": false,
+  "configured": true,
   "purse": 100000,
   "minSquad": 3,
-  "maxSquad": 8,
-  "teams": [],
+  "maxSquad": 9,
+  "teams": [
+    {
+      "id": "t0",
+      "name": "Ananth Mallya",
+      "purse": 100000,
+      "players": []
+    },
+    {
+      "id": "t1",
+      "name": "Don",
+      "purse": 100000,
+      "players": []
+    },
+    {
+      "id": "t2",
+      "name": "Vineeth",
+      "purse": 100000,
+      "players": []
+    },
+    {
+      "id": "t3",
+      "name": "Sathya",
+      "purse": 100000,
+      "players": []
+    }
+  ],
   "players": [],
   "auction": {
     "currentPlayerId": null,
