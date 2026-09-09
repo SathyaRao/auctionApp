@@ -38,10 +38,11 @@
     {
       "id": "t3",
       "name": "Sathya",
-      "purse": 86000,
+      "purse": 76000,
       "players": [
         "p1788959008080",
-        "p1788958998767"
+        "p1788958998767",
+        "p1788958876647"
       ]
     }
   ],
@@ -87,9 +88,9 @@
       "name": "Arun Bukkigudde",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 10000
     },
     {
       "id": "p1788958886015",
@@ -318,16 +319,15 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958876647",
-    "currentBid": 10000,
-    "leadingTeamId": "t3",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
       "p1788958852432",
       "p1788958859913",
       "p1788958867561",
-      "p1788958876647",
       "p1788958886015",
       "p1788958895850",
       "p1788958909760",
