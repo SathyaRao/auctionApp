@@ -19,13 +19,14 @@
     {
       "id": "t1",
       "name": "Don",
-      "purse": 39000,
+      "purse": 35000,
       "players": [
         "p1788959095535",
         "p1788959053353",
         "p1788959015727",
         "p1788959029039",
-        "p1788957413463"
+        "p1788957413463",
+        "p1788959047103"
       ]
     },
     {
@@ -279,9 +280,9 @@
       "name": "Jayantha",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 4000
     },
     {
       "id": "p1788959053353",
@@ -321,9 +322,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959047103",
-    "currentBid": 4000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788958852432",
@@ -338,7 +339,6 @@
       "p1788958960367",
       "p1788958971815",
       "p1788958989623",
-      "p1788959047103",
       "p1788959074680"
     ]
   }
