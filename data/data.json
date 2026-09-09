@@ -37,9 +37,10 @@
     {
       "id": "t3",
       "name": "Sathya",
-      "purse": 96000,
+      "purse": 86000,
       "players": [
-        "p1788959008080"
+        "p1788959008080",
+        "p1788958998767"
       ]
     }
   ],
@@ -220,9 +221,9 @@
       "name": "Ganesh Puthran",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 10000
     },
     {
       "id": "p1788959008080",
@@ -316,9 +317,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958998767",
-    "currentBid": 10000,
-    "leadingTeamId": "t3",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -336,7 +337,6 @@
       "p1788958960367",
       "p1788958971815",
       "p1788958989623",
-      "p1788958998767",
       "p1788959040464",
       "p1788959047103",
       "p1788959074680"
