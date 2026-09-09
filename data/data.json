@@ -31,8 +31,10 @@
     {
       "id": "t3",
       "name": "Sathya",
-      "purse": 100000,
-      "players": []
+      "purse": 96000,
+      "players": [
+        "p1788959008080"
+      ]
     }
   ],
   "players": [
@@ -221,9 +223,9 @@
       "name": "Pradeep Acharya",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 4000
     },
     {
       "id": "p1788959015727",
@@ -308,9 +310,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959008080",
-    "currentBid": 4000,
-    "leadingTeamId": "t3",
+    "currentPlayerId": "p1788959015727",
+    "currentBid": 1000,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -332,7 +334,6 @@
       "p1788958979351",
       "p1788958989623",
       "p1788958998767",
-      "p1788959008080",
       "p1788959015727",
       "p1788959029039",
       "p1788959040464",
