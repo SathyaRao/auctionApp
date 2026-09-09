@@ -1,0 +1,14 @@
+{
+  "configured": false,
+  "purse": 100000,
+  "minSquad": 3,
+  "maxSquad": 8,
+  "teams": [],
+  "players": [],
+  "auction": {
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
+    "increment": 1000
+  }
+}

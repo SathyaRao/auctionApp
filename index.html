@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Auction</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Lock the admin UI immediately (before paint) unless this is spectator mode,
+    // so protected content never flashes before the password gate appears.
+    (function () {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = (p.get('mode') || '').toLowerCase();
+        var isView = mode === 'view' || mode === 'spectator' || p.get('view') === '1';
+        var unlocked = sessionStorage.getItem('cricket-auction-unlocked') === '1';
+        if (!isView && !unlocked) {
+          document.documentElement.classList.add('prelock');
+        }
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+  <style>
+    /* Applied pre-boot to avoid a flash of admin content before the gate mounts. */
+    html.prelock body #app,
+    html.prelock body .app-header .tabs { visibility: hidden; }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-icon">&#127951;</span>
+      <h1>Cricket Auction</h1>
+    </div>
+    <nav class="tabs" id="tabs" hidden>
+      <button class="tab-btn active" data-view="auction">Auction</button>
+      <button class="tab-btn" data-view="teams">Teams</button>
+      <button class="tab-btn" data-view="players">Players</button>
+      <button class="tab-btn admin-only" data-view="settings" id="settingsTab">Settings</button>
+      <span class="sync-badge admin-only" id="syncBadge" title="Storage status">Local only</span>
+      <button class="tab-btn admin-only" id="watchLinkBtn" title="Copy a view-only spectator link">Share view link</button>
+      <button class="tab-btn danger admin-only" id="resetBtn">Reset</button>
+    </nav>
+  </header>
+
+  <!-- Admin password gate (hidden for spectators) -->
+  <div class="gate-overlay" id="gateOverlay" hidden>
+    <div class="gate-card">
+      <span class="brand-icon" style="font-size:34px;">&#128274;</span>
+      <h2>Admin access</h2>
+      <p class="muted">Enter the password to manage the auction. Spectators can watch without a password.</p>
+      <input id="gatePassword" type="password" placeholder="Password" autocomplete="current-password" />
+      <div class="gate-error" id="gateError" hidden></div>
+      <button class="btn primary" id="gateUnlockBtn">Unlock</button>
+      <a class="gate-view-link" id="gateViewLink" href="?mode=view">Continue as spectator (view only)</a>
+      <a class="gate-view-link" id="gateResetLink" href="#">Reset password to default</a>
+    </div>
+  </div>
+
+  <main id="app">
+    <!-- Spectator banner (shown only in view-only mode) -->
+    <div class="spectator-banner" id="spectatorBanner" hidden>
+      <span class="dot"></span>
+      <span>Spectator mode &mdash; view only. Live updates every few seconds.</span>
+      <span class="live-flag" id="liveFlag">LIVE</span>
+    </div>
+
+    <!-- ============ SETUP VIEW ============ -->
+    <section id="view-setup" class="view">
+      <div class="card setup-card">
+        <h2>Set up your auction</h2>
+        <p class="muted">Configure between 4 and 8 teams, then start bidding.</p>
+
+        <div class="form-row">
+          <label for="numTeams">Number of teams</label>
+          <div class="stepper">
+            <button type="button" id="teamsMinus" class="round">&minus;</button>
+            <input id="numTeams" type="number" min="4" max="8" value="4" />
+            <button type="button" id="teamsPlus" class="round">+</button>
+          </div>
+          <span class="hint">min 4, max 8</span>
+        </div>
+
+        <div class="form-row">
+          <label for="purse">Purse per team</label>
+          <input id="purse" type="number" min="1" step="1000" value="100000" />
+          <span class="hint">e.g. 100000</span>
+        </div>
+
+        <div class="form-row">
+          <label for="minSquad">Min players per squad</label>
+          <input id="minSquad" type="number" min="1" max="25" value="3" />
+        </div>
+
+        <div class="form-row">
+          <label for="maxSquad">Max players per squad</label>
+          <input id="maxSquad" type="number" min="1" max="25" value="8" />
+        </div>
+
+        <h3>Team names</h3>
+        <div id="teamNamesWrap" class="team-names"></div>
+
+        <div class="setup-error" id="setupError" hidden></div>
+
+        <div class="actions">
+          <button class="btn primary" id="startBtn">Start Auction</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AUCTION VIEW ============ -->
+    <section id="view-auction" class="view" hidden>
+      <div class="auction-grid">
+        <div class="card current-player" id="currentPlayerCard">
+          <div class="empty-state" id="auctionEmpty">
+            <p id="auctionEmptyMsg">No player on the block.</p>
+            <button class="btn primary admin-only" id="nextPlayerBtn">Bring next player</button>
+          </div>
+
+          <div id="playerBlock" hidden>
+            <div class="player-headline">
+              <div>
+                <span class="pill" id="cpCategory">Batsman</span>
+                <h2 id="cpName">Player Name</h2>
+                <p class="muted" id="cpMeta">Base price</p>
+              </div>
+              <div class="current-bid">
+                <span class="muted">Current bid</span>
+                <div class="bid-amount" id="cpBid">--</div>
+                <span class="muted" id="cpLeader">No bids yet</span>
+              </div>
+            </div>
+
+            <div class="bid-controls admin-only">
+              <label>Bid increment</label>
+              <div class="increment-group" id="incrementGroup">
+                <button type="button" class="chip active" data-inc="1000">+1,000</button>
+                <button type="button" class="chip" data-inc="2000">+2,000</button>
+                <button type="button" class="chip" data-inc="5000">+5,000</button>
+                <button type="button" class="chip" data-inc="10000">+10,000</button>
+              </div>
+            </div>
+
+            <div class="team-bid-buttons" id="teamBidButtons"></div>
+
+            <div class="auction-actions admin-only">
+              <button class="btn success" id="sellBtn" disabled>Sell to leader</button>
+              <button class="btn warn" id="unsoldBtn">Mark unsold</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card purse-panel">
+          <h3>Team purses</h3>
+          <ul class="purse-list" id="purseList"></ul>
+          <div class="queue-info">
+            <span id="queueInfo">Players remaining: 0</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ TEAMS VIEW ============ -->
+    <section id="view-teams" class="view" hidden>
+      <div class="teams-grid" id="teamsGrid"></div>
+    </section>
+
+    <!-- ============ PLAYERS VIEW ============ -->
+    <section id="view-players" class="view" hidden>
+      <div class="card">
+        <div class="players-header">
+          <h2>Player pool</h2>
+          <button class="btn primary admin-only" id="addPlayerBtn">Add player</button>
+        </div>
+
+        <div class="add-player-form" id="addPlayerForm" hidden>
+          <input id="newPlayerName" placeholder="Player name" />
+          <select id="newPlayerCategory">
+            <option>Batsman</option>
+            <option>Bowler</option>
+            <option>All-rounder</option>
+            <option>Wicket-keeper</option>
+          </select>
+          <input id="newPlayerBase" type="number" min="0" step="0.5" value="2" placeholder="Base price" />
+          <button class="btn success" id="savePlayerBtn">Save</button>
+          <button class="btn ghost" id="cancelPlayerBtn">Cancel</button>
+        </div>
+
+        <table class="players-table">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Category</th>
+              <th>Base</th>
+              <th>Status</th>
+              <th>Sold to</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="playersTbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+    <!-- ============ SETTINGS VIEW ============ -->
+    <section id="view-settings" class="view" hidden>
+      <div class="card settings-card">
+        <h2>Storage settings</h2>
+        <p class="muted">
+          Data is saved to a JSON file in a GitHub repository (same mechanism as the gym app).
+          Without a token the app still works and keeps a local snapshot in this browser.
+        </p>
+
+        <div class="form-row">
+          <label for="ghToken">GitHub token</label>
+          <input id="ghToken" type="password" placeholder="Personal Access Token (repo scope)" />
+          <span class="hint">stored in this browser only</span>
+        </div>
+        <div class="form-row">
+          <label for="ghOwner">Repo owner</label>
+          <input id="ghOwner" type="text" placeholder="github-username" />
+        </div>
+        <div class="form-row">
+          <label for="ghRepo">Repo name</label>
+          <input id="ghRepo" type="text" placeholder="cricket-auction" />
+        </div>
+        <div class="form-row">
+          <label for="ghBranch">Branch</label>
+          <input id="ghBranch" type="text" placeholder="main" />
+        </div>
+        <div class="form-row">
+          <label for="ghPath">Data file path</label>
+          <input id="ghPath" type="text" placeholder="data/data.json" />
+        </div>
+
+        <div class="setup-error" id="settingsMsg" hidden></div>
+
+        <div class="actions" style="gap:10px;">
+          <button class="btn ghost" id="testConnBtn">Test connection</button>
+          <button class="btn primary" id="saveSettingsBtn">Save &amp; sync</button>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:22px 0;" />
+
+        <h3 style="margin-top:0;">Admin password</h3>
+        <p class="muted">Protects every view except spectator mode. Stored as a hash in this browser.</p>
+        <div class="form-row">
+          <label for="curPassword">Current password</label>
+          <input id="curPassword" type="password" placeholder="Current password" />
+        </div>
+        <div class="form-row">
+          <label for="newPassword">New password</label>
+          <input id="newPassword" type="password" placeholder="New password" />
+        </div>
+        <div class="form-row">
+          <label for="confirmPassword">Confirm new</label>
+          <input id="confirmPassword" type="password" placeholder="Repeat new password" />
+        </div>
+        <div class="setup-error" id="passwordMsg" hidden></div>
+        <div class="actions">
+          <button class="btn primary" id="changePasswordBtn">Change password</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
