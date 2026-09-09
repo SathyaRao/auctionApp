@@ -190,7 +190,7 @@
       "name": "Vinod",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
+      "status": "unsold",
       "soldTo": null,
       "price": 0
     },
@@ -331,15 +331,14 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958952071",
-    "currentBid": 1000,
+    "currentPlayerId": null,
+    "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788958886015",
       "p1788958909760",
-      "p1788958938367",
-      "p1788958952071"
+      "p1788958938367"
     ]
   }
 }
