@@ -263,6 +263,15 @@
       "status": "available",
       "soldTo": null,
       "price": 0
+    },
+    {
+      "id": "p1788959053353",
+      "name": "Hanuma",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     }
   ],
   "auction": {
