@@ -18,11 +18,12 @@
     {
       "id": "t1",
       "name": "Don",
-      "purse": 93000,
+      "purse": 89000,
       "players": [
         "p1788959095535",
         "p1788959053353",
-        "p1788959015727"
+        "p1788959015727",
+        "p1788959029039"
       ]
     },
     {
@@ -255,9 +256,9 @@
       "name": "Abhi",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 4000
     },
     {
       "id": "p1788959040464",
@@ -315,9 +316,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959029039",
-    "currentBid": 3000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -336,7 +337,6 @@
       "p1788958971815",
       "p1788958989623",
       "p1788958998767",
-      "p1788959029039",
       "p1788959040464",
       "p1788959047103",
       "p1788959074680"
