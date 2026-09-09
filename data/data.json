@@ -47,11 +47,12 @@
     {
       "id": "t3",
       "name": "Sathya",
-      "purse": 76000,
+      "purse": 37000,
       "players": [
         "p1788959008080",
         "p1788958998767",
-        "p1788958876647"
+        "p1788958876647",
+        "p1788958933808"
       ]
     }
   ],
@@ -160,9 +161,9 @@
       "name": "Krishna",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 39000
     },
     {
       "id": "p1788958938367",
@@ -328,16 +329,15 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958933808",
-    "currentBid": 38000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788958859913",
       "p1788958867561",
       "p1788958886015",
       "p1788958909760",
-      "p1788958933808",
       "p1788958938367",
       "p1788958952071"
     ]
