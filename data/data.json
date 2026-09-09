@@ -16,10 +16,11 @@
     {
       "id": "t1",
       "name": "Don",
-      "purse": 94000,
+      "purse": 93000,
       "players": [
         "p1788959095535",
-        "p1788959053353"
+        "p1788959053353",
+        "p1788959015727"
       ]
     },
     {
@@ -232,9 +233,9 @@
       "name": "Anish Bhat",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 1000
     },
     {
       "id": "p1788959021232",
@@ -310,9 +311,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959015727",
+    "currentPlayerId": "p1788958918216",
     "currentBid": 1000,
-    "leadingTeamId": "t1",
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -334,7 +335,6 @@
       "p1788958979351",
       "p1788958989623",
       "p1788958998767",
-      "p1788959015727",
       "p1788959029039",
       "p1788959040464",
       "p1788959047103",
