@@ -7,8 +7,10 @@
     {
       "id": "t0",
       "name": "Ananth Mallya",
-      "purse": 100000,
-      "players": []
+      "purse": 99000,
+      "players": [
+        "p1788959021232"
+      ]
     },
     {
       "id": "t1",
@@ -233,9 +235,9 @@
       "name": "Suresh",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 1000
     },
     {
       "id": "p1788959029039",
@@ -302,9 +304,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959021232",
-    "currentBid": 1000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -329,7 +331,6 @@
       "p1788958998767",
       "p1788959008080",
       "p1788959015727",
-      "p1788959021232",
       "p1788959029039",
       "p1788959040464",
       "p1788959047103",
