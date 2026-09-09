@@ -33,11 +33,12 @@
     {
       "id": "t2",
       "name": "Nagaraj Bhat",
-      "purse": 66000,
+      "purse": 55000,
       "players": [
         "p1788958979351",
         "p1788958895850",
-        "p1788958971815"
+        "p1788958971815",
+        "p1788958927919"
       ]
     },
     {
@@ -147,9 +148,9 @@
       "name": "Prashanth Bande",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 11000
     },
     {
       "id": "p1788958933808",
@@ -324,9 +325,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958927919",
-    "currentBid": 11000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788958852432",
@@ -334,7 +335,6 @@
       "p1788958867561",
       "p1788958886015",
       "p1788958909760",
-      "p1788958927919",
       "p1788958933808",
       "p1788958938367",
       "p1788958952071",
