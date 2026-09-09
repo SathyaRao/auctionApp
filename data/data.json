@@ -34,12 +34,13 @@
     {
       "id": "t2",
       "name": "Nagaraj Bhat",
-      "purse": 55000,
+      "purse": 45000,
       "players": [
         "p1788958979351",
         "p1788958895850",
         "p1788958971815",
-        "p1788958927919"
+        "p1788958927919",
+        "p1788958852432"
       ]
     },
     {
@@ -68,9 +69,9 @@
       "name": "Umesh",
       "category": "Bowler",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 10000
     },
     {
       "id": "p1788958859913",
@@ -326,12 +327,11 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958852432",
-    "currentBid": 10000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
-      "p1788958852432",
       "p1788958859913",
       "p1788958867561",
       "p1788958886015",
