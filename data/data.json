@@ -7,12 +7,13 @@
     {
       "id": "t0",
       "name": "Ananth Mallya",
-      "purse": 62000,
+      "purse": 32000,
       "players": [
         "p1788959021232",
         "p1788958945696",
         "p1788958918216",
-        "p1788958902391"
+        "p1788958902391",
+        "p1788959040464"
       ]
     },
     {
@@ -266,9 +267,9 @@
       "name": "Yathish",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 30000
     },
     {
       "id": "p1788959047103",
@@ -317,9 +318,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788959040464",
-    "currentBid": 30000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -337,7 +338,6 @@
       "p1788958960367",
       "p1788958971815",
       "p1788958989623",
-      "p1788959040464",
       "p1788959047103",
       "p1788959074680"
     ]
