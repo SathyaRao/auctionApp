@@ -29,7 +29,17 @@
       "players": []
     }
   ],
-  "players": [],
+  "players": [
+    {
+      "id": "p1788957413463",
+      "name": "Glady",
+      "category": "Batsman",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    }
+  ],
   "auction": {
     "currentPlayerId": null,
     "currentBid": 0,
