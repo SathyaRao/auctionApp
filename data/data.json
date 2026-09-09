@@ -191,6 +191,15 @@
       "status": "available",
       "soldTo": null,
       "price": 0
+    },
+    {
+      "id": "p1788958989623",
+      "name": "Karthik Bailakere",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     }
   ],
   "auction": {
