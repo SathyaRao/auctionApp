@@ -173,6 +173,15 @@
       "status": "available",
       "soldTo": null,
       "price": 0
+    },
+    {
+      "id": "p1788958971815",
+      "name": "Sudha",
+      "category": "Batsman",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     }
   ],
   "auction": {
