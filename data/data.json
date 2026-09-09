@@ -28,8 +28,10 @@
     {
       "id": "t2",
       "name": "Nagaraj Bhat",
-      "purse": 100000,
-      "players": []
+      "purse": 69000,
+      "players": [
+        "p1788958979351"
+      ]
     },
     {
       "id": "t3",
@@ -199,9 +201,9 @@
       "name": "Arun Kutty",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 31000
     },
     {
       "id": "p1788958989623",
@@ -313,9 +315,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1788958979351",
-    "currentBid": 31000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1788957413463",
@@ -332,7 +334,6 @@
       "p1788958952071",
       "p1788958960367",
       "p1788958971815",
-      "p1788958979351",
       "p1788958989623",
       "p1788958998767",
       "p1788959029039",
