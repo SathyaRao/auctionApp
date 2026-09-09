@@ -16,8 +16,8 @@
 
 const Store = {
   // --- GitHub configuration (editable from Settings) ---
-  OWNER: 'sathyarao',
-  REPO: 'cricket-auction',
+  OWNER: 'SathyaRao',
+  REPO: 'auctionApp',
   FILE_PATH: 'data/data.json',
   BRANCH: 'main',
 

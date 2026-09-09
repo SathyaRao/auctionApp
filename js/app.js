@@ -946,7 +946,7 @@
     if (setup) setup.hidden = true;
     // Live remote updates require the shared GitHub store. Without it we can only
     // show whatever snapshot exists in this browser, so tell the spectator.
-    if (!Store.getToken() && (!Store.getConfig().owner || Store.getConfig().owner === 'sathyarao')) {
+    if (!Store.getToken() && (!Store.getConfig().owner || Store.getConfig().owner === 'SathyaRao')) {
       // Still poll GitHub anonymously - works for public repos even without a token.
       console.info('Spectator mode: polling the configured GitHub repo for live updates.');
     }
