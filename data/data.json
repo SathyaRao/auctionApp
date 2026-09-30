@@ -53,7 +53,692 @@
       "players": []
     }
   ],
-  "players": [],
+  "players": [
+    {
+      "id": "p1790743344027_0",
+      "name": "Gowrish",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_1",
+      "name": "Allan",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_2",
+      "name": "Uday Ba",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_3",
+      "name": "Nagaraj",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_4",
+      "name": "Raxon",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_5",
+      "name": "Satish",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_6",
+      "name": "Karthik s",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_7",
+      "name": "Samroy",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_8",
+      "name": "Naveen K",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_9",
+      "name": "Praveen",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_10",
+      "name": "Manja K",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_11",
+      "name": "Shubaka",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_12",
+      "name": "Abhijeeth",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_13",
+      "name": "Suman D",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_14",
+      "name": "Rajanna",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_15",
+      "name": "Anil Pad",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_16",
+      "name": "Karunak",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_17",
+      "name": "Sangapp",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_18",
+      "name": "Vineeth",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_19",
+      "name": "Praveen",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_20",
+      "name": "Ivan",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_21",
+      "name": "Amith",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_22",
+      "name": "Sumanth",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_23",
+      "name": "Sathya a",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_24",
+      "name": "Srajan a",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_25",
+      "name": "Halesh",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_26",
+      "name": "Sachu K",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_27",
+      "name": "Dhanu K",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_28",
+      "name": "Harish K",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_29",
+      "name": "Sujith K",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_30",
+      "name": "Suresh A",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_31",
+      "name": "Santhosh",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_32",
+      "name": "Ashwath",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_33",
+      "name": "Ajay",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_34",
+      "name": "Rosten",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_35",
+      "name": "Parsi",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_36",
+      "name": "Vikesh",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_37",
+      "name": "Sudhakar",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_38",
+      "name": "Nithesh",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_39",
+      "name": "Prakash",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_40",
+      "name": "Lokesh s",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_41",
+      "name": "Vikram",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_42",
+      "name": "Anith",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_43",
+      "name": "Eleston",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_44",
+      "name": "Arun Ach",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_45",
+      "name": "Susheel",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_46",
+      "name": "Karthik F",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_47",
+      "name": "Ramgane",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_48",
+      "name": "Dhanraj",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_49",
+      "name": "Sandesh",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_50",
+      "name": "Sudeep",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_51",
+      "name": "Vibroit",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_52",
+      "name": "Karthik S",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_53",
+      "name": "Shravan",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_54",
+      "name": "Ankith",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_55",
+      "name": "Kaushik",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_56",
+      "name": "Calvin",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_57",
+      "name": "Andhu k",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_58",
+      "name": "Samarth",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_59",
+      "name": "Navarag",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_60",
+      "name": "Ashwin",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_61",
+      "name": "Ragu",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_62",
+      "name": "Raviraj",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_63",
+      "name": "Vishal",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_64",
+      "name": "Akash D",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_65",
+      "name": "JK",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_66",
+      "name": "Sunny",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_67",
+      "name": "Sathya P",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_68",
+      "name": "Atul She",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_69",
+      "name": "Deepak",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_70",
+      "name": "Sandeep",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_71",
+      "name": "Dishan",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_72",
+      "name": "Shashan",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_73",
+      "name": "Elson",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_74",
+      "name": "Shivu",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    },
+    {
+      "id": "p1790743344027_75",
+      "name": "Naveen",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    }
+  ],
   "auction": {
     "currentPlayerId": null,
     "currentBid": 0,
