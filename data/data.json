@@ -629,6 +629,15 @@
       "status": "available",
       "soldTo": null,
       "price": 0
+    },
+    {
+      "id": "p1790743887361",
+      "name": "Nagaraj Bhat",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     }
   ],
   "auction": {
