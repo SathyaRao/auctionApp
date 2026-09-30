@@ -737,6 +737,15 @@
       "status": "available",
       "soldTo": null,
       "price": 0
+    },
+    {
+      "id": "p1790744605466",
+      "name": "Anith",
+      "category": "All-rounder",
+      "base": 0,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     }
   ],
   "auction": {
