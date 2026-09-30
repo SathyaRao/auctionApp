@@ -55,15 +55,6 @@
   ],
   "players": [
     {
-      "id": "p0",
-      "name": "Virat Kohli",
-      "category": "Batsman",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
       "id": "p1",
       "name": "Rohit Sharma",
       "category": "Batsman",
