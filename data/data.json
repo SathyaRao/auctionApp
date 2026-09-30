@@ -710,6 +710,15 @@
       "status": "available",
       "soldTo": null,
       "price": 0
+    },
+    {
+      "id": "p1790744528900",
+      "name": "Ragunath",
+      "category": "All-rounder",
+      "base": 0,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     }
   ],
   "auction": {
