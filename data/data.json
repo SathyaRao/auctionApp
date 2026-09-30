@@ -32,7 +32,9 @@
       "id": "t4",
       "name": "Bhajarangi Cricketers",
       "purse": 100000,
-      "players": []
+      "players": [
+        "p1790744589259"
+      ]
     },
     {
       "id": "t5",
@@ -734,8 +736,8 @@
       "name": "Pursi",
       "category": "Batsman",
       "base": 0,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t4",
       "price": 0
     },
     {
@@ -767,13 +769,12 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790744589259",
+    "currentPlayerId": null,
     "currentBid": 0,
-    "leadingTeamId": "t4",
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
-      "p1790744499770",
-      "p1790744589259"
+      "p1790744499770"
     ]
   }
 }
