@@ -232,7 +232,6 @@
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
-      "p0",
       "p1",
       "p2",
       "p3",
