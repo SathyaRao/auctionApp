@@ -206,7 +206,11 @@
       <div class="card">
         <div class="players-header">
           <h2>Player pool</h2>
-          <button class="btn primary admin-only" id="addPlayerBtn">Add player</button>
+          <div class="players-header-actions admin-only">
+            <button class="btn primary" id="addPlayerBtn">Add player</button>
+            <button class="btn ghost" id="bulkUploadBtn">Bulk upload</button>
+            <button class="btn warn" id="deleteAllPlayersBtn">Delete all</button>
+          </div>
         </div>
 
         <div class="add-player-form" id="addPlayerForm" hidden>
@@ -220,6 +224,20 @@
           <input id="newPlayerBase" type="number" min="0" step="100" value="1000" placeholder="Base price" />
           <button class="btn success" id="savePlayerBtn">Save</button>
           <button class="btn ghost" id="cancelPlayerBtn">Cancel</button>
+        </div>
+
+        <div class="bulk-upload-form" id="bulkUploadForm" hidden>
+          <p class="muted">
+            Paste one player per line as <code>Name, Category, BasePrice</code>.
+            Category and base price are optional (default: Batsman, 1000).
+            Category must be one of Batsman, Bowler, All-rounder, Wicket-keeper.
+          </p>
+          <textarea id="bulkUploadText" rows="8"
+            placeholder="Virat Kohli, Batsman, 2000&#10;Jasprit Bumrah, Bowler, 1500&#10;Ravindra Jadeja, All-rounder&#10;MS Dhoni"></textarea>
+          <div class="bulk-upload-actions">
+            <button class="btn success" id="bulkUploadSaveBtn">Upload players</button>
+            <button class="btn ghost" id="bulkUploadCancelBtn">Cancel</button>
+          </div>
         </div>
 
         <table class="players-table">

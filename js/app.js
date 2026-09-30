@@ -851,6 +851,107 @@
     }
   }
 
+  // Remove every player from the pool (does not touch teams/purses).
+  function deleteAllPlayers() {
+    if (state.players.length === 0) {
+      return toast('There are no players to delete', 'error');
+    }
+    if (!confirm('Delete ALL ' + state.players.length + ' players from the pool? This cannot be undone.')) {
+      return;
+    }
+    state.players = [];
+    // Clear anything that referenced players.
+    state.auction.currentPlayerId = null;
+    state.auction.currentBid = 0;
+    state.auction.leadingTeamId = null;
+    state.auction.wheelIds = [];
+    save();
+    renderPlayers();
+    renderAuction();
+    renderWheel();
+    toast('All players deleted', 'success');
+  }
+
+  // Parse "Name, Category, BasePrice" lines and add them to the pool.
+  function bulkUploadPlayers() {
+    var raw = $('bulkUploadText').value;
+    var lines = raw.split('\n');
+    var validCats = ['Batsman', 'Bowler', 'All-rounder', 'Wicket-keeper'];
+    // case-insensitive lookup for category normalization
+    var catLookup = {};
+    validCats.forEach(function (c) { catLookup[c.toLowerCase()] = c; });
+
+    var added = 0;
+    var skipped = 0;
+    var errors = [];
+
+    lines.forEach(function (line, idx) {
+      var trimmed = line.trim();
+      if (!trimmed) return; // ignore blank lines
+
+      var parts = trimmed.split(',').map(function (s) { return s.trim(); });
+      var name = parts[0];
+      if (!name) { skipped++; return; }
+
+      // Category (optional, default Batsman)
+      var category = 'Batsman';
+      if (parts.length >= 2 && parts[1]) {
+        var norm = catLookup[parts[1].toLowerCase()];
+        if (norm) {
+          category = norm;
+        } else {
+          errors.push('Line ' + (idx + 1) + ': unknown category "' + parts[1] + '"');
+          skipped++;
+          return;
+        }
+      }
+
+      // Base price (optional, default BASE_PRICE)
+      var base = BASE_PRICE;
+      if (parts.length >= 3 && parts[2] !== '') {
+        var parsed = parseFloat(parts[2]);
+        if (isNaN(parsed) || parsed < 0) {
+          errors.push('Line ' + (idx + 1) + ': invalid base price "' + parts[2] + '"');
+          skipped++;
+          return;
+        }
+        base = parsed;
+      }
+
+      state.players.push({
+        id: 'p' + Date.now() + '_' + idx,
+        name: name,
+        category: category,
+        base: base,
+        status: 'available',
+        soldTo: null,
+        price: 0
+      });
+      added++;
+    });
+
+    if (added === 0) {
+      var msg = 'No players added.';
+      if (errors.length) msg += ' ' + errors[0];
+      return toast(msg, 'error');
+    }
+
+    save();
+    $('bulkUploadText').value = '';
+    $('bulkUploadForm').hidden = true;
+    renderPlayers();
+    renderAuction();
+    renderWheel();
+
+    var summary = 'Added ' + added + ' player' + (added === 1 ? '' : 's');
+    if (skipped) summary += ', skipped ' + skipped;
+    toast(summary, 'success');
+    if (errors.length) {
+      // surface the first couple of issues so the user knows what was skipped
+      setTimeout(function () { toast(errors.slice(0, 2).join(' | '), 'error'); }, 400);
+    }
+  }
+
   /* ==========================================================
      RESET
      ========================================================== */
@@ -990,6 +1091,19 @@
     $('cancelPlayerBtn').addEventListener('click', function () {
       $('addPlayerForm').hidden = true;
     });
+
+    // Bulk upload + delete all
+    $('bulkUploadBtn').addEventListener('click', function () {
+      var f = $('bulkUploadForm');
+      f.hidden = !f.hidden;
+      // hide the single-add form when opening bulk, to avoid confusion
+      if (!f.hidden) $('addPlayerForm').hidden = true;
+    });
+    $('bulkUploadSaveBtn').addEventListener('click', bulkUploadPlayers);
+    $('bulkUploadCancelBtn').addEventListener('click', function () {
+      $('bulkUploadForm').hidden = true;
+    });
+    $('deleteAllPlayersBtn').addEventListener('click', deleteAllPlayers);
 
     // Spinner wheel
     var spinBtn = $('spinBtn');
