@@ -49,9 +49,10 @@
     {
       "id": "t5",
       "name": "Chitte Pili",
-      "purse": 100000,
+      "purse": 90000,
       "players": [
-        "p1790744499770"
+        "p1790744499770",
+        "p1790768829462"
       ]
     },
     {
@@ -784,9 +785,9 @@
       "name": "Vineeth",
       "category": "All-rounder",
       "base": 10000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t5",
+      "price": 10000
     }
   ],
   "auction": {
