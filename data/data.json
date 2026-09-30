@@ -67,7 +67,9 @@
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
       "purse": 100000,
-      "players": []
+      "players": [
+        "p1790744605466"
+      ]
     }
   ],
   "players": [
@@ -760,8 +762,8 @@
       "name": "Anith",
       "category": "All-rounder",
       "base": 0,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t7",
       "price": 0
     },
     {
