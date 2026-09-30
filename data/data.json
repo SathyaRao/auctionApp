@@ -511,7 +511,7 @@
       "name": "Kaushik",
       "category": "All-rounder",
       "base": 1000,
-      "status": "unsold",
+      "status": "available",
       "soldTo": null,
       "price": 0
     },
