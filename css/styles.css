@@ -21,7 +21,13 @@
 body {
   margin: 0;
   font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 80% -10%, rgba(47, 123, 255, 0.12) 0%, transparent 60%), var(--bg);
+  /* Cricket backdrop: light dark overlay on top of the stadium image so the
+     image stays clearly visible while text over it remains legible. The cards
+     have their own solid backgrounds, so a light overlay is enough. */
+  background:
+    linear-gradient(180deg, rgba(15, 20, 32, 0.45), rgba(15, 20, 32, 0.55)),
+    url('../images/cricket-background.avif') center center / cover no-repeat fixed,
+    var(--bg);
   background-color: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -33,7 +39,8 @@ body {
   justify-content: space-between;
   gap: 16px;
   padding: 14px 22px;
-  background: linear-gradient(180deg, var(--bg-2), rgba(22, 29, 46, 0.6));
+  background: linear-gradient(180deg, rgba(22, 29, 46, 0.72), rgba(22, 29, 46, 0.55));
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -281,7 +288,10 @@ main { padding: 22px; max-width: 1200px; margin: 0 auto; }
 @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
 .card {
-  background: var(--card);
+  /* Slightly translucent so the cricket backdrop shows through, with a blur
+     to keep the content readable. */
+  background: rgba(28, 37, 55, 0.82);
+  backdrop-filter: blur(7px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px;
@@ -408,6 +418,12 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
 .queue-info { margin-top: 14px; color: var(--muted); font-size: 13px; text-align: center; }
 
 /* ---------- Teams ---------- */
+.teams-toolbar {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px; margin-bottom: 14px;
+}
+.teams-toolbar-title { margin: 0; }
+.teams-toolbar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .teams-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .team-card { display: flex; flex-direction: column; }
 .team-card .team-head { display: flex; justify-content: space-between; align-items: baseline; }
@@ -510,4 +526,12 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
   .form-row { grid-template-columns: 1fr; }
   .form-row .hint { margin-top: -8px; }
   .team-names { grid-template-columns: 1fr; }
+  /* `fixed` background attachment is unreliable on mobile; use scroll instead. */
+  body {
+    background:
+      linear-gradient(180deg, rgba(15, 20, 32, 0.5), rgba(15, 20, 32, 0.6)),
+      url('../images/cricket-background.avif') center center / cover no-repeat scroll,
+      var(--bg);
+    background-color: var(--bg);
+  }
 }

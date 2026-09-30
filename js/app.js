@@ -820,6 +820,117 @@
     return box;
   }
 
+  /* ==========================================================
+     PDF EXPORT (print-to-PDF, no external dependency)
+     ========================================================== */
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // Shared print styles + open/print a generated document in a new window.
+  function openPrintDocument(title, bodyHtml) {
+    var win = window.open('', '_blank');
+    if (!win) {
+      toast('Popup blocked. Allow popups to export PDF.', 'error');
+      return;
+    }
+    var css =
+      'body{font-family:"Segoe UI",Arial,sans-serif;color:#111;margin:24px;}' +
+      'h1{font-size:20px;margin:0 0 4px;}' +
+      '.meta{color:#666;font-size:12px;margin-bottom:18px;}' +
+      'h2{font-size:15px;margin:18px 0 6px;border-bottom:2px solid #222;padding-bottom:3px;}' +
+      'table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:12px;}' +
+      'th,td{border:1px solid #ccc;padding:6px 8px;text-align:left;}' +
+      'th{background:#f0f0f0;}' +
+      'td.num,th.num{text-align:right;}' +
+      'tfoot td{font-weight:bold;background:#fafafa;}' +
+      '.team-block{page-break-inside:avoid;margin-bottom:8px;}' +
+      '@media print{.no-print{display:none;}}';
+    var html =
+      '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' + escapeHtml(title) + '</title>' +
+      '<style>' + css + '</style></head><body>' + bodyHtml +
+      '<script>window.onload=function(){setTimeout(function(){window.print();},250);};<\/script>' +
+      '</body></html>';
+    win.document.open();
+    win.document.write(html);
+    win.document.close();
+  }
+
+  // Export the final team list: each team with its roster + spent/purse.
+  function exportTeamsPdf() {
+    if (!state.teams || state.teams.length === 0) {
+      return toast('No teams to export', 'error');
+    }
+    var now = new Date().toLocaleString();
+    var body = '<h1>Cricket Auction — Final Team List</h1>' +
+      '<div class="meta">Generated ' + escapeHtml(now) + '</div>';
+
+    state.teams.forEach(function (team) {
+      var rosterPlayers = (team.players || [])
+        .map(function (pid) { return getPlayer(pid); })
+        .filter(function (p) { return !!p; });
+      var spent = Math.round((state.purse - team.purse) * 100) / 100;
+
+      body += '<div class="team-block"><h2>' + escapeHtml(team.name) +
+        '  —  Players: ' + rosterPlayers.length +
+        ' | Spent: ' + escapeHtml(fmt(spent)) +
+        ' | Purse left: ' + escapeHtml(fmt(team.purse)) + '</h2>';
+
+      if (rosterPlayers.length === 0) {
+        body += '<p style="color:#888;">No players.</p></div>';
+        return;
+      }
+
+      body += '<table><thead><tr><th>#</th><th>Player</th><th>Category</th>' +
+        '<th class="num">Price</th></tr></thead><tbody>';
+      rosterPlayers.forEach(function (p, i) {
+        body += '<tr><td>' + (i + 1) + '</td><td>' + escapeHtml(p.name) +
+          '</td><td>' + escapeHtml(p.category) + '</td><td class="num">' +
+          escapeHtml(fmt(p.price)) + '</td></tr>';
+      });
+      var total = rosterPlayers.reduce(function (s, p) { return s + (p.price || 0); }, 0);
+      body += '</tbody><tfoot><tr><td colspan="3">Total</td><td class="num">' +
+        escapeHtml(fmt(Math.round(total * 100) / 100)) + '</td></tr></tfoot></table></div>';
+    });
+
+    openPrintDocument('Final Team List', body);
+  }
+
+  // Export the sold list: every sold player with team + price, sorted by price desc.
+  function exportSoldPdf() {
+    var sold = state.players
+      .filter(function (p) { return p.status === 'sold'; })
+      .sort(function (a, b) { return (b.price || 0) - (a.price || 0); });
+
+    if (sold.length === 0) {
+      return toast('No players sold yet', 'error');
+    }
+    var now = new Date().toLocaleString();
+    var totalSpend = sold.reduce(function (s, p) { return s + (p.price || 0); }, 0);
+
+    var body = '<h1>Cricket Auction — Sold Players List</h1>' +
+      '<div class="meta">Generated ' + escapeHtml(now) +
+      ' &nbsp;|&nbsp; ' + sold.length + ' players sold &nbsp;|&nbsp; total spend ' +
+      escapeHtml(fmt(Math.round(totalSpend * 100) / 100)) + '</div>';
+
+    body += '<table><thead><tr><th>#</th><th>Player</th><th>Category</th>' +
+      '<th>Team</th><th class="num">Base</th><th class="num">Sold price</th></tr></thead><tbody>';
+    sold.forEach(function (p, i) {
+      var team = p.soldTo ? getTeam(p.soldTo) : null;
+      body += '<tr><td>' + (i + 1) + '</td><td>' + escapeHtml(p.name) +
+        '</td><td>' + escapeHtml(p.category) + '</td><td>' +
+        escapeHtml(team ? team.name : '-') + '</td><td class="num">' +
+        escapeHtml(fmt(p.base)) + '</td><td class="num">' + escapeHtml(fmt(p.price)) +
+        '</td></tr>';
+    });
+    body += '</tbody><tfoot><tr><td colspan="5">Total spend</td><td class="num">' +
+      escapeHtml(fmt(Math.round(totalSpend * 100) / 100)) + '</td></tr></tfoot></table>';
+
+    openPrintDocument('Sold Players List', body);
+  }
+
   // Manually assign an available player to a team (outside the auction flow).
   // Deducts price from the team purse and marks the player sold - mirrors sellToLeader.
   function addPlayerToTeamManually(teamId, playerId, priceRaw) {
@@ -1350,6 +1461,12 @@
     // Settings
     $('saveSettingsBtn').addEventListener('click', saveSettings);
     $('testConnBtn').addEventListener('click', testConnection);
+
+    // PDF exports (Teams view)
+    var expTeamsBtn = $('exportTeamsPdfBtn');
+    if (expTeamsBtn) expTeamsBtn.addEventListener('click', exportTeamsPdf);
+    var expSoldBtn = $('exportSoldPdfBtn');
+    if (expSoldBtn) expSoldBtn.addEventListener('click', exportSoldPdf);
 
     // Spectator link
     var watchBtn = $('watchLinkBtn');
