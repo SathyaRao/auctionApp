@@ -17,7 +17,9 @@
       "id": "t1",
       "name": "Brutal Warriors",
       "purse": 100000,
-      "players": []
+      "players": [
+        "p1790744528900"
+      ]
     },
     {
       "id": "t2",
@@ -723,8 +725,8 @@
       "name": "Ragunath",
       "category": "All-rounder",
       "base": 0,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t1",
       "price": 0
     },
     {
