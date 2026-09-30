@@ -7,9 +7,10 @@
     {
       "id": "t0",
       "name": "Dunhill Cricketers",
-      "purse": 100000,
+      "purse": 85000,
       "players": [
-        "p1790744510762"
+        "p1790744510762",
+        "p1790746614474"
       ]
     },
     {
@@ -767,9 +768,9 @@
       "name": "Vibrolt",
       "category": "All-rounder",
       "base": 15000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 15000
     }
   ],
   "auction": {
