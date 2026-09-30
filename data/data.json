@@ -665,6 +665,15 @@
       "status": "available",
       "soldTo": null,
       "price": 0
+    },
+    {
+      "id": "p1790744494009",
+      "name": "Sumanth",
+      "category": "All-rounder",
+      "base": 1000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     }
   ],
   "auction": {
