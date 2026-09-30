@@ -778,6 +778,15 @@
       "status": "sold",
       "soldTo": "t0",
       "price": 15000
+    },
+    {
+      "id": "p1790768829462",
+      "name": "Vineeth",
+      "category": "All-rounder",
+      "base": 10000,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     }
   ],
   "auction": {
