@@ -511,7 +511,7 @@
       "name": "Kaushik",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
+      "status": "unsold",
       "soldTo": null,
       "price": 0
     },
@@ -796,8 +796,8 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_55",
-    "currentBid": 1000,
+    "currentPlayerId": null,
+    "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
@@ -848,7 +848,6 @@
       "p1790743344027_52",
       "p1790743344027_53",
       "p1790743344027_54",
-      "p1790743344027_55",
       "p1790743344027_56",
       "p1790743344027_57",
       "p1790743344027_58",
