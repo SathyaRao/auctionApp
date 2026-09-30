@@ -422,8 +422,38 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
   border-bottom: 1px dashed var(--border); font-size: 14px;
 }
 .roster li:last-child { border-bottom: none; }
+.roster li > span:first-child { flex: 1; }
 .roster .rprice { color: var(--accent); font-weight: 600; }
-.roster-empty { color: var(--muted); font-size: 13px; font-style: italic; }
+.roster-empty { color: var(--muted); font-size: 13px; font-style: italic; margin: 8px 0; }
+
+/* Team roster as a table */
+.roster-table { width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 13px; }
+.roster-table th {
+  text-align: left; color: var(--muted); font-weight: 600; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.3px; padding: 4px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.roster-table td { padding: 6px 8px; border-bottom: 1px dashed var(--border); }
+.roster-table tbody tr:last-child td { border-bottom: 1px solid var(--border); }
+.roster-table .ta-right { text-align: right; }
+.roster-table .rprice { color: var(--accent); font-weight: 600; }
+.roster-table tfoot td { padding: 6px 8px; font-weight: 700; color: var(--text); border: none; }
+.roster-table .icon-btn.cancel { padding: 0 4px; }
+
+/* Manual add-player-to-team controls on the Teams page */
+.team-add-btn { margin-top: 10px; align-self: flex-start; font-size: 13px; padding: 7px 12px; }
+.manual-add-row {
+  display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; align-items: center;
+}
+.manual-add-row select {
+  flex: 1; min-width: 140px; background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px; padding: 7px 8px; font-size: 13px;
+}
+.manual-add-row input {
+  width: 90px; background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px; padding: 7px 8px; font-size: 13px;
+}
+.manual-add-row .btn { font-size: 13px; padding: 7px 12px; }
 
 /* ---------- Players table ---------- */
 .players-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }

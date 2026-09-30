@@ -255,7 +255,7 @@
   }
 
   /* -------------------- Pagination -------------------- */
-  var PAGE_SIZES = { players: 8, teams: 6 };
+  var PAGE_SIZES = { players: 10, teams: 10 };
   var pageState = { players: 0, teams: 0 };
 
   // Clamp a page index against the total item count and page size.
@@ -623,6 +623,8 @@
      ========================================================== */
   // Tracks which team card is currently in name-edit mode (id or null).
   var editingTeamId = null;
+  // Tracks which team card has its manual "add player" form open (id or null).
+  var manualAddTeamId = null;
 
   function renderTeams() {
     var grid = $('teamsGrid');
@@ -681,23 +683,111 @@
       stats.appendChild(statBox('Players', String(team.players.length)));
       card.appendChild(stats);
 
-      var roster = el('ul', 'roster');
       if (team.players.length === 0) {
-        roster.appendChild(el('li', 'roster-empty', 'No players yet'));
+        card.appendChild(el('p', 'roster-empty', 'No players yet'));
       } else {
-        team.players.forEach(function (pid) {
-          var p = getPlayer(pid);
-          if (!p) return;
-          var li = el('li');
-          var nm = el('span', null, p.name + '  ');
-          var cat = el('span', 'muted', p.category);
-          nm.appendChild(cat);
-          li.appendChild(nm);
-          li.appendChild(el('span', 'rprice', fmt(p.price)));
-          roster.appendChild(li);
+        var rosterPlayers = team.players
+          .map(function (pid) { return getPlayer(pid); })
+          .filter(function (p) { return !!p; });
+
+        var table = el('table', 'roster-table');
+        var thead = el('thead');
+        var htr = el('tr');
+        htr.appendChild(el('th', null, '#'));
+        htr.appendChild(el('th', null, 'Player'));
+        htr.appendChild(el('th', null, 'Category'));
+        htr.appendChild(el('th', 'ta-right', 'Sold price'));
+        if (!VIEW_ONLY) htr.appendChild(el('th', null, ''));
+        thead.appendChild(htr);
+        table.appendChild(thead);
+
+        var tbody = el('tbody');
+        rosterPlayers.forEach(function (p, i) {
+          var row = el('tr');
+          row.appendChild(el('td', null, String(i + 1)));
+          row.appendChild(el('td', null, p.name));
+          row.appendChild(el('td', 'muted', p.category));
+          row.appendChild(el('td', 'ta-right rprice', fmt(p.price)));
+          if (!VIEW_ONLY) {
+            var actTd = el('td', 'ta-right');
+            var rel = el('button', 'icon-btn cancel', '\u2715');
+            rel.title = 'Remove from team (return to pool)';
+            rel.addEventListener('click', function () { releasePlayerFromTeam(team.id, p.id); });
+            actTd.appendChild(rel);
+            row.appendChild(actTd);
+          }
+          tbody.appendChild(row);
         });
+
+        // Totals footer
+        var totalSpent = rosterPlayers.reduce(function (sum, p) { return sum + (p.price || 0); }, 0);
+        table.appendChild(tbody);
+
+        var tfoot = el('tfoot');
+        var ftr = el('tr');
+        ftr.appendChild(el('td', null, ''));
+        var ftd = el('td', null, 'Total (' + rosterPlayers.length + ')');
+        ftd.colSpan = 2;
+        ftr.appendChild(ftd);
+        ftr.appendChild(el('td', 'ta-right rprice', fmt(Math.round(totalSpent * 100) / 100)));
+        if (!VIEW_ONLY) ftr.appendChild(el('td', null, ''));
+        tfoot.appendChild(ftr);
+        table.appendChild(tfoot);
+
+        card.appendChild(table);
       }
-      card.appendChild(roster);
+
+      // --- Admin: manually add an available player to this team ---
+      if (!VIEW_ONLY) {
+        var squadFull = team.players.length >= state.maxSquad;
+        if (manualAddTeamId === team.id && !squadFull) {
+          var addWrap = el('div', 'manual-add-row');
+          var sel = el('select');
+          var avail = availablePlayers();
+          if (avail.length === 0) {
+            sel.appendChild(el('option', null, 'No available players'));
+            sel.disabled = true;
+          } else {
+            avail.forEach(function (p) {
+              var opt = el('option', null, p.name + ' (' + p.category + ', base ' + fmt(p.base) + ')');
+              opt.value = p.id;
+              sel.appendChild(opt);
+            });
+          }
+          var priceInput = el('input');
+          priceInput.type = 'number';
+          priceInput.min = '0';
+          priceInput.step = '100';
+          priceInput.placeholder = 'Price';
+          // default price = selected player's base
+          if (avail.length > 0) priceInput.value = avail[0].base;
+          sel.addEventListener('change', function () {
+            var p = getPlayer(sel.value);
+            if (p) priceInput.value = p.base;
+          });
+          var addBtn = el('button', 'btn success', 'Add');
+          addBtn.addEventListener('click', function () {
+            addPlayerToTeamManually(team.id, sel.value, priceInput.value);
+          });
+          var cancelBtn = el('button', 'btn ghost', 'Cancel');
+          cancelBtn.addEventListener('click', function () { manualAddTeamId = null; renderTeams(); });
+          addWrap.appendChild(sel);
+          addWrap.appendChild(priceInput);
+          addWrap.appendChild(addBtn);
+          addWrap.appendChild(cancelBtn);
+          card.appendChild(addWrap);
+        } else {
+          var addPlayerBtn = el('button', 'btn ghost team-add-btn', '+ Add player');
+          addPlayerBtn.disabled = squadFull;
+          if (squadFull) addPlayerBtn.title = 'Squad is full';
+          addPlayerBtn.addEventListener('click', function () {
+            manualAddTeamId = team.id;
+            renderTeams();
+          });
+          card.appendChild(addPlayerBtn);
+        }
+      }
+
       grid.appendChild(card);
     });
 
@@ -728,6 +818,70 @@
     box.appendChild(el('span', 'label', label));
     box.appendChild(el('span', 'value', value));
     return box;
+  }
+
+  // Manually assign an available player to a team (outside the auction flow).
+  // Deducts price from the team purse and marks the player sold - mirrors sellToLeader.
+  function addPlayerToTeamManually(teamId, playerId, priceRaw) {
+    var team = getTeam(teamId);
+    if (!team) return;
+    if (!playerId) return toast('Select a player to add', 'error');
+
+    var player = getPlayer(playerId);
+    if (!player) return toast('Player not found', 'error');
+    if (player.status !== 'available') {
+      return toast(player.name + ' is not available', 'error');
+    }
+    if (team.players.length >= state.maxSquad) {
+      return toast(team.name + ' squad is full', 'error');
+    }
+
+    var price = parseFloat(priceRaw);
+    if (isNaN(price) || price < 0) return toast('Enter a valid price', 'error');
+    if (team.purse < price) {
+      return toast(team.name + ' cannot afford ' + fmt(price) + ' (purse ' + fmt(team.purse) + ')', 'error');
+    }
+
+    team.purse = Math.round((team.purse - price) * 100) / 100;
+    team.players.push(player.id);
+    player.status = 'sold';
+    player.soldTo = team.id;
+    player.price = price;
+
+    // If this player happened to be on the auction block, clear the block.
+    if (state.auction.currentPlayerId === player.id) {
+      state.auction.currentPlayerId = null;
+      state.auction.currentBid = 0;
+      state.auction.leadingTeamId = null;
+    }
+
+    manualAddTeamId = null;
+    save().then(function (ok) {
+      if (ok) toast(player.name + ' added to ' + team.name + ' for ' + fmt(price), 'success');
+    });
+    renderAll(); // teams, players pool, purse panel, wheel all reflect the change
+  }
+
+  // Release a player from a team back into the available pool, refunding the purse.
+  function releasePlayerFromTeam(teamId, playerId) {
+    var team = getTeam(teamId);
+    var player = getPlayer(playerId);
+    if (!team || !player) return;
+    if (!confirm('Remove ' + player.name + ' from ' + team.name + ' and return them to the pool?')) {
+      return;
+    }
+
+    team.players = team.players.filter(function (id) { return id !== playerId; });
+    // Refund the price that was paid for this player.
+    team.purse = Math.round((team.purse + (player.price || 0)) * 100) / 100;
+    player.status = 'available';
+    player.soldTo = null;
+    player.price = 0;
+
+    save().then(function (ok) {
+      if (ok) toast(player.name + ' returned to the pool', 'success');
+    });
+    renderAll();
   }
 
   /* ==========================================================
