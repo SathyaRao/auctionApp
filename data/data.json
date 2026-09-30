@@ -286,7 +286,7 @@
       "name": "Halesh",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
+      "status": "unsold",
       "soldTo": null,
       "price": 0
     },
@@ -796,8 +796,8 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_25",
-    "currentBid": 1000,
+    "currentPlayerId": null,
+    "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
@@ -824,7 +824,6 @@
       "p1790743344027_21",
       "p1790743344027_23",
       "p1790743344027_24",
-      "p1790743344027_25",
       "p1790743344027_26",
       "p1790743344027_27",
       "p1790743344027_28",
