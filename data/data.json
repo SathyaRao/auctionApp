@@ -40,7 +40,9 @@
       "id": "t5",
       "name": "Chitte Pili",
       "purse": 100000,
-      "players": []
+      "players": [
+        "p1790744499770"
+      ]
     },
     {
       "id": "t6",
@@ -682,8 +684,8 @@
       "name": "JK",
       "category": "All-rounder",
       "base": 0,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t5",
       "price": 0
     },
     {
@@ -769,12 +771,10 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790744499770",
+    "currentPlayerId": null,
     "currentBid": 0,
-    "leadingTeamId": "t5",
+    "leadingTeamId": null,
     "increment": 1000,
-    "wheelIds": [
-      "p1790744499770"
-    ]
+    "wheelIds": []
   }
 }
