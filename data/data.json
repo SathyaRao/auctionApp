@@ -25,7 +25,9 @@
       "id": "t2",
       "name": "ED Strikers",
       "purse": 100000,
-      "players": []
+      "players": [
+        "p1790744506960"
+      ]
     },
     {
       "id": "t3",
@@ -707,8 +709,8 @@
       "name": "Sandeep",
       "category": "All-rounder",
       "base": 0,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t2",
       "price": 0
     },
     {
