@@ -183,10 +183,21 @@
   // the sync badge reflects the remote result.
   function save() {
     setSyncBadge('saving');
-    Store.set(state).then(function (remoteOk) {
-      setSyncBadge(remoteOk ? 'synced' : (Store.isConfigured() ? 'error' : 'local'));
+    return Store.set(state).then(function (remoteOk) {
+      if (remoteOk) {
+        setSyncBadge('synced');
+      } else if (Store.isConfigured()) {
+        setSyncBadge('error');
+        toast('Could not save to the file (GitHub). Your change may be lost on refresh. Check Settings.', 'error');
+      } else {
+        setSyncBadge('local');
+        toast('No GitHub token set — changes are local only and will be lost on refresh. Add a token in Settings.', 'error');
+      }
+      return remoteOk;
     }).catch(function () {
       setSyncBadge('error');
+      toast('Save failed. Your change may be lost on refresh.', 'error');
+      return false;
     });
   }
 
@@ -219,6 +230,15 @@
     var m = map[mode] || map.local;
     badge.textContent = m.text;
     badge.className = 'sync-badge ' + m.cls;
+    updateTokenBanner();
+  }
+
+  // Show a prominent banner whenever there's no token, so the user knows
+  // changes are NOT being written to the file and will be lost on refresh.
+  function updateTokenBanner() {
+    var banner = document.getElementById('noTokenBanner');
+    if (!banner) return;
+    banner.hidden = VIEW_ONLY || Store.isConfigured();
   }
 
   /* -------------------- DOM helpers -------------------- */
@@ -871,13 +891,16 @@
       id: id, name: name, category: category, base: base,
       status: 'available', soldTo: null, price: 0
     });
-    save();
     $('newPlayerName').value = '';
     $('newPlayerBase').value = String(BASE_PRICE);
     $('addPlayerForm').hidden = true;
     renderPlayers();
     renderAuction();
-    toast(name + ' added to the pool', 'success');
+    // Only confirm success once the write to the file actually completes,
+    // so a refresh right after can't lose the entry.
+    save().then(function (ok) {
+      if (ok) toast(name + ' added and saved to file', 'success');
+    });
   }
 
   function removePlayer(id) {
@@ -1177,6 +1200,13 @@
     // Spectator link
     var watchBtn = $('watchLinkBtn');
     if (watchBtn) watchBtn.addEventListener('click', shareViewLink);
+
+    // No-token banner -> jump to Settings
+    var noTokenLink = $('noTokenBannerLink');
+    if (noTokenLink) noTokenLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      showView('settings');
+    });
 
     // Gate (admin password)
     var unlockBtn = $('gateUnlockBtn');

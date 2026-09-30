@@ -427,6 +427,12 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
 
 /* ---------- Players table ---------- */
 .players-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.no-token-banner {
+  background: #4a2b12; color: #ffcc80; border-bottom: 1px solid var(--warn);
+  padding: 10px 16px; font-size: 14px; text-align: center;
+}
+.no-token-banner[hidden] { display: none !important; }
+.no-token-banner a { color: #ffe0b2; font-weight: 600; }
 .players-header-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .add-player-form { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
 .add-player-form input, .add-player-form select { width: auto; flex: 1; min-width: 120px; }
