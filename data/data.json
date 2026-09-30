@@ -34,7 +34,8 @@
       "name": "NFC",
       "purse": 85000,
       "players": [
-        "p1790744633361"
+        "p1790744633361",
+        "p1790744575856"
       ]
     },
     {
@@ -738,8 +739,8 @@
       "name": "Sudeep",
       "category": "All-rounder",
       "base": 0,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t3",
       "price": 0
     },
     {
