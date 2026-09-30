@@ -535,3 +535,96 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
     background-color: var(--bg);
   }
 }
+
+/* ============================================================
+   MOBILE / TOUCH  (phones and small tablets)
+   ============================================================ */
+
+/* Medium screens / small tablets */
+@media (max-width: 860px) {
+  main { padding: 14px; }
+  .card { padding: 16px; }
+
+  /* Header: let brand + tabs stack and the tab bar scroll horizontally
+     instead of overflowing/wrapping awkwardly. */
+  .app-header { padding: 10px 14px; gap: 10px; }
+  .brand h1 { font-size: 18px; }
+  .tabs {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+  .tabs::-webkit-scrollbar { height: 4px; }
+  .tab-btn, .sync-badge { flex: 0 0 auto; white-space: nowrap; }
+
+  /* Bid buttons: one per row is easier to tap. */
+  .team-bid-buttons { grid-template-columns: 1fr 1fr; }
+  .auction-actions { flex-direction: column; }
+  .auction-actions .btn { width: 100%; }
+
+  /* Teams toolbar actions go full width. */
+  .teams-toolbar-actions { width: 100%; }
+  .teams-toolbar-actions .btn { flex: 1; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  :root { --radius: 12px; }
+  main { padding: 10px; }
+  .card { padding: 14px; border-radius: var(--radius); }
+  .brand h1 { font-size: 16px; }
+  .brand-icon { font-size: 22px; }
+
+  /* Bigger, easier tap targets. */
+  .btn { padding: 12px 16px; font-size: 15px; }
+  .tab-btn { padding: 9px 14px; }
+  .icon-btn { font-size: 18px; padding: 6px 8px; }
+
+  /* Setup / settings forms: labels above inputs, full width. */
+  .form-row { grid-template-columns: 1fr; gap: 6px; }
+  .setup-card, .settings-card { max-width: 100%; }
+
+  /* Bid buttons single column. */
+  .team-bid-buttons { grid-template-columns: 1fr; }
+
+  /* Players pool + roster tables: allow horizontal scroll so columns
+     never get crushed; the table keeps a sensible minimum width. */
+  .players-table, .roster-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .players-table thead th, .players-table td { padding: 8px 10px; font-size: 13px; }
+  .players-header { flex-direction: column; align-items: stretch; gap: 10px; }
+  .players-header-actions { width: 100%; }
+  .players-header-actions .btn { flex: 1; }
+
+  /* Player-pool "bulk upload" + inline edit controls stack. */
+  .bulk-upload-actions { flex-direction: column; }
+  .bulk-upload-actions .btn { width: 100%; }
+
+  /* Manual add-to-team row stacks vertically. */
+  .manual-add-row { flex-direction: column; align-items: stretch; }
+  .manual-add-row select, .manual-add-row input, .manual-add-row .btn { width: 100%; }
+
+  /* Teams: one card per row already via auto-fill; tighten stats. */
+  .team-stats { gap: 8px; }
+  .team-stats .stat { min-width: 0; flex: 1; padding: 8px; }
+
+  /* Spinner: fit the wheel to the viewport width. */
+  .wheel-wrap, #wheelCanvas { width: 88vw; height: 88vw; max-width: 340px; max-height: 340px; }
+
+  /* Purse panel full width under the auction card. */
+  .purse-panel { margin-top: 4px; }
+
+  /* Pager controls wrap and stay tappable. */
+  .pager { gap: 6px; }
+  .pager button { padding: 8px 12px; }
+
+  /* Gate (password) card fits small screens. */
+  .gate-card { padding: 22px 18px; }
+
+  /* Toast spans most of the width so it's readable. */
+  .toast { left: 12px; right: 12px; bottom: 12px; transform: none; max-width: none; text-align: center; }
+
+  /* Spectator banner / no-token banner text a touch smaller. */
+  .spectator-banner, .no-token-banner { font-size: 13px; }
+}
