@@ -723,13 +723,16 @@
     var all = state.players;
     var pagePlayers = paginate('players', all);
 
+    var CATEGORIES = ['Batsman', 'Bowler', 'All-rounder', 'Wicket-keeper'];
+
     pagePlayers.forEach(function (p) {
       var tr = el('tr');
+      var editing = !VIEW_ONLY && editingPlayerId === p.id;
 
       // --- Name cell (inline-editable when not view-only) ---
       var nameTd = el('td');
       var cell = el('div', 'player-name-cell');
-      if (!VIEW_ONLY && editingPlayerId === p.id) {
+      if (editing) {
         var input = el('input');
         input.type = 'text';
         input.value = p.name;
@@ -737,7 +740,9 @@
         saveP.title = 'Save';
         var cancelP = el('button', 'icon-btn cancel', '\u2715');
         cancelP.title = 'Cancel';
-        var commit = function () { savePlayerName(p.id, input.value); };
+        var commit = function () {
+          savePlayerRow(p.id, input.value, catSelect.value, baseInput.value);
+        };
         saveP.addEventListener('click', commit);
         cancelP.addEventListener('click', function () { editingPlayerId = null; renderPlayers(); });
         input.addEventListener('keydown', function (e) {
@@ -753,7 +758,7 @@
         cell.appendChild(el('span', null, p.name));
         if (!VIEW_ONLY) {
           var editP = el('button', 'icon-btn edit', '\u270e');
-          editP.title = 'Edit name';
+          editP.title = 'Edit player';
           editP.addEventListener('click', function () { editingPlayerId = p.id; renderPlayers(); });
           cell.appendChild(editP);
         }
@@ -761,8 +766,42 @@
       }
       tr.appendChild(nameTd);
 
-      tr.appendChild(el('td', null, p.category));
-      tr.appendChild(el('td', null, fmt(p.base)));
+      // --- Category cell (editable when this row is in edit mode) ---
+      var catSelect;
+      var catTd = el('td');
+      if (editing) {
+        catSelect = el('select');
+        CATEGORIES.forEach(function (c) {
+          var opt = el('option', null, c);
+          opt.value = c;
+          if (c === p.category) opt.selected = true;
+          catSelect.appendChild(opt);
+        });
+        catTd.appendChild(catSelect);
+      } else {
+        catTd.textContent = p.category;
+      }
+      tr.appendChild(catTd);
+
+      // --- Base price cell (editable when this row is in edit mode) ---
+      var baseInput;
+      var baseTd = el('td');
+      if (editing) {
+        baseInput = el('input');
+        baseInput.type = 'number';
+        baseInput.min = '0';
+        baseInput.step = '100';
+        baseInput.value = p.base;
+        baseInput.style.maxWidth = '110px';
+        baseInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') savePlayerRow(p.id, input.value, catSelect.value, baseInput.value);
+          if (e.key === 'Escape') { editingPlayerId = null; renderPlayers(); }
+        });
+        baseTd.appendChild(baseInput);
+      } else {
+        baseTd.textContent = fmt(p.base);
+      }
+      tr.appendChild(baseTd);
 
       var statusTd = el('td');
       var tag = el('span', 'status-tag status-' + p.status, p.status);
@@ -793,18 +832,31 @@
     renderPager('playersPager', 'players', all.length, renderPlayers);
   }
 
-  function savePlayerName(id, newName) {
+  function savePlayerRow(id, newName, newCategory, newBase) {
     var name = (newName || '').trim();
     if (!name) return toast('Player name cannot be empty', 'error');
+
+    var base = parseFloat(newBase);
+    if (isNaN(base) || base < 0) return toast('Enter a valid base price', 'error');
+
     var p = getPlayer(id);
     if (!p) return;
+
     p.name = name;
+    if (newCategory) p.category = newCategory;
+    p.base = base;
+    // If this player is currently on the block and hasn't received a bid yet,
+    // keep the current bid in sync with the (possibly changed) base price.
+    if (state.auction.currentPlayerId === id && state.auction.leadingTeamId === null) {
+      state.auction.currentBid = base;
+    }
+
     editingPlayerId = null;
     save();
     renderPlayers();
     renderWheel();        // wheel labels reflect the new name
-    renderAuction();      // in case this player is on the block
-    toast('Player renamed', 'success');
+    renderAuction();      // reflect name/base if this player is on the block
+    toast('Player updated', 'success');
   }
 
   function addPlayer() {
