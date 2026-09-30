@@ -32,8 +32,10 @@
     {
       "id": "t3",
       "name": "NFC",
-      "purse": 100000,
-      "players": []
+      "purse": 85000,
+      "players": [
+        "p1790744633361"
+      ]
     },
     {
       "id": "t4",
@@ -763,9 +765,9 @@
       "name": "Raviraj",
       "category": "All-rounder",
       "base": 15000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 15000
     },
     {
       "id": "p1790746614474",
