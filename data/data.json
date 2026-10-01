@@ -52,7 +52,6 @@
       "name": "Chitte Pili",
       "purse": 90000,
       "players": [
-        "p1790744499770",
         "p1790768829462"
       ]
     },
@@ -701,8 +700,8 @@
       "name": "JK",
       "category": "All-rounder",
       "base": 0,
-      "status": "sold",
-      "soldTo": "t5",
+      "status": "available",
+      "soldTo": null,
       "price": 0
     },
     {
