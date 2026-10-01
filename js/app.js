@@ -1378,6 +1378,68 @@
     });
   }
 
+  /* ---------- Token transfer (link + QR) ---------- */
+  function buildTokenTransferUrl() {
+    var token = ($('ghToken').value || '').trim() || Store.getToken();
+    if (!token) {
+      settingsMsg('Save a token first, then generate a transfer link.', true);
+      return null;
+    }
+    var base = window.location.href.split('#')[0].split('?')[0];
+    return base + '#token=' + encodeURIComponent(token);
+  }
+
+  function generateTokenTransfer() {
+    var url = buildTokenTransferUrl();
+    if (!url) return;
+    $('tokenTransferArea').hidden = false;
+    $('tokenLink').value = url;
+
+    var box = $('tokenQr');
+    box.innerHTML = '';
+    if (typeof qrcode === 'function') {
+      var qr = qrcode(0, 'M');
+      qr.addData(url);
+      qr.make();
+      box.innerHTML = qr.createImgTag(5, 8);
+    } else {
+      box.innerHTML = '<span style="color:#e05353;">QR library failed to load. Use the link instead.</span>';
+    }
+    settingsMsg('', false);
+  }
+
+  function copyTokenLink() {
+    var url = buildTokenTransferUrl();
+    if (!url) return;
+    $('tokenTransferArea').hidden = false;
+    $('tokenLink').value = url;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () {
+        toast('Token link copied', 'success');
+      }, function () {
+        window.prompt('Copy this token link:', url);
+      });
+    } else {
+      window.prompt('Copy this token link:', url);
+    }
+  }
+
+  // Read a token passed via the URL hash (settings page link / QR), store it,
+  // and strip it from the address bar. Returns true if a token was applied.
+  function loadTokenFromUrl() {
+    var hash = window.location.hash || '';
+    var m = hash.match(/[#&]token=([^&]+)/);
+    if (!m) return false;
+    var incoming = '';
+    try { incoming = decodeURIComponent(m[1]); } catch (e) { incoming = m[1]; }
+    incoming = (incoming || '').trim();
+    // Remove the token from the URL immediately for safety.
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+    if (!incoming) return false;
+    Store.setToken(incoming);
+    return true;
+  }
+
   /* ==========================================================
      WIRING
      ========================================================== */
@@ -1461,6 +1523,10 @@
     // Settings
     $('saveSettingsBtn').addEventListener('click', saveSettings);
     $('testConnBtn').addEventListener('click', testConnection);
+    var genTokenBtn = $('genTokenLinkBtn');
+    if (genTokenBtn) genTokenBtn.addEventListener('click', generateTokenTransfer);
+    var copyTokenBtn = $('copyTokenLinkBtn');
+    if (copyTokenBtn) copyTokenBtn.addEventListener('click', copyTokenLink);
 
     // PDF exports (Teams view)
     var expTeamsBtn = $('exportTeamsPdfBtn');
@@ -1888,6 +1954,13 @@
      ========================================================== */
   function boot() {
     wireEvents();
+
+    // If a token was passed in via a transfer link/QR, store it before anything
+    // else (works even behind the admin gate). Confirm once the UI is ready.
+    var tokenFromLink = loadTokenFromUrl();
+    if (tokenFromLink) {
+      setTimeout(function () { toast('Token loaded from link', 'success'); }, 300);
+    }
 
     /* ---------- Spectator (view-only) path ---------- */
     if (VIEW_ONLY) {

@@ -310,6 +310,32 @@
 
         <hr style="border:none;border-top:1px solid var(--border);margin:22px 0;" />
 
+        <h3 style="margin-top:0;">Transfer token to another device</h3>
+        <p class="muted">
+          Copy your GitHub token to your phone or another browser without retyping it.
+          Save your token above first, then generate a link or QR code and open it on the other device.
+        </p>
+        <p class="muted" style="color:#f0c040;">
+          The link contains your token. Only share it with your own devices. The token stays in the URL
+          after <code>#</code> (never sent to a server) and is removed from the address bar automatically once loaded.
+        </p>
+        <div class="actions" style="gap:10px;">
+          <button class="btn ghost" id="genTokenLinkBtn">Generate link &amp; QR</button>
+          <button class="btn ghost" id="copyTokenLinkBtn">Copy link</button>
+        </div>
+        <div id="tokenTransferArea" hidden style="margin-top:14px;">
+          <div class="form-row">
+            <label for="tokenLink">Transfer link</label>
+            <input id="tokenLink" type="text" readonly onclick="this.select()" />
+          </div>
+          <div id="tokenQr" style="margin-top:10px;display:inline-block;background:#fff;padding:12px;border-radius:8px;"></div>
+          <p class="muted" style="margin-top:8px;">
+            Scan this QR code with your phone's camera, then open the link. The token will load automatically.
+          </p>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:22px 0;" />
+
         <h3 style="margin-top:0;">Admin password</h3>
         <p class="muted">Protects every view except spectator mode. Stored as a hash in this browser.</p>
         <div class="form-row">
@@ -334,6 +360,7 @@
 
   <div class="toast" id="toast" hidden></div>
 
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
   <script src="js/store.js"></script>
   <script src="js/app.js"></script>
 </body>
