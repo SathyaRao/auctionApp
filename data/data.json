@@ -24,10 +24,11 @@
     {
       "id": "t2",
       "name": "ED Strikers",
-      "purse": 85000,
+      "purse": 84000,
       "players": [
         "p1790744506960",
-        "p1790743344027_43"
+        "p1790743344027_43",
+        "p1790743344027_37"
       ]
     },
     {
@@ -386,9 +387,9 @@
       "name": "Sudhakar",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 1000
     },
     {
       "id": "p1790743344027_38",
@@ -797,9 +798,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_37",
-    "currentBid": 1000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_0",
@@ -835,7 +836,6 @@
       "p1790743344027_33",
       "p1790743344027_34",
       "p1790743344027_36",
-      "p1790743344027_37",
       "p1790743344027_38",
       "p1790743344027_39",
       "p1790743344027_40",
