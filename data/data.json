@@ -67,11 +67,10 @@
     {
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
-      "purse": 83000,
+      "purse": 90000,
       "players": [
         "p1790744605466",
-        "p1790744494009",
-        "p1790743344027_45"
+        "p1790744494009"
       ]
     }
   ],
@@ -441,9 +440,9 @@
       "name": "Susheel",
       "category": "All-rounder",
       "base": 1000,
-      "status": "sold",
-      "soldTo": "t7",
-      "price": 7000
+      "status": "available",
+      "soldTo": null,
+      "price": 0
     },
     {
       "id": "p1790743344027_46",
