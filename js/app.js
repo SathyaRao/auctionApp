@@ -442,6 +442,10 @@
     if (!team) return false;
     if (team.players.length >= state.maxSquad) return false;
     if (team.purse < nextBid) return false;
+    // A team may not bid beyond its max bid (the amount it can spend on this
+    // player while still being able to fill its remaining required slots at base).
+    var maxBid = maxBidForTeam(team);
+    if (maxBid !== null && nextBid > maxBid) return false;
     return true;
   }
 
@@ -488,6 +492,12 @@
     }
     if (team.purse < nextBid) {
       return toast(team.name + ' cannot afford ' + fmt(nextBid), 'error');
+    }
+    // Enforce the max bid: cannot bid more than it can spend on this player
+    // while keeping enough to fill remaining required slots at base.
+    var maxBid = maxBidForTeam(team);
+    if (maxBid !== null && nextBid > maxBid) {
+      return toast(team.name + ' has reached its max bid of ' + fmt(maxBid), 'error');
     }
     // Prevent a team from bidding against itself.
     if (a.leadingTeamId === teamId) {
@@ -614,13 +624,23 @@
         btn.appendChild(maxLine);
       }
 
+      // A team is "maxed out" when it still has room/purse for the base, but the
+      // next bid would push it beyond its max bid.
+      var maxedOut = a.leadingTeamId !== team.id
+        && team.players.length < state.maxSquad
+        && maxBid !== null && nextBid > maxBid;
+
       var label = el('span');
       label.style.fontSize = '13px';
-      label.style.color = 'var(--accent)';
-      if (VIEW_ONLY) {
-        label.textContent = a.leadingTeamId === team.id ? 'Leading' : ('Next ' + fmt(nextBid));
+      label.style.color = maxedOut ? 'var(--danger)' : 'var(--accent)';
+      if (a.leadingTeamId === team.id) {
+        label.textContent = 'Leading';
+      } else if (maxedOut) {
+        label.textContent = 'Maxed out';
+      } else if (VIEW_ONLY) {
+        label.textContent = 'Next ' + fmt(nextBid);
       } else {
-        label.textContent = a.leadingTeamId === team.id ? 'Leading' : ('Bid ' + fmt(nextBid));
+        label.textContent = 'Bid ' + fmt(nextBid);
       }
       btn.appendChild(label);
 
