@@ -67,10 +67,11 @@
     {
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
-      "purse": 90000,
+      "purse": 83000,
       "players": [
         "p1790744605466",
-        "p1790744494009"
+        "p1790744494009",
+        "p1790743344027_45"
       ]
     }
   ],
@@ -440,9 +441,9 @@
       "name": "Susheel",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t7",
+      "price": 7000
     },
     {
       "id": "p1790743344027_46",
@@ -797,9 +798,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_45",
-    "currentBid": 7000,
-    "leadingTeamId": "t7",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_0",
@@ -841,7 +842,6 @@
       "p1790743344027_39",
       "p1790743344027_40",
       "p1790743344027_44",
-      "p1790743344027_45",
       "p1790743344027_46",
       "p1790743344027_48",
       "p1790743344027_49",
