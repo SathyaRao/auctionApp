@@ -404,6 +404,7 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
 .team-bid-btn.leading { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
 .team-bid-btn .tname { font-weight: 700; display: block; }
 .team-bid-btn .tpurse { font-size: 12px; color: var(--muted); }
+.team-bid-btn .tmaxbid { display: block; font-size: 12px; font-weight: 600; color: var(--accent); margin-top: 2px; }
 
 .auction-actions { display: flex; gap: 10px; margin-top: 8px; }
 
@@ -415,6 +416,7 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
 }
 .purse-list li:last-child { border-bottom: none; }
 .purse-list .count { color: var(--muted); font-size: 12px; }
+.purse-list .max-bid { color: var(--accent); font-size: 12px; font-weight: 600; margin-left: 6px; }
 .queue-info { margin-top: 14px; color: var(--muted); font-size: 13px; text-align: center; }
 
 /* ---------- Teams ---------- */

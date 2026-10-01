@@ -445,6 +445,30 @@
     return true;
   }
 
+  /**
+   * Maximum a team can bid for the current player while still being able to fill
+   * its remaining required squad slots at base price.
+   *
+   *   maxBid = purse - (base * (totalSlots - playersBought - 1))
+   *
+   * where base is the current player's base price (the per-slot reserve) and
+   * totalSlots is the maximum squad size. The "- 1" excludes the slot being
+   * filled by this very player. Clamped to [0, purse]; returns null if the squad
+   * is already full or there is no player on the block.
+   */
+  function maxBidForTeam(team) {
+    if (!team) return null;
+    if (team.players.length >= state.maxSquad) return null;
+    var player = state.auction.currentPlayerId ? getPlayer(state.auction.currentPlayerId) : null;
+    if (!player) return null;
+    var base = player.base || 0;
+    var slotsToReserve = Math.max(0, state.maxSquad - team.players.length - 1);
+    var max = team.purse - (base * slotsToReserve);
+    if (max < 0) max = 0;
+    if (max > team.purse) max = team.purse;
+    return Math.round(max * 100) / 100;
+  }
+
   function placeBid(teamId) {
     var a = state.auction;
     if (!a.currentPlayerId) return;
@@ -584,6 +608,12 @@
       btn.appendChild(name);
       btn.appendChild(sub);
 
+      var maxBid = maxBidForTeam(team);
+      if (maxBid !== null) {
+        var maxLine = el('span', 'tmaxbid', 'Max bid ' + fmt(maxBid));
+        btn.appendChild(maxLine);
+      }
+
       var label = el('span');
       label.style.fontSize = '13px';
       label.style.color = 'var(--accent)';
@@ -612,6 +642,11 @@
       var count = el('span', 'count', ' (' + team.players.length + '/' + state.maxSquad + ')');
       right.appendChild(purse);
       right.appendChild(count);
+      var maxBid = maxBidForTeam(team);
+      if (maxBid !== null) {
+        var maxEl = el('span', 'max-bid', ' max ' + fmt(maxBid));
+        right.appendChild(maxEl);
+      }
       li.appendChild(left);
       li.appendChild(right);
       list.appendChild(li);
