@@ -157,7 +157,8 @@
         currentBid: 0,
         leadingTeamId: null,
         increment: 1000,
-        wheelIds: null   // null = "not initialized"; [] = explicitly empty
+        wheelIds: null,  // null = "not initialized"; [] = explicitly empty
+        prevBid: null    // snapshot of { currentBid, leadingTeamId } before the last bid, for undo
       }
     };
   }
@@ -423,6 +424,7 @@
     state.auction.currentPlayerId = pick.id;
     state.auction.currentBid = pick.base;
     state.auction.leadingTeamId = null;
+    state.auction.prevBid = null;
     save();
     renderAuction();
     return true;
@@ -504,9 +506,29 @@
       return toast(team.name + ' already leads this bid', 'error');
     }
 
+    // Snapshot the state before this bid so it can be undone.
+    a.prevBid = { currentBid: a.currentBid, leadingTeamId: a.leadingTeamId };
     a.currentBid = nextBid;
     a.leadingTeamId = teamId;
     save();
+    renderAuction();
+  }
+
+  // Undo the most recent bid on the current player, restoring the previous
+  // bid amount and leader. Only one step back is kept.
+  function undoLastBid() {
+    var a = state.auction;
+    if (!a.currentPlayerId) {
+      return toast('No player on the block', 'error');
+    }
+    if (!a.prevBid) {
+      return toast('Nothing to undo', 'error');
+    }
+    a.currentBid = a.prevBid.currentBid;
+    a.leadingTeamId = a.prevBid.leadingTeamId;
+    a.prevBid = null;
+    save();
+    toast('Last bid undone');
     renderAuction();
   }
 
@@ -532,6 +554,7 @@
     a.currentPlayerId = null;
     a.currentBid = 0;
     a.leadingTeamId = null;
+    a.prevBid = null;
     save();
     toast(soldMsg, 'success');
     renderAll();
@@ -551,6 +574,7 @@
     a.currentPlayerId = null;
     a.currentBid = 0;
     a.leadingTeamId = null;
+    a.prevBid = null;
     save();
     toast((player ? player.name : 'Player') + ' marked unsold');
     renderAll();
@@ -581,6 +605,8 @@
           : 'No player on the block.';
       }
       $('nextPlayerBtn').disabled = availablePlayers().length === 0;
+      var undoBtnEmpty = $('undoBidBtn');
+      if (undoBtnEmpty) undoBtnEmpty.disabled = true;
     } else {
       empty.hidden = true;
       block.hidden = false;
@@ -591,6 +617,8 @@
       var leader = a.leadingTeamId ? getTeam(a.leadingTeamId) : null;
       $('cpLeader').textContent = leader ? ('Leading: ' + leader.name) : 'No bids yet';
       $('sellBtn').disabled = a.leadingTeamId === null;
+      var undoBtn = $('undoBidBtn');
+      if (undoBtn) undoBtn.disabled = !a.prevBid;
 
       renderTeamBidButtons();
     }
@@ -1533,6 +1561,8 @@
     $('nextPlayerBtn').addEventListener('click', bringNextPlayer);
     $('sellBtn').addEventListener('click', sellToLeader);
     $('unsoldBtn').addEventListener('click', markUnsold);
+    var undoBtn = $('undoBidBtn');
+    if (undoBtn) undoBtn.addEventListener('click', undoLastBid);
     document.querySelectorAll('#incrementGroup .chip').forEach(function (c) {
       c.addEventListener('click', function () {
         setIncrement(parseInt(c.getAttribute('data-inc'), 10));
