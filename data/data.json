@@ -54,12 +54,13 @@
     {
       "id": "t4",
       "name": "Bhajarangi Cricketers",
-      "purse": 77000,
+      "purse": 66000,
       "players": [
         "p1790744589259",
         "p1790743344027_14",
         "p1790743344027_54",
-        "p1790743344027_19"
+        "p1790743344027_19",
+        "p1790743344027_31"
       ]
     },
     {
@@ -366,9 +367,9 @@
       "name": "Santhosh",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t4",
+      "price": 11000
     },
     {
       "id": "p1790743344027_32",
@@ -822,9 +823,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_31",
-    "currentBid": 11000,
-    "leadingTeamId": "t4",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_2",
@@ -845,7 +846,6 @@
       "p1790743344027_28",
       "p1790743344027_29",
       "p1790743344027_30",
-      "p1790743344027_31",
       "p1790743344027_33",
       "p1790743344027_36",
       "p1790743344027_37",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 10000,
-      "leadingTeamId": "t3"
-    }
+    "prevBid": null
   }
 }
