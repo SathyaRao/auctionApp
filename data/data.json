@@ -26,10 +26,11 @@
     {
       "id": "t2",
       "name": "ED Strikers",
-      "purse": 85000,
+      "purse": 71000,
       "players": [
         "p1790744506960",
-        "p1790743344027_43"
+        "p1790743344027_43",
+        "p1790743344027_53"
       ]
     },
     {
@@ -498,9 +499,9 @@
       "name": "Shravan",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 14000
     },
     {
       "id": "p1790743344027_54",
@@ -801,9 +802,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_53",
-    "currentBid": 14000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -845,7 +846,6 @@
       "p1790743344027_48",
       "p1790743344027_49",
       "p1790743344027_52",
-      "p1790743344027_53",
       "p1790743344027_54",
       "p1790743344027_55",
       "p1790743344027_56",
@@ -869,9 +869,6 @@
       "p1790768829462",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 13000,
-      "leadingTeamId": "t3"
-    }
+    "prevBid": null
   }
 }
