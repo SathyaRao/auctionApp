@@ -205,7 +205,7 @@
       "name": "Praveen K",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
+      "status": "unsold",
       "soldTo": null,
       "price": 0
     },
@@ -841,15 +841,14 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_9",
-    "currentBid": 1000,
+    "currentPlayerId": null,
+    "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
       "p1790743344027_7",
       "p1790743344027_8",
-      "p1790743344027_9",
       "p1790743344027_10",
       "p1790743344027_11",
       "p1790743344027_12",
