@@ -19,12 +19,13 @@
     {
       "id": "t1",
       "name": "Brutal Warriors",
-      "purse": 56000,
+      "purse": 43000,
       "players": [
         "p1790744528900",
         "p1790743344027_23",
         "p1790744499770",
-        "p1790743344027_25"
+        "p1790743344027_25",
+        "p1790743344027_69"
       ]
     },
     {
@@ -630,9 +631,9 @@
       "name": "Deepak",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 13000
     },
     {
       "id": "p1790743344027_71",
@@ -825,9 +826,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_69",
-    "currentBid": 13000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -860,7 +861,6 @@
       "p1790743344027_64",
       "p1790743344027_67",
       "p1790743344027_68",
-      "p1790743344027_69",
       "p1790743344027_72",
       "p1790743344027_73",
       "p1790743344027_75",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 12000,
-      "leadingTeamId": "t2"
-    }
+    "prevBid": null
   }
 }
