@@ -43,12 +43,13 @@
     {
       "id": "t3",
       "name": "NFC",
-      "purse": 56000,
+      "purse": 51000,
       "players": [
         "p1790744633361",
         "p1790744575856",
         "p1790743344027_32",
-        "p1790743902602"
+        "p1790743902602",
+        "p1790743344027_20"
       ]
     },
     {
@@ -278,9 +279,9 @@
       "name": "Ivan",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 5000
     },
     {
       "id": "p1790743344027_21",
@@ -824,9 +825,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_20",
-    "currentBid": 5000,
-    "leadingTeamId": "t3",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -841,7 +842,6 @@
       "p1790743344027_15",
       "p1790743344027_16",
       "p1790743344027_17",
-      "p1790743344027_20",
       "p1790743344027_26",
       "p1790743344027_28",
       "p1790743344027_29",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 4000,
-      "leadingTeamId": "t0"
-    }
+    "prevBid": null
   }
 }
