@@ -107,7 +107,7 @@
     {
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
-      "purse": 23000,
+      "purse": 5000,
       "players": [
         "p1790744605466",
         "p1790744494009",
@@ -116,7 +116,8 @@
         "p1790743344027_56",
         "p1790743344027_2",
         "p1790743344027_36",
-        "p1790743344027_75"
+        "p1790743344027_75",
+        "p1790743344027_37"
       ]
     }
   ],
@@ -432,9 +433,9 @@
       "name": "Sudhakar",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t7",
+      "price": 18000
     },
     {
       "id": "p1790743344027_38",
@@ -843,9 +844,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_37",
-    "currentBid": 18000,
-    "leadingTeamId": "t7",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_7",
@@ -856,7 +857,6 @@
       "p1790743344027_17",
       "p1790743344027_28",
       "p1790743344027_30",
-      "p1790743344027_37",
       "p1790743344027_38",
       "p1790743344027_40",
       "p1790743344027_46",
@@ -867,9 +867,6 @@
       "p1790743344027_73",
       "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 17000,
-      "leadingTeamId": "t5"
-    }
+    "prevBid": null
   }
 }
