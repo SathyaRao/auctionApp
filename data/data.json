@@ -22,7 +22,7 @@
     {
       "id": "t1",
       "name": "Brutal Warriors",
-      "purse": 30000,
+      "purse": 19000,
       "players": [
         "p1790744528900",
         "p1790743344027_23",
@@ -31,7 +31,8 @@
         "p1790743344027_69",
         "p1790743344027_4",
         "p1790743344027_15",
-        "p1790743344027_40"
+        "p1790743344027_40",
+        "p1790743344027_73"
       ]
     },
     {
@@ -686,9 +687,9 @@
       "name": "Elson",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 11000
     },
     {
       "id": "p1790743344027_74",
@@ -854,19 +855,15 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_73",
-    "currentBid": 11000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_11",
       "p1790743344027_17",
-      "p1790743344027_72",
-      "p1790743344027_73"
+      "p1790743344027_72"
     ],
-    "prevBid": {
-      "currentBid": 10000,
-      "leadingTeamId": "t6"
-    }
+    "prevBid": null
   }
 }
