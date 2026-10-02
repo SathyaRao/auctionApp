@@ -49,11 +49,12 @@
     {
       "id": "t4",
       "name": "Bhajarangi Cricketers",
-      "purse": 87000,
+      "purse": 77000,
       "players": [
         "p1790744589259",
         "p1790743344027_14",
-        "p1790743344027_54"
+        "p1790743344027_54",
+        "p1790743344027_19"
       ]
     },
     {
@@ -258,9 +259,9 @@
       "name": "Praveen K",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t4",
+      "price": 10000
     },
     {
       "id": "p1790743344027_20",
@@ -813,9 +814,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_19",
-    "currentBid": 10000,
-    "leadingTeamId": "t4",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_2",
@@ -831,7 +832,6 @@
       "p1790743344027_15",
       "p1790743344027_16",
       "p1790743344027_17",
-      "p1790743344027_19",
       "p1790743344027_20",
       "p1790743344027_21",
       "p1790743344027_25",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 9000,
-      "leadingTeamId": "t0"
-    }
+    "prevBid": null
   }
 }
