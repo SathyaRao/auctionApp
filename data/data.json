@@ -87,7 +87,7 @@
     {
       "id": "t5",
       "name": "Chitte Pili",
-      "purse": 27000,
+      "purse": 23000,
       "players": [
         "p1790743344027_47",
         "p1790743887361",
@@ -97,7 +97,8 @@
         "p1790743344027_48",
         "p1790743344027_3",
         "p1790743344027_30",
-        "p1790743344027_46"
+        "p1790743344027_46",
+        "p1790743344027_11"
       ]
     },
     {
@@ -239,9 +240,9 @@
       "name": "Suhan",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t5",
+      "price": 4000
     },
     {
       "id": "p1790743344027_12",
@@ -857,16 +858,11 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_11",
-    "currentBid": 4000,
-    "leadingTeamId": "t5",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
-    "wheelIds": [
-      "p1790743344027_11"
-    ],
-    "prevBid": {
-      "currentBid": 3000,
-      "leadingTeamId": "t3"
-    }
+    "wheelIds": [],
+    "prevBid": null
   }
 }
