@@ -49,10 +49,11 @@
     {
       "id": "t4",
       "name": "Bhajarangi Cricketers",
-      "purse": 98000,
+      "purse": 87000,
       "players": [
         "p1790744589259",
-        "p1790743344027_14"
+        "p1790743344027_14",
+        "p1790743344027_54"
       ]
     },
     {
@@ -517,9 +518,9 @@
       "name": "Ankith",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t4",
+      "price": 11000
     },
     {
       "id": "p1790743344027_55",
@@ -811,9 +812,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_54",
-    "currentBid": 11000,
-    "leadingTeamId": "t4",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -850,7 +851,6 @@
       "p1790743344027_48",
       "p1790743344027_49",
       "p1790743344027_52",
-      "p1790743344027_54",
       "p1790743344027_56",
       "p1790743344027_57",
       "p1790743344027_58",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 10000,
-      "leadingTeamId": "t3"
-    }
+    "prevBid": null
   }
 }
