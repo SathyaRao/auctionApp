@@ -7,11 +7,12 @@
     {
       "id": "t0",
       "name": "Dunhill Cricketers",
-      "purse": 81000,
+      "purse": 76000,
       "players": [
         "p1790744510762",
         "p1790746614474",
-        "p1790743344027_24"
+        "p1790743344027_24",
+        "p1790743344027_5"
       ]
     },
     {
@@ -131,9 +132,9 @@
       "name": "Satish",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 5000
     },
     {
       "id": "p1790743344027_6",
@@ -803,16 +804,15 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_5",
-    "currentBid": 5000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
       "p1790743344027_2",
       "p1790743344027_3",
       "p1790743344027_4",
-      "p1790743344027_5",
       "p1790743344027_6",
       "p1790743344027_7",
       "p1790743344027_8",
@@ -869,9 +869,6 @@
       "p1790744499770",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 4000,
-      "leadingTeamId": "t3"
-    }
+    "prevBid": null
   }
 }
