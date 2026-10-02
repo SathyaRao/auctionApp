@@ -48,7 +48,7 @@
     {
       "id": "t3",
       "name": "NFC",
-      "purse": 35000,
+      "purse": 5000,
       "players": [
         "p1790744633361",
         "p1790744575856",
@@ -56,7 +56,8 @@
         "p1790743902602",
         "p1790743344027_20",
         "p1790743344027_13",
-        "p1790743344027_49"
+        "p1790743344027_49",
+        "p1790743909627"
       ]
     },
     {
@@ -721,9 +722,9 @@
       "name": "Praveen Pithrody",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 30000
     },
     {
       "id": "p1790744494009",
@@ -835,9 +836,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743909627",
-    "currentBid": 30000,
-    "leadingTeamId": "t3",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -865,12 +866,8 @@
       "p1790743344027_72",
       "p1790743344027_73",
       "p1790743344027_75",
-      "p1790743896763",
-      "p1790743909627"
+      "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 29000,
-      "leadingTeamId": "t7"
-    }
+    "prevBid": null
   }
 }
