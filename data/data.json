@@ -17,9 +17,10 @@
     {
       "id": "t1",
       "name": "Brutal Warriors",
-      "purse": 100000,
+      "purse": 98000,
       "players": [
-        "p1790744528900"
+        "p1790744528900",
+        "p1790743344027_23"
       ]
     },
     {
@@ -271,9 +272,9 @@
       "name": "Sathya Marne",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 2000
     },
     {
       "id": "p1790743344027_24",
@@ -799,9 +800,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_23",
-    "currentBid": 2000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -824,7 +825,6 @@
       "p1790743344027_19",
       "p1790743344027_20",
       "p1790743344027_21",
-      "p1790743344027_23",
       "p1790743344027_25",
       "p1790743344027_26",
       "p1790743344027_27",
@@ -869,9 +869,6 @@
       "p1790768829462",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": "t6"
-    }
+    "prevBid": null
   }
 }
