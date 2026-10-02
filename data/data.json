@@ -82,7 +82,7 @@
       "name": "Gowrish",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
+      "status": "unsold",
       "soldTo": null,
       "price": 0
     },
@@ -799,12 +799,11 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_0",
-    "currentBid": 1000,
+    "currentPlayerId": null,
+    "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
-      "p1790743344027_0",
       "p1790743344027_1",
       "p1790743344027_2",
       "p1790743344027_3",
