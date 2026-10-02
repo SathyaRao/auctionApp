@@ -22,7 +22,7 @@
     {
       "id": "t1",
       "name": "Brutal Warriors",
-      "purse": 31000,
+      "purse": 30000,
       "players": [
         "p1790744528900",
         "p1790743344027_23",
@@ -30,7 +30,8 @@
         "p1790743344027_25",
         "p1790743344027_69",
         "p1790743344027_4",
-        "p1790743344027_15"
+        "p1790743344027_15",
+        "p1790743344027_40"
       ]
     },
     {
@@ -467,9 +468,9 @@
       "name": "Lokesh sir",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 1000
     },
     {
       "id": "p1790743344027_43",
@@ -851,23 +852,19 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_40",
-    "currentBid": 1000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_11",
       "p1790743344027_12",
       "p1790743344027_17",
       "p1790743344027_38",
-      "p1790743344027_40",
       "p1790743344027_64",
       "p1790743344027_72",
       "p1790743344027_73"
     ],
-    "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": null
-    }
+    "prevBid": null
   }
 }
