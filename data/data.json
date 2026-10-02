@@ -73,11 +73,12 @@
     {
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
-      "purse": 80000,
+      "purse": 76000,
       "players": [
         "p1790744605466",
         "p1790744494009",
-        "p1790768829462"
+        "p1790768829462",
+        "p1790743344027_55"
       ]
     }
   ],
@@ -519,9 +520,9 @@
       "name": "Kaushik",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t7",
+      "price": 4000
     },
     {
       "id": "p1790743344027_56",
@@ -804,9 +805,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_55",
-    "currentBid": 4000,
-    "leadingTeamId": "t7",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -847,7 +848,6 @@
       "p1790743344027_49",
       "p1790743344027_52",
       "p1790743344027_54",
-      "p1790743344027_55",
       "p1790743344027_56",
       "p1790743344027_57",
       "p1790743344027_58",
@@ -868,9 +868,6 @@
       "p1790744499770",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 3000,
-      "leadingTeamId": "t3"
-    }
+    "prevBid": null
   }
 }
