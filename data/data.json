@@ -7,13 +7,14 @@
     {
       "id": "t0",
       "name": "Dunhill Cricketers",
-      "purse": 61000,
+      "purse": 9000,
       "players": [
         "p1790744510762",
         "p1790746614474",
         "p1790743344027_24",
         "p1790743344027_5",
-        "p1790743344027_57"
+        "p1790743344027_57",
+        "p1790743344027_67"
       ]
     },
     {
@@ -614,9 +615,9 @@
       "name": "Sathya Rao",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 52000
     },
     {
       "id": "p1790743344027_68",
@@ -827,9 +828,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_67",
-    "currentBid": 52000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -859,7 +860,6 @@
       "p1790743344027_58",
       "p1790743344027_59",
       "p1790743344027_64",
-      "p1790743344027_67",
       "p1790743344027_68",
       "p1790743344027_72",
       "p1790743344027_73",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 51000,
-      "leadingTeamId": "t7"
-    }
+    "prevBid": null
   }
 }
