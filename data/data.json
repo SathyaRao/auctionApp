@@ -79,13 +79,14 @@
     {
       "id": "t5",
       "name": "Chitte Pili",
-      "purse": 54000,
+      "purse": 33000,
       "players": [
         "p1790743344027_47",
         "p1790743887361",
         "p1790743344027_44",
         "p1790743344027_1",
-        "p1790743344027_74"
+        "p1790743344027_74",
+        "p1790743344027_48"
       ]
     },
     {
@@ -508,9 +509,9 @@
       "name": "Dhanraj",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t5",
+      "price": 21000
     },
     {
       "id": "p1790743344027_49",
@@ -838,9 +839,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_48",
-    "currentBid": 21000,
-    "leadingTeamId": "t5",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -858,7 +859,6 @@
       "p1790743344027_38",
       "p1790743344027_40",
       "p1790743344027_46",
-      "p1790743344027_48",
       "p1790743344027_52",
       "p1790743344027_58",
       "p1790743344027_64",
@@ -868,9 +868,6 @@
       "p1790743344027_75",
       "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 20000,
-      "leadingTeamId": "t1"
-    }
+    "prevBid": null
   }
 }
