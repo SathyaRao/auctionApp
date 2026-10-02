@@ -42,11 +42,12 @@
     {
       "id": "t3",
       "name": "NFC",
-      "purse": 73000,
+      "purse": 56000,
       "players": [
         "p1790744633361",
         "p1790744575856",
-        "p1790743344027_32"
+        "p1790743344027_32",
+        "p1790743902602"
       ]
     },
     {
@@ -697,9 +698,9 @@
       "name": "Umesh",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 17000
     },
     {
       "id": "p1790743909627",
@@ -820,9 +821,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743902602",
-    "currentBid": 17000,
-    "leadingTeamId": "t3",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_2",
@@ -864,13 +865,9 @@
       "p1790743344027_73",
       "p1790743344027_75",
       "p1790743896763",
-      "p1790743902602",
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 16000,
-      "leadingTeamId": "t5"
-    }
+    "prevBid": null
   }
 }
