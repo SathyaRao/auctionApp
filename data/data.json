@@ -55,10 +55,11 @@
     {
       "id": "t5",
       "name": "Chitte Pili",
-      "purse": 85000,
+      "purse": 72000,
       "players": [
         "p1790743344027_47",
-        "p1790743887361"
+        "p1790743887361",
+        "p1790743344027_44"
       ]
     },
     {
@@ -439,9 +440,9 @@
       "name": "Arun Acharya",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t5",
+      "price": 13000
     },
     {
       "id": "p1790743344027_45",
@@ -805,9 +806,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_44",
-    "currentBid": 13000,
-    "leadingTeamId": "t5",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -842,7 +843,6 @@
       "p1790743344027_38",
       "p1790743344027_39",
       "p1790743344027_40",
-      "p1790743344027_44",
       "p1790743344027_46",
       "p1790743344027_48",
       "p1790743344027_49",
@@ -868,9 +868,6 @@
       "p1790744499770",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 12000,
-      "leadingTeamId": "t1"
-    }
+    "prevBid": null
   }
 }
