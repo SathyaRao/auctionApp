@@ -68,7 +68,7 @@
     {
       "id": "t4",
       "name": "Bhajarangi Cricketers",
-      "purse": 32000,
+      "purse": 2000,
       "players": [
         "p1790744589259",
         "p1790743344027_14",
@@ -78,7 +78,8 @@
         "p1790743344027_59",
         "p1790743344027_45",
         "p1790743344027_58",
-        "p1790743344027_8"
+        "p1790743344027_8",
+        "p1790743344027_38"
       ]
     },
     {
@@ -451,9 +452,9 @@
       "name": "Nithesh",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t4",
+      "price": 30000
     },
     {
       "id": "p1790743344027_39",
@@ -853,21 +854,17 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_38",
-    "currentBid": 29000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_11",
       "p1790743344027_17",
-      "p1790743344027_38",
       "p1790743344027_64",
       "p1790743344027_72",
       "p1790743344027_73"
     ],
-    "prevBid": {
-      "currentBid": 28000,
-      "leadingTeamId": "t4"
-    }
+    "prevBid": null
   }
 }
