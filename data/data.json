@@ -90,13 +90,14 @@
     {
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
-      "purse": 65000,
+      "purse": 62000,
       "players": [
         "p1790744605466",
         "p1790744494009",
         "p1790768829462",
         "p1790743344027_55",
-        "p1790743344027_56"
+        "p1790743344027_56",
+        "p1790743344027_2"
       ]
     }
   ],
@@ -124,9 +125,9 @@
       "name": "Uday Bantakal",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t7",
+      "price": 3000
     },
     {
       "id": "p1790743344027_3",
@@ -823,12 +824,11 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_2",
-    "currentBid": 3000,
-    "leadingTeamId": "t7",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
-      "p1790743344027_2",
       "p1790743344027_3",
       "p1790743344027_4",
       "p1790743344027_7",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 2000,
-      "leadingTeamId": "t1"
-    }
+    "prevBid": null
   }
 }
