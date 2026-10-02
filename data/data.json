@@ -67,7 +67,7 @@
     {
       "id": "t4",
       "name": "Bhajarangi Cricketers",
-      "purse": 38000,
+      "purse": 37000,
       "players": [
         "p1790744589259",
         "p1790743344027_14",
@@ -76,7 +76,8 @@
         "p1790743344027_31",
         "p1790743344027_59",
         "p1790743344027_45",
-        "p1790743344027_58"
+        "p1790743344027_58",
+        "p1790743896763"
       ]
     },
     {
@@ -717,9 +718,9 @@
       "name": "Ananth Mallya",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t4",
+      "price": 1000
     },
     {
       "id": "p1790743902602",
@@ -849,9 +850,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743896763",
-    "currentBid": 1000,
-    "leadingTeamId": "t4",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_8",
@@ -863,12 +864,8 @@
       "p1790743344027_40",
       "p1790743344027_64",
       "p1790743344027_72",
-      "p1790743344027_73",
-      "p1790743896763"
+      "p1790743344027_73"
     ],
-    "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": null
-    }
+    "prevBid": null
   }
 }
