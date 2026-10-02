@@ -27,11 +27,12 @@
     {
       "id": "t2",
       "name": "ED Strikers",
-      "purse": 71000,
+      "purse": 61000,
       "players": [
         "p1790744506960",
         "p1790743344027_43",
-        "p1790743344027_53"
+        "p1790743344027_53",
+        "p1790743344027_63"
       ]
     },
     {
@@ -576,9 +577,9 @@
       "name": "Vishal",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 10000
     },
     {
       "id": "p1790743344027_64",
@@ -807,9 +808,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_63",
-    "currentBid": 10000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -852,7 +853,6 @@
       "p1790743344027_57",
       "p1790743344027_58",
       "p1790743344027_59",
-      "p1790743344027_63",
       "p1790743344027_64",
       "p1790743344027_67",
       "p1790743344027_68",
@@ -868,9 +868,6 @@
       "p1790744499770",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 9000,
-      "leadingTeamId": "t6"
-    }
+    "prevBid": null
   }
 }
