@@ -100,14 +100,15 @@
     {
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
-      "purse": 62000,
+      "purse": 32000,
       "players": [
         "p1790744605466",
         "p1790744494009",
         "p1790768829462",
         "p1790743344027_55",
         "p1790743344027_56",
-        "p1790743344027_2"
+        "p1790743344027_2",
+        "p1790743344027_36"
       ]
     }
   ],
@@ -414,9 +415,9 @@
       "name": "Vikesh",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t7",
+      "price": 30000
     },
     {
       "id": "p1790743344027_37",
@@ -834,9 +835,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_36",
-    "currentBid": 30000,
-    "leadingTeamId": "t7",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -852,7 +853,6 @@
       "p1790743344027_28",
       "p1790743344027_29",
       "p1790743344027_30",
-      "p1790743344027_36",
       "p1790743344027_37",
       "p1790743344027_38",
       "p1790743344027_40",
@@ -868,9 +868,6 @@
       "p1790743896763",
       "p1790743909627"
     ],
-    "prevBid": {
-      "currentBid": 29000,
-      "leadingTeamId": "t5"
-    }
+    "prevBid": null
   }
 }
