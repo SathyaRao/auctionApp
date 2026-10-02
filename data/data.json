@@ -68,10 +68,11 @@
     {
       "id": "t6",
       "name": "Geleyara Balaga",
-      "purse": 91000,
+      "purse": 66000,
       "players": [
         "p1790744503197",
-        "p1790743344027_60"
+        "p1790743344027_60",
+        "p1790743344027_71"
       ]
     },
     {
@@ -623,9 +624,9 @@
       "name": "Dishan",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t6",
+      "price": 25000
     },
     {
       "id": "p1790743344027_72",
@@ -809,9 +810,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_71",
-    "currentBid": 25000,
-    "leadingTeamId": "t6",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -858,7 +859,6 @@
       "p1790743344027_67",
       "p1790743344027_68",
       "p1790743344027_69",
-      "p1790743344027_71",
       "p1790743344027_72",
       "p1790743344027_73",
       "p1790743344027_74",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 24000,
-      "leadingTeamId": "t0"
-    }
+    "prevBid": null
   }
 }
