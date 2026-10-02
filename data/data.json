@@ -36,7 +36,7 @@
     {
       "id": "t2",
       "name": "ED Strikers",
-      "purse": 3000,
+      "purse": 2000,
       "players": [
         "p1790744506960",
         "p1790743344027_43",
@@ -45,7 +45,8 @@
         "p1790743344027_34",
         "p1790743344027_21",
         "p1790743344027_16",
-        "p1790743344027_33"
+        "p1790743344027_33",
+        "p1790743344027_7"
       ]
     },
     {
@@ -192,9 +193,9 @@
       "name": "Samroy",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 1000
     },
     {
       "id": "p1790743344027_8",
@@ -846,12 +847,11 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_7",
-    "currentBid": 1000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
-      "p1790743344027_7",
       "p1790743344027_8",
       "p1790743344027_10",
       "p1790743344027_11",
@@ -867,9 +867,6 @@
       "p1790743344027_73",
       "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": null
-    }
+    "prevBid": null
   }
 }
