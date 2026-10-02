@@ -632,7 +632,7 @@
       "name": "Akash D",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
+      "status": "unsold",
       "soldTo": null,
       "price": 0
     },
@@ -854,14 +854,13 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_64",
-    "currentBid": 1000,
+    "currentPlayerId": null,
+    "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_11",
       "p1790743344027_17",
-      "p1790743344027_64",
       "p1790743344027_72",
       "p1790743344027_73"
     ],
