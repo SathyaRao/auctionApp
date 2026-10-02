@@ -118,7 +118,7 @@
     {
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
-      "purse": 5000,
+      "purse": 0,
       "players": [
         "p1790744605466",
         "p1790744494009",
@@ -128,7 +128,8 @@
         "p1790743344027_2",
         "p1790743344027_36",
         "p1790743344027_75",
-        "p1790743344027_37"
+        "p1790743344027_37",
+        "p1790743344027_17"
       ]
     }
   ],
@@ -291,9 +292,9 @@
       "name": "Sangappa",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t7",
+      "price": 5000
     },
     {
       "id": "p1790743344027_19",
@@ -855,18 +856,14 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_17",
-    "currentBid": 5000,
-    "leadingTeamId": "t7",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_11",
-      "p1790743344027_17",
       "p1790743344027_72"
     ],
-    "prevBid": {
-      "currentBid": 4000,
-      "leadingTeamId": "t3"
-    }
+    "prevBid": null
   }
 }
