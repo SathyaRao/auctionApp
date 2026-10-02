@@ -98,7 +98,7 @@
     {
       "id": "t6",
       "name": "Geleyara Balaga",
-      "purse": 21000,
+      "purse": 16000,
       "players": [
         "p1790744503197",
         "p1790743344027_60",
@@ -106,7 +106,8 @@
         "p1790743344027_6",
         "p1790743344027_39",
         "p1790743344027_68",
-        "p1790743344027_28"
+        "p1790743344027_28",
+        "p1790743344027_10"
       ]
     },
     {
@@ -222,9 +223,9 @@
       "name": "Manja K",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t6",
+      "price": 5000
     },
     {
       "id": "p1790743344027_11",
@@ -849,13 +850,12 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_10",
-    "currentBid": 5000,
-    "leadingTeamId": "t6",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_8",
-      "p1790743344027_10",
       "p1790743344027_11",
       "p1790743344027_12",
       "p1790743344027_17",
@@ -865,9 +865,6 @@
       "p1790743344027_72",
       "p1790743344027_73"
     ],
-    "prevBid": {
-      "currentBid": 4000,
-      "leadingTeamId": "t7"
-    }
+    "prevBid": null
   }
 }
