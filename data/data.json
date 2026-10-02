@@ -7,12 +7,13 @@
     {
       "id": "t0",
       "name": "Dunhill Cricketers",
-      "purse": 76000,
+      "purse": 61000,
       "players": [
         "p1790744510762",
         "p1790746614474",
         "p1790743344027_24",
-        "p1790743344027_5"
+        "p1790743344027_5",
+        "p1790743344027_57"
       ]
     },
     {
@@ -548,9 +549,9 @@
       "name": "Andhu A",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 15000
     },
     {
       "id": "p1790743344027_58",
@@ -815,9 +816,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_57",
-    "currentBid": 15000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_2",
@@ -852,7 +853,6 @@
       "p1790743344027_49",
       "p1790743344027_52",
       "p1790743344027_56",
-      "p1790743344027_57",
       "p1790743344027_58",
       "p1790743344027_59",
       "p1790743344027_64",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 14000,
-      "leadingTeamId": "t4"
-    }
+    "prevBid": null
   }
 }
