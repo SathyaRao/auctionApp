@@ -20,14 +20,15 @@
     {
       "id": "t1",
       "name": "Brutal Warriors",
-      "purse": 35000,
+      "purse": 31000,
       "players": [
         "p1790744528900",
         "p1790743344027_23",
         "p1790744499770",
         "p1790743344027_25",
         "p1790743344027_69",
-        "p1790743344027_4"
+        "p1790743344027_4",
+        "p1790743344027_15"
       ]
     },
     {
@@ -254,9 +255,9 @@
       "name": "Anil Padubelle",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 4000
     },
     {
       "id": "p1790743344027_16",
@@ -836,9 +837,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_15",
-    "currentBid": 4000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -848,7 +849,6 @@
       "p1790743344027_10",
       "p1790743344027_11",
       "p1790743344027_12",
-      "p1790743344027_15",
       "p1790743344027_17",
       "p1790743344027_26",
       "p1790743344027_28",
@@ -868,9 +868,6 @@
       "p1790743344027_75",
       "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 3000,
-      "leadingTeamId": "t0"
-    }
+    "prevBid": null
   }
 }
