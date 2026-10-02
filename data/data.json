@@ -94,13 +94,14 @@
     {
       "id": "t6",
       "name": "Geleyara Balaga",
-      "purse": 24000,
+      "purse": 22000,
       "players": [
         "p1790744503197",
         "p1790743344027_60",
         "p1790743344027_71",
         "p1790743344027_6",
-        "p1790743344027_39"
+        "p1790743344027_39",
+        "p1790743344027_68"
       ]
     },
     {
@@ -638,9 +639,9 @@
       "name": "Atul Shetty",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t6",
+      "price": 2000
     },
     {
       "id": "p1790743344027_69",
@@ -842,9 +843,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_68",
-    "currentBid": 2000,
-    "leadingTeamId": "t6",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_7",
@@ -862,14 +863,10 @@
       "p1790743344027_52",
       "p1790743344027_58",
       "p1790743344027_64",
-      "p1790743344027_68",
       "p1790743344027_72",
       "p1790743344027_73",
       "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": "t1"
-    }
+    "prevBid": null
   }
 }
