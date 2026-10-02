@@ -28,12 +28,13 @@
     {
       "id": "t2",
       "name": "ED Strikers",
-      "purse": 61000,
+      "purse": 26000,
       "players": [
         "p1790744506960",
         "p1790743344027_43",
         "p1790743344027_53",
-        "p1790743344027_63"
+        "p1790743344027_63",
+        "p1790743344027_34"
       ]
     },
     {
@@ -385,9 +386,9 @@
       "name": "Rosten",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 35000
     },
     {
       "id": "p1790743344027_36",
@@ -814,9 +815,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_34",
-    "currentBid": 35000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": "p1790743344027_57",
+    "currentBid": 1000,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_2",
@@ -841,7 +842,6 @@
       "p1790743344027_30",
       "p1790743344027_31",
       "p1790743344027_33",
-      "p1790743344027_34",
       "p1790743344027_36",
       "p1790743344027_37",
       "p1790743344027_38",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 34000,
-      "leadingTeamId": "t0"
-    }
+    "prevBid": null
   }
 }
