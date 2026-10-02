@@ -795,7 +795,7 @@
       "id": "p1790768829462",
       "name": "Vineeth",
       "category": "All-rounder",
-      "base": 10000,
+      "base": 1000,
       "status": "available",
       "soldTo": null,
       "price": 0
@@ -803,7 +803,7 @@
   ],
   "auction": {
     "currentPlayerId": "p1790768829462",
-    "currentBid": 10000,
+    "currentBid": 1000,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
