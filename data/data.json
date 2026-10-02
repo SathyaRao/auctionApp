@@ -37,10 +37,11 @@
     {
       "id": "t3",
       "name": "NFC",
-      "purse": 85000,
+      "purse": 73000,
       "players": [
         "p1790744633361",
-        "p1790744575856"
+        "p1790744575856",
+        "p1790743344027_32"
       ]
     },
     {
@@ -359,9 +360,9 @@
       "name": "Ashwath",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t3",
+      "price": 12000
     },
     {
       "id": "p1790743344027_33",
@@ -806,9 +807,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_32",
-    "currentBid": 12000,
-    "leadingTeamId": "t3",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -835,7 +836,6 @@
       "p1790743344027_29",
       "p1790743344027_30",
       "p1790743344027_31",
-      "p1790743344027_32",
       "p1790743344027_33",
       "p1790743344027_34",
       "p1790743344027_36",
@@ -868,9 +868,6 @@
       "p1790744499770",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 11000,
-      "leadingTeamId": "t1"
-    }
+    "prevBid": null
   }
 }
