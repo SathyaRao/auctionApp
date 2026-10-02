@@ -30,13 +30,14 @@
     {
       "id": "t2",
       "name": "ED Strikers",
-      "purse": 26000,
+      "purse": 16000,
       "players": [
         "p1790744506960",
         "p1790743344027_43",
         "p1790743344027_53",
         "p1790743344027_63",
-        "p1790743344027_34"
+        "p1790743344027_34",
+        "p1790743344027_21"
       ]
     },
     {
@@ -284,9 +285,9 @@
       "name": "Amith",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t2",
+      "price": 10000
     },
     {
       "id": "p1790743344027_23",
@@ -821,9 +822,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_21",
-    "currentBid": 10000,
-    "leadingTeamId": "t2",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_2",
@@ -840,7 +841,6 @@
       "p1790743344027_16",
       "p1790743344027_17",
       "p1790743344027_20",
-      "p1790743344027_21",
       "p1790743344027_26",
       "p1790743344027_28",
       "p1790743344027_29",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 9000,
-      "leadingTeamId": "t1"
-    }
+    "prevBid": null
   }
 }
