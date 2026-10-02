@@ -68,11 +68,12 @@
     {
       "id": "t6",
       "name": "Geleyara Balaga",
-      "purse": 66000,
+      "purse": 64000,
       "players": [
         "p1790744503197",
         "p1790743344027_60",
-        "p1790743344027_71"
+        "p1790743344027_71",
+        "p1790743344027_6"
       ]
     },
     {
@@ -147,9 +148,9 @@
       "name": "Karthik sir",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t6",
+      "price": 2000
     },
     {
       "id": "p1790743344027_7",
@@ -810,16 +811,15 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_6",
-    "currentBid": 2000,
-    "leadingTeamId": "t6",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
       "p1790743344027_2",
       "p1790743344027_3",
       "p1790743344027_4",
-      "p1790743344027_6",
       "p1790743344027_7",
       "p1790743344027_8",
       "p1790743344027_9",
@@ -868,9 +868,6 @@
       "p1790743909627",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": "t5"
-    }
+    "prevBid": null
   }
 }
