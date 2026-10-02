@@ -19,11 +19,12 @@
     {
       "id": "t1",
       "name": "Brutal Warriors",
-      "purse": 57000,
+      "purse": 56000,
       "players": [
         "p1790744528900",
         "p1790743344027_23",
-        "p1790744499770"
+        "p1790744499770",
+        "p1790743344027_25"
       ]
     },
     {
@@ -306,9 +307,9 @@
       "name": "Halesh",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 1000
     },
     {
       "id": "p1790743344027_26",
@@ -816,8 +817,8 @@
     }
   ],
   "auction": {
-    "currentPlayerId": null,
-    "currentBid": 0,
+    "currentPlayerId": "p1790743344027_74",
+    "currentBid": 1000,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
@@ -836,7 +837,6 @@
       "p1790743344027_17",
       "p1790743344027_20",
       "p1790743344027_21",
-      "p1790743344027_25",
       "p1790743344027_26",
       "p1790743344027_28",
       "p1790743344027_29",
