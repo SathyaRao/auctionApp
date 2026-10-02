@@ -535,7 +535,7 @@
       "name": "Karthik Shetty",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
+      "status": "unsold",
       "soldTo": null,
       "price": 0
     },
@@ -847,8 +847,8 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_52",
-    "currentBid": 1000,
+    "currentPlayerId": null,
+    "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
@@ -861,7 +861,6 @@
       "p1790743344027_38",
       "p1790743344027_40",
       "p1790743344027_46",
-      "p1790743344027_52",
       "p1790743344027_64",
       "p1790743344027_72",
       "p1790743344027_73",
