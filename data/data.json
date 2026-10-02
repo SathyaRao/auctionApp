@@ -7,14 +7,15 @@
     {
       "id": "t0",
       "name": "Dunhill Cricketers",
-      "purse": 9000,
+      "purse": 8000,
       "players": [
         "p1790744510762",
         "p1790746614474",
         "p1790743344027_24",
         "p1790743344027_5",
         "p1790743344027_57",
-        "p1790743344027_67"
+        "p1790743344027_67",
+        "p1790743344027_29"
       ]
     },
     {
@@ -363,9 +364,9 @@
       "name": "Sujith K",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 1000
     },
     {
       "id": "p1790743344027_30",
@@ -837,9 +838,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_29",
-    "currentBid": 1000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -852,7 +853,6 @@
       "p1790743344027_17",
       "p1790743344027_26",
       "p1790743344027_28",
-      "p1790743344027_29",
       "p1790743344027_30",
       "p1790743344027_37",
       "p1790743344027_38",
@@ -868,9 +868,6 @@
       "p1790743344027_75",
       "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": null
-    }
+    "prevBid": null
   }
 }
