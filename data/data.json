@@ -7,10 +7,11 @@
     {
       "id": "t0",
       "name": "Dunhill Cricketers",
-      "purse": 85000,
+      "purse": 81000,
       "players": [
         "p1790744510762",
-        "p1790746614474"
+        "p1790746614474",
+        "p1790743344027_24"
       ]
     },
     {
@@ -279,9 +280,9 @@
       "name": "Srajan Marne",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 4000
     },
     {
       "id": "p1790743344027_25",
@@ -798,9 +799,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_24",
-    "currentBid": 4000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_0",
@@ -825,7 +826,6 @@
       "p1790743344027_20",
       "p1790743344027_21",
       "p1790743344027_23",
-      "p1790743344027_24",
       "p1790743344027_25",
       "p1790743344027_26",
       "p1790743344027_27",
@@ -870,9 +870,6 @@
       "p1790768829462",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 3000,
-      "leadingTeamId": "t2"
-    }
+    "prevBid": null
   }
 }
