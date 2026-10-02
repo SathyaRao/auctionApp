@@ -59,9 +59,10 @@
     {
       "id": "t6",
       "name": "Geleyara Balaga",
-      "purse": 100000,
+      "purse": 91000,
       "players": [
-        "p1790744503197"
+        "p1790744503197",
+        "p1790743344027_60"
       ]
     },
     {
@@ -557,9 +558,9 @@
       "name": "Ashwin",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t6",
+      "price": 9000
     },
     {
       "id": "p1790743344027_63",
@@ -797,9 +798,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_60",
-    "currentBid": 9000,
-    "leadingTeamId": "t6",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_0",
@@ -852,7 +853,6 @@
       "p1790743344027_57",
       "p1790743344027_58",
       "p1790743344027_59",
-      "p1790743344027_60",
       "p1790743344027_63",
       "p1790743344027_64",
       "p1790743344027_67",
@@ -870,9 +870,6 @@
       "p1790768829462",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 8000,
-      "leadingTeamId": "t7"
-    }
+    "prevBid": null
   }
 }
