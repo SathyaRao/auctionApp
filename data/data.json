@@ -850,7 +850,7 @@
   ],
   "auction": {
     "currentPlayerId": "p1790743344027_10",
-    "currentBid": 1000,
+    "currentBid": 3000,
     "leadingTeamId": "t6",
     "increment": 1000,
     "wheelIds": [
@@ -866,8 +866,8 @@
       "p1790743344027_73"
     ],
     "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": null
+      "currentBid": 2000,
+      "leadingTeamId": "t7"
     }
   }
 }
