@@ -80,14 +80,15 @@
     {
       "id": "t5",
       "name": "Chitte Pili",
-      "purse": 33000,
+      "purse": 31000,
       "players": [
         "p1790743344027_47",
         "p1790743887361",
         "p1790743344027_44",
         "p1790743344027_1",
         "p1790743344027_74",
-        "p1790743344027_48"
+        "p1790743344027_48",
+        "p1790743344027_3"
       ]
     },
     {
@@ -151,9 +152,9 @@
       "name": "Nagaraj Shetty",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t5",
+      "price": 2000
     },
     {
       "id": "p1790743344027_4",
@@ -841,12 +842,11 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_3",
-    "currentBid": 2000,
-    "leadingTeamId": "t5",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
-      "p1790743344027_3",
       "p1790743344027_7",
       "p1790743344027_8",
       "p1790743344027_10",
@@ -867,9 +867,6 @@
       "p1790743344027_73",
       "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 1000,
-      "leadingTeamId": "t6"
-    }
+    "prevBid": null
   }
 }
