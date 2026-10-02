@@ -7,7 +7,7 @@
     {
       "id": "t0",
       "name": "Dunhill Cricketers",
-      "purse": 8000,
+      "purse": 2000,
       "players": [
         "p1790744510762",
         "p1790746614474",
@@ -15,7 +15,8 @@
         "p1790743344027_5",
         "p1790743344027_57",
         "p1790743344027_67",
-        "p1790743344027_29"
+        "p1790743344027_29",
+        "p1790743344027_26"
       ]
     },
     {
@@ -338,9 +339,9 @@
       "name": "Sachu K",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 6000
     },
     {
       "id": "p1790743344027_27",
@@ -839,9 +840,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_26",
-    "currentBid": 6000,
-    "leadingTeamId": "t0",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -852,7 +853,6 @@
       "p1790743344027_11",
       "p1790743344027_12",
       "p1790743344027_17",
-      "p1790743344027_26",
       "p1790743344027_28",
       "p1790743344027_30",
       "p1790743344027_37",
@@ -868,9 +868,6 @@
       "p1790743344027_75",
       "p1790743896763"
     ],
-    "prevBid": {
-      "currentBid": 5000,
-      "leadingTeamId": "t6"
-    }
+    "prevBid": null
   }
 }
