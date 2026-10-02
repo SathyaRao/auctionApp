@@ -7,7 +7,7 @@
     {
       "id": "t0",
       "name": "Dunhill Cricketers",
-      "purse": 1000,
+      "purse": 0,
       "players": [
         "p1790744510762",
         "p1790746614474",
@@ -17,7 +17,8 @@
         "p1790743344027_67",
         "p1790743344027_29",
         "p1790743344027_26",
-        "p1790743344027_52"
+        "p1790743344027_52",
+        "p1790743896763"
       ]
     },
     {
@@ -731,9 +732,9 @@
       "name": "Ananth Mallya",
       "category": "Batsman",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t0",
+      "price": 1000
     },
     {
       "id": "p1790743902602",
@@ -867,9 +868,7 @@
     "currentBid": 0,
     "leadingTeamId": null,
     "increment": 1000,
-    "wheelIds": [
-      "p1790743896763"
-    ],
+    "wheelIds": [],
     "prevBid": null
   }
 }
