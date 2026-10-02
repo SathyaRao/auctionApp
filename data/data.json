@@ -75,12 +75,13 @@
     {
       "id": "t6",
       "name": "Geleyara Balaga",
-      "purse": 64000,
+      "purse": 24000,
       "players": [
         "p1790744503197",
         "p1790743344027_60",
         "p1790743344027_71",
-        "p1790743344027_6"
+        "p1790743344027_6",
+        "p1790743344027_39"
       ]
     },
     {
@@ -426,9 +427,9 @@
       "name": "Prakash",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t6",
+      "price": 40000
     },
     {
       "id": "p1790743344027_40",
@@ -819,9 +820,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_39",
-    "currentBid": 40000,
-    "leadingTeamId": "t6",
+    "currentPlayerId": "p1790743902602",
+    "currentBid": 1000,
+    "leadingTeamId": "t5",
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_2",
@@ -848,7 +849,6 @@
       "p1790743344027_36",
       "p1790743344027_37",
       "p1790743344027_38",
-      "p1790743344027_39",
       "p1790743344027_40",
       "p1790743344027_46",
       "p1790743344027_48",
@@ -869,8 +869,8 @@
       "p1790743344027_45"
     ],
     "prevBid": {
-      "currentBid": 39000,
-      "leadingTeamId": "t0"
+      "currentBid": 1000,
+      "leadingTeamId": null
     }
   }
 }
