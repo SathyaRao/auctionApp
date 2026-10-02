@@ -18,10 +18,11 @@
     {
       "id": "t1",
       "name": "Brutal Warriors",
-      "purse": 98000,
+      "purse": 57000,
       "players": [
         "p1790744528900",
-        "p1790743344027_23"
+        "p1790743344027_23",
+        "p1790744499770"
       ]
     },
     {
@@ -712,9 +713,9 @@
       "name": "JK",
       "category": "All-rounder",
       "base": 0,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t1",
+      "price": 41000
     },
     {
       "id": "p1790744503197",
@@ -808,9 +809,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790744499770",
-    "currentBid": 41000,
-    "leadingTeamId": "t1",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -865,12 +866,8 @@
       "p1790743896763",
       "p1790743902602",
       "p1790743909627",
-      "p1790744499770",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 40000,
-      "leadingTeamId": "t0"
-    }
+    "prevBid": null
   }
 }
