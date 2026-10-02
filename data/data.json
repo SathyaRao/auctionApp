@@ -72,10 +72,11 @@
     {
       "id": "t7",
       "name": "Bakeline Friends Moodubelle",
-      "purse": 90000,
+      "purse": 80000,
       "players": [
         "p1790744605466",
-        "p1790744494009"
+        "p1790744494009",
+        "p1790768829462"
       ]
     }
   ],
@@ -796,15 +797,15 @@
       "name": "Vineeth",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t7",
+      "price": 10000
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790768829462",
-    "currentBid": 10000,
-    "leadingTeamId": "t7",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_1",
@@ -866,12 +867,8 @@
       "p1790743902602",
       "p1790743909627",
       "p1790744499770",
-      "p1790768829462",
       "p1790743344027_45"
     ],
-    "prevBid": {
-      "currentBid": 9000,
-      "leadingTeamId": "t5"
-    }
+    "prevBid": null
   }
 }
