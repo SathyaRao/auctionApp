@@ -59,14 +59,15 @@
     {
       "id": "t4",
       "name": "Bhajarangi Cricketers",
-      "purse": 62000,
+      "purse": 49000,
       "players": [
         "p1790744589259",
         "p1790743344027_14",
         "p1790743344027_54",
         "p1790743344027_19",
         "p1790743344027_31",
-        "p1790743344027_59"
+        "p1790743344027_59",
+        "p1790743344027_45"
       ]
     },
     {
@@ -473,9 +474,9 @@
       "name": "Susheel",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+      "status": "sold",
+      "soldTo": "t4",
+      "price": 13000
     },
     {
       "id": "p1790743344027_46",
@@ -830,9 +831,9 @@
     }
   ],
   "auction": {
-    "currentPlayerId": "p1790743344027_45",
-    "currentBid": 13000,
-    "leadingTeamId": "t4",
+    "currentPlayerId": null,
+    "currentBid": 0,
+    "leadingTeamId": null,
     "increment": 1000,
     "wheelIds": [
       "p1790743344027_3",
@@ -865,12 +866,8 @@
       "p1790743344027_73",
       "p1790743344027_75",
       "p1790743896763",
-      "p1790743909627",
-      "p1790743344027_45"
+      "p1790743909627"
     ],
-    "prevBid": {
-      "currentBid": 12000,
-      "leadingTeamId": "t2"
-    }
+    "prevBid": null
   }
 }
