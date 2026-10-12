@@ -8,7 +8,9 @@
       "id": "t0",
       "name": "Sri Durga Kunjar",
       "purse": 100000,
-      "players": []
+      "players": [
+        "p1791802299706"
+      ]
     },
     {
       "id": "t1",
@@ -41,8 +43,8 @@
       "name": "Roshan",
       "category": "All-rounder",
       "base": 0,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t0",
       "price": 0
     },
     {
