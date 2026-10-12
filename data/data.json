@@ -24,7 +24,9 @@
       "id": "t2",
       "name": "Bajarangi",
       "purse": 100000,
-      "players": []
+      "players": [
+        "p1791802314719"
+      ]
     },
     {
       "id": "t3",
@@ -63,8 +65,8 @@
       "name": "Nithesh",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t2",
       "price": 0
     },
     {
