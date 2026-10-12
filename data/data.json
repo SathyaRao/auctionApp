@@ -35,7 +35,17 @@
       "players": []
     }
   ],
-  "players": [],
+  "players": [
+    {
+      "id": "p1791802299706",
+      "name": "Roshan",
+      "category": "All-rounder",
+      "base": 0,
+      "status": "available",
+      "soldTo": null,
+      "price": 0
+    }
+  ],
   "auction": {
     "currentPlayerId": null,
     "currentBid": 0,
