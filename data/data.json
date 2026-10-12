@@ -32,7 +32,9 @@
       "id": "t3",
       "name": "Nini Friends",
       "purse": 100000,
-      "players": []
+      "players": [
+        "p1791802323708"
+      ]
     },
     {
       "id": "t4",
@@ -74,8 +76,8 @@
       "name": "Praveen",
       "category": "All-rounder",
       "base": 1000,
-      "status": "available",
-      "soldTo": null,
+      "status": "sold",
+      "soldTo": "t3",
       "price": 0
     },
     {
