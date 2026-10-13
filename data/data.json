@@ -600,11 +600,12 @@
           {
             "id": "t3",
             "name": "Nini Friends",
-            "purse": 85000,
+            "purse": 79000,
             "players": [
               "p1791802323708",
               "p1791802758748",
-              "p1791802801296"
+              "p1791802801296",
+              "p1791802612199"
             ]
           },
           {
@@ -805,9 +806,9 @@
             "name": "Kiran",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 6000
           },
           {
             "id": "p1791802620226",
@@ -1027,9 +1028,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802612199",
-          "currentBid": 6000,
-          "leadingTeamId": "t3",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1042,7 +1043,6 @@
             "p1791802514811",
             "p1791802578211",
             "p1791802590383",
-            "p1791802612199",
             "p1791802620226",
             "p1791802645784",
             "p1791802648319",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 5000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     }
