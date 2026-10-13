@@ -604,9 +604,10 @@
           {
             "id": "t4",
             "name": "Arya Fighters",
-            "purse": 100000,
+            "purse": 97000,
             "players": [
-              "p1791802329006"
+              "p1791802329006",
+              "p1791802523128"
             ]
           }
         ],
@@ -742,9 +743,9 @@
             "name": "Karthik",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 3000
           },
           {
             "id": "p1791802538682",
@@ -1018,9 +1019,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802523128",
-          "currentBid": 3000,
-          "leadingTeamId": "t4",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1031,7 +1032,6 @@
             "p1791802500528",
             "p1791802506624",
             "p1791802514811",
-            "p1791802523128",
             "p1791802578211",
             "p1791802587965",
             "p1791802590383",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 2000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     }
