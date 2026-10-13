@@ -43,11 +43,12 @@
           {
             "id": "t3",
             "name": "Dunhill Cricketers",
-            "purse": 78000,
+            "purse": 72000,
             "players": [
               "p1791884920982_18",
               "p1791884920982_13",
-              "p1791884920982_12"
+              "p1791884920982_12",
+              "p1791884920982_4"
             ]
           },
           {
@@ -102,9 +103,9 @@
             "name": "Ashwath",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 6000
           },
           {
             "id": "p1791884920982_5",
@@ -513,14 +514,13 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_4",
-          "currentBid": 6000,
-          "leadingTeamId": "t3",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
             "p1791884920982_2",
-            "p1791884920982_4",
             "p1791884920982_5",
             "p1791884920982_7",
             "p1791884920982_8",
@@ -560,10 +560,7 @@
             "p1791894956070",
             "p1791895011573"
           ],
-          "prevBid": {
-            "currentBid": 5000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     },
