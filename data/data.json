@@ -578,12 +578,13 @@
           {
             "id": "t1",
             "name": "Black Fort Friends",
-            "purse": 59000,
+            "purse": 53000,
             "players": [
               "p1791802307442",
               "p1791802538682",
               "p1791802552454",
-              "p1791802749431"
+              "p1791802749431",
+              "p1791802730313"
             ]
           },
           {
@@ -874,9 +875,9 @@
             "name": "Sharath",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 6000
           },
           {
             "id": "p1791802734630",
@@ -1024,9 +1025,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802730313",
-          "currentBid": 6000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1047,7 +1048,6 @@
             "p1791802672585",
             "p1791802682821",
             "p1791802721488",
-            "p1791802730313",
             "p1791802734630",
             "p1791802741375",
             "p1791802754065",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 5000,
-            "leadingTeamId": "t4"
-          }
+          "prevBid": null
         }
       }
     }
