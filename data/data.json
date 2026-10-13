@@ -588,9 +588,10 @@
           {
             "id": "t2",
             "name": "Bajarangi",
-            "purse": 100000,
+            "purse": 79000,
             "players": [
-              "p1791802314719"
+              "p1791802314719",
+              "p1791802810435"
             ]
           },
           {
@@ -951,9 +952,9 @@
             "name": "Mani nini",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 21000
           },
           {
             "id": "p1791802829801",
@@ -1020,9 +1021,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802810435",
-          "currentBid": 21000,
-          "leadingTeamId": "t2",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1053,16 +1054,12 @@
             "p1791802779034",
             "p1791802790615",
             "p1791802801296",
-            "p1791802810435",
             "p1791802829801",
             "p1791803880969",
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 20000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     }
