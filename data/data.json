@@ -57,12 +57,13 @@
           {
             "id": "t4",
             "name": "Pushpodaya Cricketers",
-            "purse": 65000,
+            "purse": 56000,
             "players": [
               "p1791884920982_14",
               "p1791884920982_6",
               "p1791884920982_11",
-              "p1791884920982_29"
+              "p1791884920982_29",
+              "p1791884920982_30"
             ]
           }
         ],
@@ -342,9 +343,9 @@
             "name": "Shivu",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 9000
           },
           {
             "id": "p1791884920982_31",
@@ -519,9 +520,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_30",
-          "currentBid": 8000,
-          "leadingTeamId": "t3",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
@@ -541,7 +542,6 @@
             "p1791884920982_26",
             "p1791884920982_27",
             "p1791884920982_28",
-            "p1791884920982_30",
             "p1791884920982_31",
             "p1791884920982_32",
             "p1791884920982_33",
@@ -559,10 +559,7 @@
             "p1791894956070",
             "p1791895011573"
           ],
-          "prevBid": {
-            "currentBid": 7000,
-            "leadingTeamId": "t4"
-          }
+          "prevBid": null
         }
       }
     },
