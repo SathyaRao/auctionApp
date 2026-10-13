@@ -601,7 +601,6 @@
             "name": "Bajarangi",
             "purse": 5000,
             "players": [
-              "p1791802314719",
               "p1791802810435",
               "p1791802641818",
               "p1791824914721",
@@ -668,8 +667,8 @@
             "name": "Nithesh",
             "category": "All-rounder",
             "base": 0,
-            "status": "sold",
-            "soldTo": "t2",
+            "status": "available",
+            "soldTo": null,
             "price": 0
           },
           {
