@@ -48,24 +48,6 @@
         ],
         "players": [
           {
-            "id": "p1791802299706",
-            "name": "Roshan",
-            "category": "All-rounder",
-            "base": 0,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802307442",
-            "name": "Nikil",
-            "category": "All-rounder",
-            "base": 0,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
             "id": "p1791802314719",
             "name": "Nithesh",
             "category": "All-rounder",
