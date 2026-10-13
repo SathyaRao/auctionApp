@@ -576,7 +576,7 @@
           {
             "id": "t0",
             "name": "Sri Durga Kunjar",
-            "purse": 12000,
+            "purse": 11000,
             "players": [
               "p1791805362653",
               "p1791802462950",
@@ -585,7 +585,8 @@
               "p1791802475776",
               "p1791802486374",
               "p1791802454631",
-              "p1791906919232"
+              "p1791906919232",
+              "p1791911001249"
             ]
           },
           {
@@ -1114,9 +1115,9 @@
             "name": "Pramod",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 1000
           }
         ],
         "auction": {
