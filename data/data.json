@@ -577,9 +577,10 @@
           {
             "id": "t1",
             "name": "Black Fort Friends",
-            "purse": 100000,
+            "purse": 88000,
             "players": [
-              "p1791802307442"
+              "p1791802307442",
+              "p1791802538682"
             ]
           },
           {
@@ -748,9 +749,9 @@
             "name": "Kishan",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 12000
           },
           {
             "id": "p1791802552454",
@@ -1015,9 +1016,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802538682",
-          "currentBid": 12000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1030,7 +1031,6 @@
             "p1791802506624",
             "p1791802514811",
             "p1791802523128",
-            "p1791802538682",
             "p1791802552454",
             "p1791802578211",
             "p1791802587965",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 11000,
-            "leadingTeamId": "t4"
-          }
+          "prevBid": null
         }
       }
     }
