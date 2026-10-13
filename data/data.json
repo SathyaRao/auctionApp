@@ -630,7 +630,7 @@
           {
             "id": "t4",
             "name": "Arya Fighters",
-            "purse": 23000,
+            "purse": 9000,
             "players": [
               "p1791802329006",
               "p1791802523128",
@@ -638,7 +638,8 @@
               "p1791802587965",
               "p1791802481618",
               "p1791802467354",
-              "p1791885337051"
+              "p1791885337051",
+              "p1791802754065"
             ]
           }
         ],
@@ -936,9 +937,9 @@
             "name": "Nikhil",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 14000
           },
           {
             "id": "p1791802758748",
@@ -1050,17 +1051,12 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802754065",
-          "currentBid": 12000,
-          "leadingTeamId": "t4",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
-          "wheelIds": [
-            "p1791802754065"
-          ],
-          "prevBid": {
-            "currentBid": 11000,
-            "leadingTeamId": "t0"
-          }
+          "wheelIds": [],
+          "prevBid": null
         }
       }
     }
