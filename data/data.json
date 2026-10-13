@@ -568,7 +568,7 @@
           {
             "id": "t0",
             "name": "Sri Durga Kunjar",
-            "purse": 73000,
+            "purse": 13000,
             "players": [
               "p1791802299706",
               "p1791805362653",
@@ -576,7 +576,8 @@
               "p1791802721488",
               "p1791802514811",
               "p1791802475776",
-              "p1791802486374"
+              "p1791802486374",
+              "p1791802454631"
             ]
           },
           {
@@ -683,9 +684,9 @@
             "name": "Ajmeer",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 60000
           },
           {
             "id": "p1791802462950",
@@ -1040,12 +1041,11 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802454631",
-          "currentBid": 60000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
-            "p1791802454631",
             "p1791802500528",
             "p1791802506624",
             "p1791802578211",
@@ -1057,10 +1057,7 @@
             "p1791802754065",
             "p1791803880969"
           ],
-          "prevBid": {
-            "currentBid": 59000,
-            "leadingTeamId": "t2"
-          }
+          "prevBid": null
         }
       }
     }
