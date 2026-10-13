@@ -583,7 +583,7 @@
           {
             "id": "t1",
             "name": "Black Fort Friends",
-            "purse": 42000,
+            "purse": 37000,
             "players": [
               "p1791802307442",
               "p1791802538682",
@@ -591,7 +591,8 @@
               "p1791802749431",
               "p1791802730313",
               "p1791802590383",
-              "p1791802682821"
+              "p1791802682821",
+              "p1791802648319"
             ]
           },
           {
@@ -857,9 +858,9 @@
             "name": "Mani",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 5000
           },
           {
             "id": "p1791802672585",
@@ -1043,24 +1044,20 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802648319",
-          "currentBid": 5000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802500528",
             "p1791802506624",
             "p1791802578211",
             "p1791802620226",
-            "p1791802648319",
             "p1791802672585",
             "p1791802741375",
             "p1791802754065"
           ],
-          "prevBid": {
-            "currentBid": 4000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     }
