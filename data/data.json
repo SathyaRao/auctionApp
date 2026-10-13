@@ -18,7 +18,7 @@
           {
             "id": "t0",
             "name": "Brutal Warriors",
-            "purse": 24000,
+            "purse": 23000,
             "players": [
               "p1791884920982_19",
               "p1791885733197",
@@ -27,7 +27,8 @@
               "p1791884920982_38",
               "p1791884920982_7",
               "p1791884920982_5",
-              "p1791884920982_10"
+              "p1791884920982_10",
+              "p1791884920982_26"
             ]
           },
           {
@@ -333,9 +334,9 @@
             "name": "Santhu Belle",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 1000
           },
           {
             "id": "p1791884920982_27",
