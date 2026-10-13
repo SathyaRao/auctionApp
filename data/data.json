@@ -103,33 +103,6 @@
             "price": 0
           },
           {
-            "id": "p1791802506624",
-            "name": "Pradeep G",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802514811",
-            "name": "Anand",
-            "category": "Batsman",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802523128",
-            "name": "Karthik",
-            "category": "Batsman",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
             "id": "p1791802538682",
             "name": "Kishan",
             "category": "Batsman",
