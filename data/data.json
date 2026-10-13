@@ -29,12 +29,13 @@
           {
             "id": "t1",
             "name": "Geleyara Balaga",
-            "purse": 49000,
+            "purse": 44000,
             "players": [
               "p1791884920982_16",
               "p1791885686812",
               "p1791884920982_42",
-              "p1791884920982_24"
+              "p1791884920982_24",
+              "p1791884920982_1"
             ]
           },
           {
@@ -85,9 +86,9 @@
             "name": "Amith",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 5000
           },
           {
             "id": "p1791884920982_2",
@@ -523,12 +524,11 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_1",
-          "currentBid": 5000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
-            "p1791884920982_1",
             "p1791884920982_2",
             "p1791884920982_5",
             "p1791884920982_7",
@@ -557,10 +557,7 @@
             "p1791894918763",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 4000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     },
