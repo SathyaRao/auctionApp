@@ -30,14 +30,15 @@
           {
             "id": "t1",
             "name": "Geleyara Balaga",
-            "purse": 42000,
+            "purse": 38000,
             "players": [
               "p1791884920982_16",
               "p1791885686812",
               "p1791884920982_42",
               "p1791884920982_24",
               "p1791884920982_1",
-              "p1791884920982_25"
+              "p1791884920982_25",
+              "p1791894918763"
             ]
           },
           {
@@ -501,9 +502,9 @@
             "name": "KP",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 4000
           },
           {
             "id": "p1791894942039",
@@ -534,9 +535,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791894918763",
-          "currentBid": 4000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
@@ -553,13 +554,9 @@
             "p1791884920982_38",
             "p1791884920982_40",
             "p1791884920982_41",
-            "p1791894918763",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 3000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     },
