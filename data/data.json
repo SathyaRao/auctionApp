@@ -1,504 +1,1026 @@
 {
-  "configured": true,
-  "purse": 100000,
-  "minSquad": 9,
-  "maxSquad": 9,
-  "teams": [
-    {
-      "id": "t0",
-      "name": "Sri Durga Kunjar",
-      "purse": 100000,
-      "players": [
-        "p1791802299706"
-      ]
-    },
-    {
-      "id": "t1",
-      "name": "Black Fort Friends",
-      "purse": 100000,
-      "players": [
-        "p1791802307442"
-      ]
-    },
-    {
-      "id": "t2",
-      "name": "Bajarangi",
-      "purse": 100000,
-      "players": [
-        "p1791802314719"
-      ]
-    },
-    {
-      "id": "t3",
-      "name": "Nini Friends",
-      "purse": 100000,
-      "players": [
-        "p1791802323708"
-      ]
-    },
-    {
-      "id": "t4",
-      "name": "Arya Fighters",
-      "purse": 100000,
-      "players": [
-        "p1791802329006"
-      ]
-    }
+  "schema": "multi-v1",
+  "activeId": "amv6cr8v7r2g5",
+  "order": [
+    "amv6cr9djcygh",
+    "amv6cr8v7r2g5"
   ],
-  "players": [
-    {
-      "id": "p1791802299706",
-      "name": "Roshan",
-      "category": "All-rounder",
-      "base": 0,
-      "status": "sold",
-      "soldTo": "t0",
-      "price": 0
+  "auctions": {
+    "amv6cr9djcygh": {
+      "id": "amv6cr9djcygh",
+      "name": "Auction 1",
+      "state": {
+        "configured": true,
+        "purse": 100000,
+        "minSquad": 9,
+        "maxSquad": 9,
+        "teams": [
+          {
+            "id": "t0",
+            "name": "Sri Durga Kunjar",
+            "purse": 100000,
+            "players": [
+              "p1791802299706"
+            ]
+          },
+          {
+            "id": "t1",
+            "name": "Black Fort Friends",
+            "purse": 100000,
+            "players": [
+              "p1791802307442"
+            ]
+          },
+          {
+            "id": "t2",
+            "name": "Bajarangi",
+            "purse": 100000,
+            "players": [
+              "p1791802314719"
+            ]
+          },
+          {
+            "id": "t3",
+            "name": "Nini Friends",
+            "purse": 100000,
+            "players": [
+              "p1791802323708"
+            ]
+          },
+          {
+            "id": "t4",
+            "name": "Arya Fighters",
+            "purse": 100000,
+            "players": [
+              "p1791802329006"
+            ]
+          }
+        ],
+        "players": [
+          {
+            "id": "p1791802299706",
+            "name": "Roshan",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 0
+          },
+          {
+            "id": "p1791802307442",
+            "name": "Nikil",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 0
+          },
+          {
+            "id": "p1791802314719",
+            "name": "Nithesh",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 0
+          },
+          {
+            "id": "p1791802323708",
+            "name": "Praveen",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 0
+          },
+          {
+            "id": "p1791802329006",
+            "name": "Sonu",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 0
+          },
+          {
+            "id": "p1791802454631",
+            "name": "Ajmeer",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802462950",
+            "name": "Anil",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802467354",
+            "name": "Armuga",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802475776",
+            "name": "Arun",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802481618",
+            "name": "Ashraf",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802486374",
+            "name": "Arun Nini",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802500528",
+            "name": "Manja",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802506624",
+            "name": "Pradeep G",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802514811",
+            "name": "Anand",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802523128",
+            "name": "Karthik",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802538682",
+            "name": "Kishan",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802552454",
+            "name": "Praveen",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802578211",
+            "name": "Nithesh Kutti",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802587965",
+            "name": "Kishor",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802590383",
+            "name": "Charan",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802612199",
+            "name": "Kiran",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802620226",
+            "name": "Harish HK",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802641818",
+            "name": "Azar",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802645784",
+            "name": "Manoj",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802648319",
+            "name": "Mani",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802672585",
+            "name": "Nithesh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802682821",
+            "name": "Pavan",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802721488",
+            "name": "Dikshith",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802730313",
+            "name": "Sharath",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802734630",
+            "name": "Rakhi",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802741375",
+            "name": "Rakesh Kaup",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802749431",
+            "name": "Vishal",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802754065",
+            "name": "Nikhil",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802758748",
+            "name": "Nandesh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802779034",
+            "name": "Kaushik",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802790615",
+            "name": "Arun",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802801296",
+            "name": "Nisar",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802810435",
+            "name": "Mani nini",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802829801",
+            "name": "Shankar",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802833483",
+            "name": "Avin",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791803880969",
+            "name": "Vijesh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791805362653",
+            "name": "Dhanush",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791824914721",
+            "name": "Rajanna",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791824921454",
+            "name": "Mahesh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791824928901",
+            "name": "Sandarsh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          }
+        ],
+        "auction": {
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
+          "increment": 1000,
+          "wheelIds": [
+            "p1791802454631",
+            "p1791802462950",
+            "p1791802467354",
+            "p1791802475776",
+            "p1791802481618",
+            "p1791802486374",
+            "p1791802500528",
+            "p1791802506624",
+            "p1791802514811",
+            "p1791802523128",
+            "p1791802538682",
+            "p1791802552454",
+            "p1791802578211",
+            "p1791802587965",
+            "p1791802590383",
+            "p1791802612199",
+            "p1791802620226",
+            "p1791802641818",
+            "p1791802645784",
+            "p1791802648319",
+            "p1791802672585",
+            "p1791802682821",
+            "p1791802721488",
+            "p1791802730313",
+            "p1791802734630",
+            "p1791802741375",
+            "p1791802749431",
+            "p1791802754065",
+            "p1791802758748",
+            "p1791802779034",
+            "p1791802790615",
+            "p1791802801296",
+            "p1791802810435",
+            "p1791802829801",
+            "p1791802833483",
+            "p1791803880969",
+            "p1791805362653",
+            "p1791824914721",
+            "p1791824921454",
+            "p1791824928901"
+          ],
+          "prevBid": null
+        }
+      }
     },
-    {
-      "id": "p1791802307442",
-      "name": "Nikil",
-      "category": "All-rounder",
-      "base": 0,
-      "status": "sold",
-      "soldTo": "t1",
-      "price": 0
-    },
-    {
-      "id": "p1791802314719",
-      "name": "Nithesh",
-      "category": "All-rounder",
-      "base": 0,
-      "status": "sold",
-      "soldTo": "t2",
-      "price": 0
-    },
-    {
-      "id": "p1791802323708",
-      "name": "Praveen",
-      "category": "All-rounder",
-      "base": 0,
-      "status": "sold",
-      "soldTo": "t3",
-      "price": 0
-    },
-    {
-      "id": "p1791802329006",
-      "name": "Sonu",
-      "category": "All-rounder",
-      "base": 0,
-      "status": "sold",
-      "soldTo": "t4",
-      "price": 0
-    },
-    {
-      "id": "p1791802454631",
-      "name": "Ajmeer",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802462950",
-      "name": "Anil",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802467354",
-      "name": "Armuga",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802475776",
-      "name": "Arun",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802481618",
-      "name": "Ashraf",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802486374",
-      "name": "Arun Nini",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802500528",
-      "name": "Manja",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802506624",
-      "name": "Pradeep G",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802514811",
-      "name": "Anand",
-      "category": "Batsman",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802523128",
-      "name": "Karthik",
-      "category": "Batsman",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802538682",
-      "name": "Kishan",
-      "category": "Batsman",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802552454",
-      "name": "Praveen",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802578211",
-      "name": "Nithesh Kutti",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802587965",
-      "name": "Kishor",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802590383",
-      "name": "Charan",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802612199",
-      "name": "Kiran",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802620226",
-      "name": "Harish HK",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802641818",
-      "name": "Azar",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802645784",
-      "name": "Manoj",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802648319",
-      "name": "Mani",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802672585",
-      "name": "Nithesh",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802682821",
-      "name": "Pavan",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802721488",
-      "name": "Dikshith",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802730313",
-      "name": "Sharath",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802734630",
-      "name": "Rakhi",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802741375",
-      "name": "Rakesh Kaup",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802749431",
-      "name": "Vishal",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802754065",
-      "name": "Nikhil",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802758748",
-      "name": "Nandesh",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802779034",
-      "name": "Kaushik",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802790615",
-      "name": "Arun",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802801296",
-      "name": "Nisar",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802810435",
-      "name": "Mani nini",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802829801",
-      "name": "Shankar",
-      "category": "Batsman",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791802833483",
-      "name": "Avin",
-      "category": "Batsman",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791803880969",
-      "name": "Vijesh",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791805362653",
-      "name": "Dhanush",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791824914721",
-      "name": "Rajanna",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791824921454",
-      "name": "Mahesh",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
-    },
-    {
-      "id": "p1791824928901",
-      "name": "Sandarsh",
-      "category": "All-rounder",
-      "base": 1000,
-      "status": "available",
-      "soldTo": null,
-      "price": 0
+    "amv6cr8v7r2g5": {
+      "id": "amv6cr8v7r2g5",
+      "name": "Auction 1",
+      "state": {
+        "configured": true,
+        "purse": 100000,
+        "minSquad": 9,
+        "maxSquad": 9,
+        "teams": [
+          {
+            "id": "t0",
+            "name": "Sri Durga Kunjar",
+            "purse": 100000,
+            "players": [
+              "p1791802299706"
+            ]
+          },
+          {
+            "id": "t1",
+            "name": "Black Fort Friends",
+            "purse": 100000,
+            "players": [
+              "p1791802307442"
+            ]
+          },
+          {
+            "id": "t2",
+            "name": "Bajarangi",
+            "purse": 100000,
+            "players": [
+              "p1791802314719"
+            ]
+          },
+          {
+            "id": "t3",
+            "name": "Nini Friends",
+            "purse": 100000,
+            "players": [
+              "p1791802323708"
+            ]
+          },
+          {
+            "id": "t4",
+            "name": "Arya Fighters",
+            "purse": 100000,
+            "players": [
+              "p1791802329006"
+            ]
+          }
+        ],
+        "players": [
+          {
+            "id": "p1791802299706",
+            "name": "Roshan",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 0
+          },
+          {
+            "id": "p1791802307442",
+            "name": "Nikil",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 0
+          },
+          {
+            "id": "p1791802314719",
+            "name": "Nithesh",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 0
+          },
+          {
+            "id": "p1791802323708",
+            "name": "Praveen",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 0
+          },
+          {
+            "id": "p1791802329006",
+            "name": "Sonu",
+            "category": "All-rounder",
+            "base": 0,
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 0
+          },
+          {
+            "id": "p1791802454631",
+            "name": "Ajmeer",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802462950",
+            "name": "Anil",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802467354",
+            "name": "Armuga",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802475776",
+            "name": "Arun",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802481618",
+            "name": "Ashraf",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802486374",
+            "name": "Arun Nini",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802500528",
+            "name": "Manja",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802506624",
+            "name": "Pradeep G",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802514811",
+            "name": "Anand",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802523128",
+            "name": "Karthik",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802538682",
+            "name": "Kishan",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802552454",
+            "name": "Praveen",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802578211",
+            "name": "Nithesh Kutti",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802587965",
+            "name": "Kishor",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802590383",
+            "name": "Charan",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802612199",
+            "name": "Kiran",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802620226",
+            "name": "Harish HK",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802641818",
+            "name": "Azar",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802645784",
+            "name": "Manoj",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802648319",
+            "name": "Mani",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802672585",
+            "name": "Nithesh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802682821",
+            "name": "Pavan",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802721488",
+            "name": "Dikshith",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802730313",
+            "name": "Sharath",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802734630",
+            "name": "Rakhi",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802741375",
+            "name": "Rakesh Kaup",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802749431",
+            "name": "Vishal",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802754065",
+            "name": "Nikhil",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802758748",
+            "name": "Nandesh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802779034",
+            "name": "Kaushik",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802790615",
+            "name": "Arun",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802801296",
+            "name": "Nisar",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802810435",
+            "name": "Mani nini",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802829801",
+            "name": "Shankar",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791802833483",
+            "name": "Avin",
+            "category": "Batsman",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791803880969",
+            "name": "Vijesh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791805362653",
+            "name": "Dhanush",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791824914721",
+            "name": "Rajanna",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791824921454",
+            "name": "Mahesh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          },
+          {
+            "id": "p1791824928901",
+            "name": "Sandarsh",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
+          }
+        ],
+        "auction": {
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
+          "increment": 1000,
+          "wheelIds": [
+            "p1791802454631",
+            "p1791802462950",
+            "p1791802467354",
+            "p1791802475776",
+            "p1791802481618",
+            "p1791802486374",
+            "p1791802500528",
+            "p1791802506624",
+            "p1791802514811",
+            "p1791802523128",
+            "p1791802538682",
+            "p1791802552454",
+            "p1791802578211",
+            "p1791802587965",
+            "p1791802590383",
+            "p1791802612199",
+            "p1791802620226",
+            "p1791802641818",
+            "p1791802645784",
+            "p1791802648319",
+            "p1791802672585",
+            "p1791802682821",
+            "p1791802721488",
+            "p1791802730313",
+            "p1791802734630",
+            "p1791802741375",
+            "p1791802749431",
+            "p1791802754065",
+            "p1791802758748",
+            "p1791802779034",
+            "p1791802790615",
+            "p1791802801296",
+            "p1791802810435",
+            "p1791802829801",
+            "p1791802833483",
+            "p1791803880969",
+            "p1791805362653",
+            "p1791824914721",
+            "p1791824921454",
+            "p1791824928901"
+          ],
+          "prevBid": null
+        }
+      }
     }
-  ],
-  "auction": {
-    "currentPlayerId": null,
-    "currentBid": 0,
-    "leadingTeamId": null,
-    "increment": 1000,
-    "wheelIds": [
-      "p1791802454631",
-      "p1791802462950",
-      "p1791802467354",
-      "p1791802475776",
-      "p1791802481618",
-      "p1791802486374",
-      "p1791802500528",
-      "p1791802506624",
-      "p1791802514811",
-      "p1791802523128",
-      "p1791802538682",
-      "p1791802552454",
-      "p1791802578211",
-      "p1791802587965",
-      "p1791802590383",
-      "p1791802612199",
-      "p1791802620226",
-      "p1791802641818",
-      "p1791802645784",
-      "p1791802648319",
-      "p1791802672585",
-      "p1791802682821",
-      "p1791802721488",
-      "p1791802730313",
-      "p1791802734630",
-      "p1791802741375",
-      "p1791802749431",
-      "p1791802754065",
-      "p1791802758748",
-      "p1791802779034",
-      "p1791802790615",
-      "p1791802801296",
-      "p1791802810435",
-      "p1791802829801",
-      "p1791802833483",
-      "p1791803880969",
-      "p1791805362653",
-      "p1791824914721",
-      "p1791824921454",
-      "p1791824928901"
-    ],
-    "prevBid": null
   }
 }
