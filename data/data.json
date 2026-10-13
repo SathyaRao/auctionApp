@@ -614,15 +614,14 @@
           {
             "id": "t3",
             "name": "Nini Friends",
-            "purse": 67000,
+            "purse": 69000,
             "players": [
               "p1791802323708",
               "p1791802758748",
               "p1791802801296",
               "p1791802612199",
               "p1791802779034",
-              "p1791802829801",
-              "p1791802672585"
+              "p1791802829801"
             ]
           },
           {
@@ -870,9 +869,9 @@
             "name": "Nithesh",
             "category": "All-rounder",
             "base": 1000,
-            "status": "sold",
-            "soldTo": "t3",
-            "price": 2000
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           },
           {
             "id": "p1791802682821",
@@ -1047,18 +1046,22 @@
           }
         ],
         "auction": {
-          "currentPlayerId": null,
-          "currentBid": 0,
-          "leadingTeamId": null,
+          "currentPlayerId": "p1791802672585",
+          "currentBid": 2000,
+          "leadingTeamId": "t3",
           "increment": 1000,
           "wheelIds": [
             "p1791802506624",
             "p1791802578211",
             "p1791802620226",
+            "p1791802672585",
             "p1791802754065",
             "p1791885337051"
           ],
-          "prevBid": null
+          "prevBid": {
+            "currentBid": 1000,
+            "leadingTeamId": "t4"
+          }
         }
       }
     }
