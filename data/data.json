@@ -18,9 +18,10 @@
           {
             "id": "t0",
             "name": "Brutal Warriors",
-            "purse": 100000,
+            "purse": 80000,
             "players": [
-              "p1791884920982_0"
+              "p1791884920982_0",
+              "p1791884920982_19"
             ]
           },
           {
@@ -238,9 +239,9 @@
             "name": "Vikesh",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 20000
           },
           {
             "id": "p1791884920982_20",
@@ -514,9 +515,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_19",
-          "currentBid": 20000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
@@ -529,7 +530,6 @@
             "p1791884920982_11",
             "p1791884920982_15",
             "p1791884920982_17",
-            "p1791884920982_19",
             "p1791884920982_20",
             "p1791884920982_21",
             "p1791884920982_22",
