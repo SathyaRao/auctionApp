@@ -103,69 +103,6 @@
             "price": 0
           },
           {
-            "id": "p1791802641818",
-            "name": "Azar",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802645784",
-            "name": "Manoj",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802648319",
-            "name": "Mani",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802672585",
-            "name": "Nithesh",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802682821",
-            "name": "Pavan",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802721488",
-            "name": "Dikshith",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802730313",
-            "name": "Sharath",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
             "id": "p1791802734630",
             "name": "Rakhi",
             "category": "All-rounder",
