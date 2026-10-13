@@ -558,10 +558,7 @@
             "p1791894956070",
             "p1791895011573"
           ],
-          "prevBid": {
-            "currentBid": 5000,
-            "leadingTeamId": "t1"
-          }
+          "prevBid": null
         }
       }
     },
