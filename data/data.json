@@ -609,11 +609,12 @@
           {
             "id": "t4",
             "name": "Arya Fighters",
-            "purse": 91000,
+            "purse": 85000,
             "players": [
               "p1791802329006",
               "p1791802523128",
-              "p1791802833483"
+              "p1791802833483",
+              "p1791802587965"
             ]
           }
         ],
@@ -785,9 +786,9 @@
             "name": "Kishor",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 6000
           },
           {
             "id": "p1791802590383",
@@ -1025,9 +1026,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802587965",
-          "currentBid": 6000,
-          "leadingTeamId": "t4",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1039,7 +1040,6 @@
             "p1791802506624",
             "p1791802514811",
             "p1791802578211",
-            "p1791802587965",
             "p1791802590383",
             "p1791802612199",
             "p1791802620226",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 5000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     }
