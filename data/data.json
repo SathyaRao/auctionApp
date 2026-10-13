@@ -37,7 +37,9 @@
             "id": "t3",
             "name": "Dunhill Cricketers",
             "purse": 100000,
-            "players": []
+            "players": [
+              "p1791884920982_18"
+            ]
           },
           {
             "id": "t4",
@@ -216,8 +218,8 @@
             "name": "Vikram",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
+            "status": "sold",
+            "soldTo": "t3",
             "price": 0
           },
           {
