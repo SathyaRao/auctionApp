@@ -568,12 +568,13 @@
           {
             "id": "t0",
             "name": "Sri Durga Kunjar",
-            "purse": 83000,
+            "purse": 77000,
             "players": [
               "p1791802299706",
               "p1791805362653",
               "p1791802462950",
-              "p1791802721488"
+              "p1791802721488",
+              "p1791802514811"
             ]
           },
           {
@@ -745,9 +746,9 @@
             "name": "Anand",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 6000
           },
           {
             "id": "p1791802523128",
@@ -1030,9 +1031,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802514811",
-          "currentBid": 5000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1041,7 +1042,6 @@
             "p1791802486374",
             "p1791802500528",
             "p1791802506624",
-            "p1791802514811",
             "p1791802578211",
             "p1791802590383",
             "p1791802620226",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 4000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     }
