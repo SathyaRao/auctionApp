@@ -640,7 +640,7 @@
           {
             "id": "t4",
             "name": "Siyarya Fighters",
-            "purse": 9000,
+            "purse": 8000,
             "players": [
               "p1791802523128",
               "p1791802833483",
@@ -648,7 +648,8 @@
               "p1791802481618",
               "p1791802467354",
               "p1791885337051",
-              "p1791802754065"
+              "p1791802754065",
+              "p1791910972274"
             ]
           }
         ],
@@ -1081,9 +1082,9 @@
             "name": "Surya",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 1000
           },
           {
             "id": "p1791910976871",
