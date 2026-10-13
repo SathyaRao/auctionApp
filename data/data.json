@@ -418,7 +418,7 @@
             "name": "Raviprasad",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
+            "status": "unsold",
             "soldTo": null,
             "price": 0
           },
@@ -541,8 +541,8 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_36",
-          "currentBid": 1000,
+          "currentPlayerId": null,
+          "currentBid": 0,
           "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
@@ -551,7 +551,6 @@
             "p1791884920982_9",
             "p1791884920982_10",
             "p1791884920982_33",
-            "p1791884920982_36",
             "p1791884920982_37",
             "p1791894942039"
           ],
