@@ -568,9 +568,10 @@
           {
             "id": "t0",
             "name": "Sri Durga Kunjar",
-            "purse": 100000,
+            "purse": 95000,
             "players": [
-              "p1791802299706"
+              "p1791802299706",
+              "p1791805362653"
             ]
           },
           {
@@ -981,9 +982,9 @@
             "name": "Dhanush",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 5000
           },
           {
             "id": "p1791824914721",
@@ -1014,9 +1015,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791805362653",
-          "currentBid": 5000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1055,14 +1056,10 @@
             "p1791802829801",
             "p1791802833483",
             "p1791803880969",
-            "p1791805362653",
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 4000,
-            "leadingTeamId": "t4"
-          }
+          "prevBid": null
         }
       }
     }
