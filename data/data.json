@@ -20,7 +20,6 @@
             "name": "Brutal Warriors",
             "purse": 24000,
             "players": [
-              "p1791884920982_0",
               "p1791884920982_19",
               "p1791885733197",
               "p1791895011573",
@@ -100,8 +99,8 @@
             "name": "Ragu",
             "category": "All-rounder",
             "base": 1000,
-            "status": "sold",
-            "soldTo": "t0",
+            "status": "available",
+            "soldTo": null,
             "price": 0
           },
           {
