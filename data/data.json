@@ -33,7 +33,7 @@
           {
             "id": "t1",
             "name": "Geleyara Balaga",
-            "purse": 38000,
+            "purse": 6000,
             "players": [
               "p1791884920982_16",
               "p1791885686812",
@@ -41,7 +41,8 @@
               "p1791884920982_24",
               "p1791884920982_1",
               "p1791884920982_25",
-              "p1791894918763"
+              "p1791894918763",
+              "p1791884920982_2"
             ]
           },
           {
@@ -115,9 +116,9 @@
             "name": "Andhu",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 32000
           },
           {
             "id": "p1791884920982_3",
@@ -544,18 +545,17 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_2",
-          "currentBid": 16000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
-            "p1791884920982_2",
             "p1791884920982_10",
             "p1791894942039"
           ],
           "prevBid": {
-            "currentBid": 15000,
-            "leadingTeamId": "t1"
+            "currentBid": 16000,
+            "leadingTeamId": "t0"
           }
         }
       }
