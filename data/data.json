@@ -578,10 +578,11 @@
           {
             "id": "t1",
             "name": "Black Fort Friends",
-            "purse": 88000,
+            "purse": 82000,
             "players": [
               "p1791802307442",
-              "p1791802538682"
+              "p1791802538682",
+              "p1791802552454"
             ]
           },
           {
@@ -759,9 +760,9 @@
             "name": "Praveen",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 6000
           },
           {
             "id": "p1791802578211",
@@ -1017,9 +1018,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802552454",
-          "currentBid": 6000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1031,7 +1032,6 @@
             "p1791802506624",
             "p1791802514811",
             "p1791802523128",
-            "p1791802552454",
             "p1791802578211",
             "p1791802587965",
             "p1791802590383",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 5000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     }
