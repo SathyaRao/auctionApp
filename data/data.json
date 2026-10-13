@@ -568,10 +568,11 @@
           {
             "id": "t0",
             "name": "Sri Durga Kunjar",
-            "purse": 95000,
+            "purse": 85000,
             "players": [
               "p1791802299706",
-              "p1791805362653"
+              "p1791805362653",
+              "p1791802462950"
             ]
           },
           {
@@ -668,9 +669,9 @@
             "name": "Anil",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 10000
           },
           {
             "id": "p1791802467354",
@@ -1016,13 +1017,12 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802462950",
-          "currentBid": 10000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": "p1791802552454",
+          "currentBid": 1000,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
-            "p1791802462950",
             "p1791802467354",
             "p1791802475776",
             "p1791802481618",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 9000,
-            "leadingTeamId": "t2"
-          }
+          "prevBid": null
         }
       }
     }
