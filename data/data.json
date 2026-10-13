@@ -56,10 +56,11 @@
           {
             "id": "t4",
             "name": "Pushpodaya Cricketers",
-            "purse": 91000,
+            "purse": 75000,
             "players": [
               "p1791884920982_14",
-              "p1791884920982_6"
+              "p1791884920982_6",
+              "p1791884920982_11"
             ]
           }
         ],
@@ -168,9 +169,9 @@
             "name": "Munna",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 16000
           },
           {
             "id": "p1791884920982_12",
@@ -516,9 +517,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_11",
-          "currentBid": 15000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
@@ -528,7 +529,6 @@
             "p1791884920982_8",
             "p1791884920982_9",
             "p1791884920982_10",
-            "p1791884920982_11",
             "p1791884920982_15",
             "p1791884920982_17",
             "p1791884920982_20",
@@ -560,10 +560,7 @@
             "p1791894956070",
             "p1791895011573"
           ],
-          "prevBid": {
-            "currentBid": 14000,
-            "leadingTeamId": "t4"
-          }
+          "prevBid": null
         }
       }
     },
