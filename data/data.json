@@ -40,9 +40,10 @@
           {
             "id": "t2",
             "name": "Ajja Friends",
-            "purse": 100000,
+            "purse": 80000,
             "players": [
-              "p1791884920982_3"
+              "p1791884920982_3",
+              "p1791884920982_15"
             ]
           },
           {
@@ -210,9 +211,9 @@
             "name": "Praveen UR",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 20000
           },
           {
             "id": "p1791884920982_16",
@@ -522,9 +523,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_15",
-          "currentBid": 20000,
-          "leadingTeamId": "t2",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
@@ -533,7 +534,6 @@
             "p1791884920982_7",
             "p1791884920982_9",
             "p1791884920982_10",
-            "p1791884920982_15",
             "p1791884920982_17",
             "p1791884920982_20",
             "p1791884920982_21",
@@ -558,10 +558,7 @@
             "p1791894942039",
             "p1791894956070"
           ],
-          "prevBid": {
-            "currentBid": 19000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     },
