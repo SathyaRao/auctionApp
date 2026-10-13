@@ -551,10 +551,7 @@
           "currentBid": 0,
           "leadingTeamId": null,
           "increment": 1000,
-          "wheelIds": [
-            "p1791884920982_9",
-            "p1791884920982_28"
-          ],
+          "wheelIds": [],
           "prevBid": null
         }
       }
