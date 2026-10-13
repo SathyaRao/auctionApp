@@ -639,7 +639,6 @@
             "name": "Arya Fighters",
             "purse": 9000,
             "players": [
-              "p1791802329006",
               "p1791802523128",
               "p1791802833483",
               "p1791802587965",
@@ -692,8 +691,8 @@
             "name": "Sonu",
             "category": "All-rounder",
             "base": 0,
-            "status": "sold",
-            "soldTo": "t4",
+            "status": "available",
+            "soldTo": null,
             "price": 0
           },
           {
