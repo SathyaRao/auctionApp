@@ -326,7 +326,7 @@
             "name": "Sujith Kattingeri",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
+            "status": "unsold",
             "soldTo": null,
             "price": 0
           },
@@ -521,9 +521,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_28",
-          "currentBid": 1000,
-          "leadingTeamId": null,
+          "currentPlayerId": "p1791895011573",
+          "currentBid": 2000,
+          "leadingTeamId": "t1",
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
@@ -541,7 +541,6 @@
             "p1791884920982_25",
             "p1791884920982_26",
             "p1791884920982_27",
-            "p1791884920982_28",
             "p1791884920982_31",
             "p1791884920982_32",
             "p1791884920982_33",
@@ -559,7 +558,10 @@
             "p1791894956070",
             "p1791895011573"
           ],
-          "prevBid": null
+          "prevBid": {
+            "currentBid": 1000,
+            "leadingTeamId": "t0"
+          }
         }
       }
     },
