@@ -48,33 +48,6 @@
         ],
         "players": [
           {
-            "id": "p1791802314719",
-            "name": "Nithesh",
-            "category": "All-rounder",
-            "base": 0,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802323708",
-            "name": "Praveen",
-            "category": "All-rounder",
-            "base": 0,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
-            "id": "p1791802329006",
-            "name": "Sonu",
-            "category": "All-rounder",
-            "base": 0,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
             "id": "p1791884920982_0",
             "name": "Ragu",
             "category": "All-rounder",
