@@ -1042,11 +1042,20 @@
             "status": "available",
             "soldTo": null,
             "price": 0
+          },
+          {
+            "id": "p1791905464391",
+            "name": "Pradeep papu",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           }
         ],
         "auction": {
           "currentPlayerId": "p1791802741375",
-          "currentBid": 16000,
+          "currentBid": 14000,
           "leadingTeamId": "t4",
           "increment": 1000,
           "wheelIds": [
@@ -1058,7 +1067,7 @@
             "p1791802754065"
           ],
           "prevBid": {
-            "currentBid": 15000,
+            "currentBid": 13000,
             "leadingTeamId": "t1"
           }
         }
