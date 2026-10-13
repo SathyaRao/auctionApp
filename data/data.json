@@ -570,7 +570,6 @@
             "name": "Sri Durga Kunjar",
             "purse": 13000,
             "players": [
-              "p1791802299706",
               "p1791805362653",
               "p1791802462950",
               "p1791802721488",
@@ -649,8 +648,8 @@
             "name": "Roshan",
             "category": "All-rounder",
             "base": 0,
-            "status": "sold",
-            "soldTo": "t0",
+            "status": "available",
+            "soldTo": null,
             "price": 0
           },
           {
