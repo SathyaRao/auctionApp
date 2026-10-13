@@ -46,14 +46,15 @@
           {
             "id": "t2",
             "name": "Ajja Friends",
-            "purse": 16000,
+            "purse": 11000,
             "players": [
               "p1791884920982_3",
               "p1791884920982_15",
               "p1791884920982_21",
               "p1791884920982_34",
               "p1791885581466",
-              "p1791884920982_20"
+              "p1791884920982_20",
+              "p1791884920982_40"
             ]
           },
           {
@@ -452,9 +453,9 @@
             "name": "Raviraj",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 5000
           },
           {
             "id": "p1791884920982_41",
@@ -539,9 +540,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_40",
-          "currentBid": 5000,
-          "leadingTeamId": "t2",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
@@ -552,13 +553,9 @@
             "p1791884920982_33",
             "p1791884920982_36",
             "p1791884920982_37",
-            "p1791884920982_40",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 4000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     },
