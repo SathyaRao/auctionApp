@@ -172,7 +172,7 @@
             "name": "Gowri",
             "category": "Batsman",
             "base": 1000,
-            "status": "unsold",
+            "status": "available",
             "soldTo": null,
             "price": 0
           },
@@ -181,7 +181,7 @@
             "name": "Uday",
             "category": "All-rounder",
             "base": 1000,
-            "status": "unsold",
+            "status": "available",
             "soldTo": null,
             "price": 0
           },
