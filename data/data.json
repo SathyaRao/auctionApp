@@ -802,7 +802,7 @@
             "name": "Nithesh Kutti",
             "category": "All-rounder",
             "base": 1000,
-            "status": "unsold",
+            "status": "available",
             "soldTo": null,
             "price": 0
           },
@@ -856,7 +856,7 @@
             "name": "Manoj",
             "category": "All-rounder",
             "base": 1000,
-            "status": "unsold",
+            "status": "available",
             "soldTo": null,
             "price": 0
           },
