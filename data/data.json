@@ -598,7 +598,7 @@
           {
             "id": "t2",
             "name": "Bajarangi",
-            "purse": 67000,
+            "purse": 6000,
             "players": [
               "p1791802314719",
               "p1791802810435",
@@ -606,7 +606,8 @@
               "p1791824914721",
               "p1791802790615",
               "p1791802734630",
-              "p1791803880969"
+              "p1791803880969",
+              "p1791802500528"
             ]
           },
           {
@@ -741,9 +742,9 @@
             "name": "Manja",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 61000
           },
           {
             "id": "p1791802506624",
@@ -1044,12 +1045,11 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802500528",
-          "currentBid": 60000,
-          "leadingTeamId": "t3",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
-            "p1791802500528",
             "p1791802506624",
             "p1791802578211",
             "p1791802620226",
@@ -1057,10 +1057,7 @@
             "p1791802741375",
             "p1791802754065"
           ],
-          "prevBid": {
-            "currentBid": 59000,
-            "leadingTeamId": "t2"
-          }
+          "prevBid": null
         }
       }
     }
