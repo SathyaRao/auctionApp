@@ -18,12 +18,13 @@
           {
             "id": "t0",
             "name": "Brutal Warriors",
-            "purse": 45000,
+            "purse": 44000,
             "players": [
               "p1791884920982_0",
               "p1791884920982_19",
               "p1791885733197",
-              "p1791895011573"
+              "p1791895011573",
+              "p1791884920982_23"
             ]
           },
           {
@@ -291,9 +292,9 @@
             "name": "Shravan",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 1000
           },
           {
             "id": "p1791884920982_24",
@@ -531,9 +532,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_23",
-          "currentBid": 1000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
@@ -543,7 +544,6 @@
             "p1791884920982_10",
             "p1791884920982_17",
             "p1791884920982_20",
-            "p1791884920982_23",
             "p1791884920982_26",
             "p1791884920982_32",
             "p1791884920982_33",
@@ -557,10 +557,7 @@
             "p1791894918763",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 1000,
-            "leadingTeamId": null
-          }
+          "prevBid": null
         }
       }
     },
