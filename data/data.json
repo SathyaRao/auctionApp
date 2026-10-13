@@ -578,11 +578,12 @@
           {
             "id": "t1",
             "name": "Black Fort Friends",
-            "purse": 82000,
+            "purse": 59000,
             "players": [
               "p1791802307442",
               "p1791802538682",
-              "p1791802552454"
+              "p1791802552454",
+              "p1791802749431"
             ]
           },
           {
@@ -898,9 +899,9 @@
             "name": "Vishal",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 23000
           },
           {
             "id": "p1791802754065",
@@ -1021,9 +1022,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802749431",
-          "currentBid": 23000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1048,7 +1049,6 @@
             "p1791802730313",
             "p1791802734630",
             "p1791802741375",
-            "p1791802749431",
             "p1791802754065",
             "p1791802758748",
             "p1791802779034",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 22000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     }
