@@ -584,7 +584,6 @@
             "name": "Black Fort Friends",
             "purse": 16000,
             "players": [
-              "p1791802307442",
               "p1791802538682",
               "p1791802552454",
               "p1791802749431",
@@ -657,8 +656,8 @@
             "name": "Nikil",
             "category": "All-rounder",
             "base": 0,
-            "status": "sold",
-            "soldTo": "t1",
+            "status": "available",
+            "soldTo": null,
             "price": 0
           },
           {
