@@ -603,12 +603,13 @@
           {
             "id": "t3",
             "name": "Nini Friends",
-            "purse": 79000,
+            "purse": 71000,
             "players": [
               "p1791802323708",
               "p1791802758748",
               "p1791802801296",
-              "p1791802612199"
+              "p1791802612199",
+              "p1791802779034"
             ]
           },
           {
@@ -936,9 +937,9 @@
             "name": "Kaushik",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 8000
           },
           {
             "id": "p1791802790615",
@@ -1032,9 +1033,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802779034",
-          "currentBid": 5000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1052,17 +1053,13 @@
             "p1791802734630",
             "p1791802741375",
             "p1791802754065",
-            "p1791802779034",
             "p1791802790615",
             "p1791802829801",
             "p1791803880969",
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 4000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     }
