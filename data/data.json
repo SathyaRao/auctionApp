@@ -41,10 +41,11 @@
           {
             "id": "t2",
             "name": "Ajja Friends",
-            "purse": 80000,
+            "purse": 25000,
             "players": [
               "p1791884920982_3",
-              "p1791884920982_15"
+              "p1791884920982_15",
+              "p1791884920982_21"
             ]
           },
           {
@@ -270,9 +271,9 @@
             "name": "Sandeep",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 55000
           },
           {
             "id": "p1791884920982_22",
@@ -528,9 +529,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_21",
-          "currentBid": 55000,
-          "leadingTeamId": "t2",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
@@ -540,7 +541,6 @@
             "p1791884920982_10",
             "p1791884920982_17",
             "p1791884920982_20",
-            "p1791884920982_21",
             "p1791884920982_22",
             "p1791884920982_23",
             "p1791884920982_25",
@@ -557,10 +557,7 @@
             "p1791894918763",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 54000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     },
