@@ -18,11 +18,12 @@
           {
             "id": "t0",
             "name": "Brutal Warriors",
-            "purse": 75000,
+            "purse": 45000,
             "players": [
               "p1791884920982_0",
               "p1791884920982_19",
-              "p1791885733197"
+              "p1791885733197",
+              "p1791895011573"
             ]
           },
           {
@@ -515,15 +516,15 @@
             "name": "Varun Kurkal",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 30000
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791895011573",
-          "currentBid": 30000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
@@ -555,13 +556,9 @@
             "p1791885581466",
             "p1791894918763",
             "p1791894942039",
-            "p1791894956070",
-            "p1791895011573"
+            "p1791894956070"
           ],
-          "prevBid": {
-            "currentBid": 29000,
-            "leadingTeamId": "t1"
-          }
+          "prevBid": null
         }
       }
     },
