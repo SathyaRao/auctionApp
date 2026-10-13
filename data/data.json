@@ -663,7 +663,7 @@
           {
             "id": "p1791884920982_22",
             "name": "Sandesh",
-            "category": "Batsman",
+            "category": "All-rounder",
             "base": 1000,
             "status": "available",
             "soldTo": null,
@@ -672,7 +672,7 @@
           {
             "id": "p1791884920982_23",
             "name": "Shravan",
-            "category": "Batsman",
+            "category": "All-rounder",
             "base": 1000,
             "status": "available",
             "soldTo": null,
