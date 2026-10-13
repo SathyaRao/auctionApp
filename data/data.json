@@ -36,7 +36,6 @@
             "name": "Geleyara Balaga",
             "purse": 6000,
             "players": [
-              "p1791884920982_16",
               "p1791885686812",
               "p1791884920982_42",
               "p1791884920982_24",
@@ -244,8 +243,8 @@
             "name": "Prakash",
             "category": "All-rounder",
             "base": 1000,
-            "status": "sold",
-            "soldTo": "t1",
+            "status": "available",
+            "soldTo": null,
             "price": 0
           },
           {
