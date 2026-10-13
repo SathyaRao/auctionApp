@@ -1090,6 +1090,15 @@
             "status": "available",
             "soldTo": null,
             "price": 0
+          },
+          {
+            "id": "p1791910994029",
+            "name": "Rajanna",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           }
         ],
         "auction": {
