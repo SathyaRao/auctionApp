@@ -177,7 +177,7 @@
             "name": "Uday",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
+            "status": "unsold",
             "soldTo": null,
             "price": 0
           },
@@ -543,13 +543,12 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_9",
-          "currentBid": 1000,
+          "currentPlayerId": null,
+          "currentBid": 0,
           "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
-            "p1791884920982_9",
             "p1791884920982_10",
             "p1791884920982_33",
             "p1791894942039"
