@@ -604,10 +604,11 @@
           {
             "id": "t4",
             "name": "Arya Fighters",
-            "purse": 97000,
+            "purse": 91000,
             "players": [
               "p1791802329006",
-              "p1791802523128"
+              "p1791802523128",
+              "p1791802833483"
             ]
           }
         ],
@@ -968,9 +969,9 @@
             "name": "Avin",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 6000
           },
           {
             "id": "p1791803880969",
@@ -1019,9 +1020,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802833483",
-          "currentBid": 6000,
-          "leadingTeamId": "t4",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1054,15 +1055,11 @@
             "p1791802801296",
             "p1791802810435",
             "p1791802829801",
-            "p1791802833483",
             "p1791803880969",
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 5000,
-            "leadingTeamId": "t2"
-          }
+          "prevBid": null
         }
       }
     }
