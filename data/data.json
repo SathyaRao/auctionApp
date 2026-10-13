@@ -18,14 +18,15 @@
           {
             "id": "t0",
             "name": "Brutal Warriors",
-            "purse": 43000,
+            "purse": 40000,
             "players": [
               "p1791884920982_0",
               "p1791884920982_19",
               "p1791885733197",
               "p1791895011573",
               "p1791884920982_23",
-              "p1791884920982_38"
+              "p1791884920982_38",
+              "p1791884920982_7"
             ]
           },
           {
@@ -154,9 +155,9 @@
             "name": "Elson",
             "category": "Bowler",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t0",
+            "price": 3000
           },
           {
             "id": "p1791884920982_8",
@@ -538,14 +539,13 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_7",
-          "currentBid": 3000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
             "p1791884920982_5",
-            "p1791884920982_7",
             "p1791884920982_9",
             "p1791884920982_10",
             "p1791884920982_17",
@@ -555,10 +555,7 @@
             "p1791884920982_40",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 2000,
-            "leadingTeamId": "t2"
-          }
+          "prevBid": null
         }
       }
     },
