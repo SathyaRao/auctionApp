@@ -629,14 +629,15 @@
           {
             "id": "t4",
             "name": "Arya Fighters",
-            "purse": 54000,
+            "purse": 23000,
             "players": [
               "p1791802329006",
               "p1791802523128",
               "p1791802833483",
               "p1791802587965",
               "p1791802481618",
-              "p1791802467354"
+              "p1791802467354",
+              "p1791885337051"
             ]
           }
         ],
@@ -1042,20 +1043,19 @@
             "name": "Pradeep",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 31000
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791885337051",
-          "currentBid": 31000,
-          "leadingTeamId": "t4",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802506624",
-            "p1791802754065",
-            "p1791885337051"
+            "p1791802754065"
           ],
           "prevBid": null
         }
