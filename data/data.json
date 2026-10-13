@@ -43,11 +43,12 @@
           {
             "id": "t2",
             "name": "Ajja Friends",
-            "purse": 25000,
+            "purse": 22000,
             "players": [
               "p1791884920982_3",
               "p1791884920982_15",
-              "p1791884920982_21"
+              "p1791884920982_21",
+              "p1791884920982_34"
             ]
           },
           {
@@ -391,9 +392,9 @@
             "name": "Sukesh Mattar",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 3000
           },
           {
             "id": "p1791884920982_35",
@@ -532,9 +533,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_34",
-          "currentBid": 3000,
-          "leadingTeamId": "t2",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
@@ -547,7 +548,6 @@
             "p1791884920982_26",
             "p1791884920982_32",
             "p1791884920982_33",
-            "p1791884920982_34",
             "p1791884920982_36",
             "p1791884920982_37",
             "p1791884920982_38",
@@ -557,10 +557,7 @@
             "p1791894918763",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 2000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     },
