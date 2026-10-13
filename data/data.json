@@ -51,9 +51,10 @@
           {
             "id": "t4",
             "name": "Pushpodaya Cricketers",
-            "purse": 100000,
+            "purse": 91000,
             "players": [
-              "p1791884920982_14"
+              "p1791884920982_14",
+              "p1791884920982_6"
             ]
           }
         ],
@@ -117,9 +118,9 @@
             "name": "Calvin",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 9000
           },
           {
             "id": "p1791884920982_7",
@@ -510,16 +511,15 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_6",
-          "currentBid": 9000,
-          "leadingTeamId": "t4",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
             "p1791884920982_2",
             "p1791884920982_4",
             "p1791884920982_5",
-            "p1791884920982_6",
             "p1791884920982_7",
             "p1791884920982_8",
             "p1791884920982_9",
@@ -560,10 +560,7 @@
             "p1791894956070",
             "p1791895011573"
           ],
-          "prevBid": {
-            "currentBid": 8000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     },
