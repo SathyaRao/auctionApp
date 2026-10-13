@@ -388,7 +388,7 @@
             "name": "Sangappa",
             "category": "All-rounder",
             "base": 1000,
-            "status": "unsold",
+            "status": "available",
             "soldTo": null,
             "price": 0
           },
@@ -424,7 +424,7 @@
             "name": "Raviprasad",
             "category": "Batsman",
             "base": 1000,
-            "status": "unsold",
+            "status": "available",
             "soldTo": null,
             "price": 0
           },
