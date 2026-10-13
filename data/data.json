@@ -27,10 +27,11 @@
           {
             "id": "t1",
             "name": "Geleyara Balaga",
-            "purse": 96000,
+            "purse": 61000,
             "players": [
               "p1791884920982_16",
-              "p1791885686812"
+              "p1791885686812",
+              "p1791884920982_42"
             ]
           },
           {
@@ -446,9 +447,9 @@
             "name": "Sathya",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 35000
           },
           {
             "id": "p1791885581466",
@@ -515,9 +516,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_42",
-          "currentBid": 33000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
@@ -552,7 +553,6 @@
             "p1791884920982_39",
             "p1791884920982_40",
             "p1791884920982_41",
-            "p1791884920982_42",
             "p1791885581466",
             "p1791885733197",
             "p1791894918763",
@@ -560,10 +560,7 @@
             "p1791894956070",
             "p1791895011573"
           ],
-          "prevBid": {
-            "currentBid": 32000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     },
