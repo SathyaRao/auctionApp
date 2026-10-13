@@ -28,11 +28,12 @@
           {
             "id": "t1",
             "name": "Geleyara Balaga",
-            "purse": 61000,
+            "purse": 49000,
             "players": [
               "p1791884920982_16",
               "p1791885686812",
-              "p1791884920982_42"
+              "p1791884920982_42",
+              "p1791884920982_24"
             ]
           },
           {
@@ -289,9 +290,9 @@
             "name": "Sudhakar",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 12000
           },
           {
             "id": "p1791884920982_25",
@@ -520,9 +521,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_24",
-          "currentBid": 10000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": "p1791884920982_28",
+          "currentBid": 1000,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_1",
@@ -537,7 +538,6 @@
             "p1791884920982_21",
             "p1791884920982_22",
             "p1791884920982_23",
-            "p1791884920982_24",
             "p1791884920982_25",
             "p1791884920982_26",
             "p1791884920982_27",
@@ -559,10 +559,7 @@
             "p1791894956070",
             "p1791895011573"
           ],
-          "prevBid": {
-            "currentBid": 9000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     },
