@@ -578,13 +578,12 @@
           {
             "id": "t1",
             "name": "Black Fort Friends",
-            "purse": 53000,
+            "purse": 59000,
             "players": [
               "p1791802307442",
               "p1791802538682",
               "p1791802552454",
-              "p1791802749431",
-              "p1791802730313"
+              "p1791802749431"
             ]
           },
           {
@@ -600,10 +599,9 @@
           {
             "id": "t3",
             "name": "Nini Friends",
-            "purse": 93000,
+            "purse": 100000,
             "players": [
-              "p1791802323708",
-              "p1791802758748"
+              "p1791802323708"
             ]
           },
           {
@@ -875,9 +873,9 @@
             "name": "Sharath",
             "category": "All-rounder",
             "base": 1000,
-            "status": "sold",
-            "soldTo": "t1",
-            "price": 6000
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           },
           {
             "id": "p1791802734630",
@@ -920,9 +918,9 @@
             "name": "Nandesh",
             "category": "All-rounder",
             "base": 1000,
-            "status": "sold",
-            "soldTo": "t3",
-            "price": 7000
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           },
           {
             "id": "p1791802779034",
@@ -1025,9 +1023,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802587965",
-          "currentBid": 1000,
-          "leadingTeamId": "t0",
+          "currentPlayerId": "p1791802758748",
+          "currentBid": 4000,
+          "leadingTeamId": "t4",
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1048,9 +1046,11 @@
             "p1791802672585",
             "p1791802682821",
             "p1791802721488",
+            "p1791802730313",
             "p1791802734630",
             "p1791802741375",
             "p1791802754065",
+            "p1791802758748",
             "p1791802779034",
             "p1791802790615",
             "p1791802801296",
@@ -1060,8 +1060,8 @@
             "p1791824921454"
           ],
           "prevBid": {
-            "currentBid": 1000,
-            "leadingTeamId": null
+            "currentBid": 3000,
+            "leadingTeamId": "t3"
           }
         }
       }
