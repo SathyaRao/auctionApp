@@ -66,7 +66,7 @@
           {
             "id": "t3",
             "name": "Dunhill Cricketers",
-            "purse": 5000,
+            "purse": 4000,
             "players": [
               "p1791884920982_13",
               "p1791884920982_12",
@@ -74,7 +74,8 @@
               "p1791884920982_39",
               "p1791884920982_22",
               "p1791884920982_41",
-              "p1791884920982_17"
+              "p1791884920982_17",
+              "p1791884920982_28"
             ]
           },
           {
@@ -352,9 +353,9 @@
             "name": "Sujith Kattingeri",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 1000
           },
           {
             "id": "p1791884920982_29",
