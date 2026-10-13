@@ -619,13 +619,14 @@
           {
             "id": "t4",
             "name": "Arya Fighters",
-            "purse": 59000,
+            "purse": 54000,
             "players": [
               "p1791802329006",
               "p1791802523128",
               "p1791802833483",
               "p1791802587965",
-              "p1791802481618"
+              "p1791802481618",
+              "p1791802467354"
             ]
           }
         ],
@@ -698,9 +699,9 @@
             "name": "Armuga",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 5000
           },
           {
             "id": "p1791802475776",
@@ -1037,13 +1038,12 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802467354",
-          "currentBid": 5000,
-          "leadingTeamId": "t4",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
-            "p1791802467354",
             "p1791802486374",
             "p1791802500528",
             "p1791802506624",
@@ -1059,10 +1059,7 @@
             "p1791803880969",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 4000,
-            "leadingTeamId": "t2"
-          }
+          "prevBid": null
         }
       }
     }
