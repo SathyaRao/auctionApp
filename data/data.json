@@ -614,7 +614,7 @@
           {
             "id": "t3",
             "name": "Nini Friends",
-            "purse": 67000,
+            "purse": 39000,
             "players": [
               "p1791802323708",
               "p1791802758748",
@@ -622,7 +622,8 @@
               "p1791802612199",
               "p1791802779034",
               "p1791802829801",
-              "p1791802672585"
+              "p1791802672585",
+              "p1791802620226"
             ]
           },
           {
@@ -834,9 +835,9 @@
             "name": "Harish HK",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 28000
           },
           {
             "id": "p1791802641818",
@@ -1047,20 +1048,16 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802620226",
-          "currentBid": 28000,
-          "leadingTeamId": "t3",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802506624",
-            "p1791802620226",
             "p1791802754065",
             "p1791885337051"
           ],
-          "prevBid": {
-            "currentBid": 27000,
-            "leadingTeamId": "t4"
-          }
+          "prevBid": null
         }
       }
     }
