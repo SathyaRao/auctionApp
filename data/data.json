@@ -31,7 +31,9 @@
             "id": "t2",
             "name": "Ajja Friends",
             "purse": 100000,
-            "players": []
+            "players": [
+              "p1791884920982_3"
+            ]
           },
           {
             "id": "t3",
@@ -83,8 +85,8 @@
             "name": "Anith",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
+            "status": "sold",
+            "soldTo": "t2",
             "price": 0
           },
           {
