@@ -375,7 +375,7 @@
             "name": "Sangappa",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
+            "status": "unsold",
             "soldTo": null,
             "price": 0
           },
@@ -534,8 +534,8 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_32",
-          "currentBid": 1000,
+          "currentPlayerId": null,
+          "currentBid": 0,
           "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
@@ -547,7 +547,6 @@
             "p1791884920982_17",
             "p1791884920982_20",
             "p1791884920982_26",
-            "p1791884920982_32",
             "p1791884920982_33",
             "p1791884920982_36",
             "p1791884920982_37",
