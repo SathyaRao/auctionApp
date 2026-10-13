@@ -50,12 +50,13 @@
           {
             "id": "t3",
             "name": "Dunhill Cricketers",
-            "purse": 72000,
+            "purse": 58000,
             "players": [
               "p1791884920982_18",
               "p1791884920982_13",
               "p1791884920982_12",
-              "p1791884920982_4"
+              "p1791884920982_4",
+              "p1791884920982_39"
             ]
           },
           {
@@ -431,9 +432,9 @@
             "name": "Karunakar",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 14000
           },
           {
             "id": "p1791884920982_40",
@@ -527,9 +528,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_39",
-          "currentBid": 14000,
-          "leadingTeamId": "t3",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
@@ -550,17 +551,13 @@
             "p1791884920982_36",
             "p1791884920982_37",
             "p1791884920982_38",
-            "p1791884920982_39",
             "p1791884920982_40",
             "p1791884920982_41",
             "p1791885581466",
             "p1791894918763",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 13000,
-            "leadingTeamId": "t0"
-          }
+          "prevBid": null
         }
       }
     },
