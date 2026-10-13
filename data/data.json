@@ -1072,6 +1072,15 @@
             "status": "sold",
             "soldTo": "t0",
             "price": 1000
+          },
+          {
+            "id": "p1791910972274",
+            "name": "Surya",
+            "category": "All-rounder",
+            "base": 1000,
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           }
         ],
         "auction": {
