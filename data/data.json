@@ -597,13 +597,14 @@
           {
             "id": "t2",
             "name": "Bajarangi",
-            "purse": 71000,
+            "purse": 70000,
             "players": [
               "p1791802314719",
               "p1791802810435",
               "p1791802641818",
               "p1791824914721",
-              "p1791802790615"
+              "p1791802790615",
+              "p1791802734630"
             ]
           },
           {
@@ -900,9 +901,9 @@
             "name": "Rakhi",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 1000
           },
           {
             "id": "p1791802741375",
@@ -1041,9 +1042,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802734630",
-          "currentBid": 1000,
-          "leadingTeamId": "t2",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802500528",
@@ -1052,15 +1053,11 @@
             "p1791802620226",
             "p1791802648319",
             "p1791802672585",
-            "p1791802734630",
             "p1791802741375",
             "p1791802754065",
             "p1791803880969"
           ],
-          "prevBid": {
-            "currentBid": 1000,
-            "leadingTeamId": null
-          }
+          "prevBid": null
         }
       }
     }
