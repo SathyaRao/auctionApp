@@ -29,13 +29,14 @@
           {
             "id": "t1",
             "name": "Geleyara Balaga",
-            "purse": 44000,
+            "purse": 42000,
             "players": [
               "p1791884920982_16",
               "p1791885686812",
               "p1791884920982_42",
               "p1791884920982_24",
-              "p1791884920982_1"
+              "p1791884920982_1",
+              "p1791884920982_25"
             ]
           },
           {
@@ -307,9 +308,9 @@
             "name": "Ranjith Ranju",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 2000
           },
           {
             "id": "p1791884920982_26",
@@ -529,9 +530,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_25",
-          "currentBid": 2000,
-          "leadingTeamId": "t1",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
@@ -543,7 +544,6 @@
             "p1791884920982_20",
             "p1791884920982_22",
             "p1791884920982_23",
-            "p1791884920982_25",
             "p1791884920982_26",
             "p1791884920982_32",
             "p1791884920982_33",
@@ -557,10 +557,7 @@
             "p1791894918763",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 1000,
-            "leadingTeamId": "t2"
-          }
+          "prevBid": null
         }
       }
     },
