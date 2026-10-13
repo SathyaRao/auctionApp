@@ -624,7 +624,6 @@
             "name": "Nini Friends",
             "purse": 17000,
             "players": [
-              "p1791802323708",
               "p1791802758748",
               "p1791802801296",
               "p1791802612199",
@@ -684,8 +683,8 @@
             "name": "Praveen",
             "category": "All-rounder",
             "base": 0,
-            "status": "sold",
-            "soldTo": "t3",
+            "status": "available",
+            "soldTo": null,
             "price": 0
           },
           {
