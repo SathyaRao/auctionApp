@@ -597,14 +597,15 @@
           {
             "id": "t2",
             "name": "Bajarangi",
-            "purse": 70000,
+            "purse": 67000,
             "players": [
               "p1791802314719",
               "p1791802810435",
               "p1791802641818",
               "p1791824914721",
               "p1791802790615",
-              "p1791802734630"
+              "p1791802734630",
+              "p1791803880969"
             ]
           },
           {
@@ -1000,9 +1001,9 @@
             "name": "Vijesh",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 3000
           },
           {
             "id": "p1791805362653",
@@ -1042,9 +1043,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791803880969",
-          "currentBid": 2000,
-          "leadingTeamId": "t3",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802500528",
@@ -1054,13 +1055,9 @@
             "p1791802648319",
             "p1791802672585",
             "p1791802741375",
-            "p1791802754065",
-            "p1791803880969"
+            "p1791802754065"
           ],
-          "prevBid": {
-            "currentBid": 1000,
-            "leadingTeamId": "t2"
-          }
+          "prevBid": null
         }
       }
     }
