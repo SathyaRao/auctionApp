@@ -42,10 +42,8 @@
           {
             "id": "t4",
             "name": "Pushpodaya Cricketers",
-            "purse": 99000,
-            "players": [
-              "p1791884920982_14"
-            ]
+            "purse": 100000,
+            "players": []
           }
         ],
         "players": [
@@ -180,9 +178,9 @@
             "name": "Sudeep",
             "category": "All-rounder",
             "base": 1000,
-            "status": "sold",
-            "soldTo": "t4",
-            "price": 1000
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           },
           {
             "id": "p1791884920982_15",
