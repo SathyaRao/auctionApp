@@ -1023,7 +1023,7 @@
             "name": "Mahesh",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
+            "status": "unsold",
             "soldTo": null,
             "price": 0
           },
@@ -1038,8 +1038,8 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791824921454",
-          "currentBid": 1000,
+          "currentPlayerId": null,
+          "currentBid": 0,
           "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
@@ -1055,8 +1055,7 @@
             "p1791802741375",
             "p1791802754065",
             "p1791802790615",
-            "p1791803880969",
-            "p1791824921454"
+            "p1791803880969"
           ],
           "prevBid": null
         }
