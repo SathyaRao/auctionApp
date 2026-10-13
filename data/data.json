@@ -77,7 +77,7 @@
           {
             "id": "t4",
             "name": "Pushpodaya Cricketers",
-            "purse": 46000,
+            "purse": 9000,
             "players": [
               "p1791884920982_14",
               "p1791884920982_6",
@@ -86,7 +86,8 @@
               "p1791884920982_30",
               "p1791884920982_35",
               "p1791884920982_27",
-              "p1791884920982_31"
+              "p1791884920982_31",
+              "p1791884920982_33"
             ]
           }
         ],
@@ -393,9 +394,9 @@
             "name": "Prathin",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t4",
+            "price": 37000
           },
           {
             "id": "p1791884920982_34",
@@ -543,20 +544,16 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_33",
-          "currentBid": 37000,
-          "leadingTeamId": "t4",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
             "p1791884920982_10",
-            "p1791884920982_33",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 36000,
-            "leadingTeamId": "t1"
-          }
+          "prevBid": null
         }
       }
     },
