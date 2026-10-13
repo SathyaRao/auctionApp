@@ -43,12 +43,13 @@
           {
             "id": "t2",
             "name": "Ajja Friends",
-            "purse": 22000,
+            "purse": 19000,
             "players": [
               "p1791884920982_3",
               "p1791884920982_15",
               "p1791884920982_21",
-              "p1791884920982_34"
+              "p1791884920982_34",
+              "p1791885581466"
             ]
           },
           {
@@ -473,9 +474,9 @@
             "name": "Sudhakar Poyyadapadi",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 3000
           },
           {
             "id": "p1791885686812",
@@ -533,9 +534,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791885581466",
-          "currentBid": 3000,
-          "leadingTeamId": "t2",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
@@ -553,14 +554,10 @@
             "p1791884920982_38",
             "p1791884920982_40",
             "p1791884920982_41",
-            "p1791885581466",
             "p1791894918763",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 2000,
-            "leadingTeamId": "t3"
-          }
+          "prevBid": null
         }
       }
     },
