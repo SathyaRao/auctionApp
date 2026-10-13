@@ -60,7 +60,7 @@
           {
             "id": "t3",
             "name": "Dunhill Cricketers",
-            "purse": 51000,
+            "purse": 5000,
             "players": [
               "p1791884920982_18",
               "p1791884920982_13",
@@ -68,7 +68,8 @@
               "p1791884920982_4",
               "p1791884920982_39",
               "p1791884920982_22",
-              "p1791884920982_41"
+              "p1791884920982_41",
+              "p1791884920982_17"
             ]
           },
           {
@@ -246,9 +247,9 @@
             "name": "Pursi",
             "category": "Batsman",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t3",
+            "price": 46000
           },
           {
             "id": "p1791884920982_18",
@@ -540,25 +541,21 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791884920982_17",
-          "currentBid": 46000,
-          "leadingTeamId": "t3",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791884920982_2",
             "p1791884920982_5",
             "p1791884920982_9",
             "p1791884920982_10",
-            "p1791884920982_17",
             "p1791884920982_33",
             "p1791884920982_36",
             "p1791884920982_37",
             "p1791894942039"
           ],
-          "prevBid": {
-            "currentBid": 45000,
-            "leadingTeamId": "t4"
-          }
+          "prevBid": null
         }
       }
     },
