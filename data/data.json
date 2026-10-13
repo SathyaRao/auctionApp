@@ -103,15 +103,6 @@
             "price": 0
           },
           {
-            "id": "p1791802454631",
-            "name": "Ajmeer",
-            "category": "All-rounder",
-            "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
-          },
-          {
             "id": "p1791802462950",
             "name": "Anil",
             "category": "All-rounder",
