@@ -589,10 +589,11 @@
           {
             "id": "t2",
             "name": "Bajarangi",
-            "purse": 79000,
+            "purse": 76000,
             "players": [
               "p1791802314719",
-              "p1791802810435"
+              "p1791802810435",
+              "p1791802641818"
             ]
           },
           {
@@ -818,9 +819,9 @@
             "name": "Azar",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t2",
+            "price": 3000
           },
           {
             "id": "p1791802645784",
@@ -1022,9 +1023,9 @@
           }
         ],
         "auction": {
-          "currentPlayerId": "p1791802641818",
-          "currentBid": 3000,
-          "leadingTeamId": "t2",
+          "currentPlayerId": null,
+          "currentBid": 0,
+          "leadingTeamId": null,
           "increment": 1000,
           "wheelIds": [
             "p1791802454631",
@@ -1040,7 +1041,6 @@
             "p1791802590383",
             "p1791802612199",
             "p1791802620226",
-            "p1791802641818",
             "p1791802645784",
             "p1791802648319",
             "p1791802672585",
@@ -1059,10 +1059,7 @@
             "p1791824914721",
             "p1791824921454"
           ],
-          "prevBid": {
-            "currentBid": 2000,
-            "leadingTeamId": "t1"
-          }
+          "prevBid": null
         }
       }
     }
