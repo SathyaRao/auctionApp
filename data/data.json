@@ -34,7 +34,7 @@
           {
             "id": "t1",
             "name": "Geleyara Balaga",
-            "purse": 6000,
+            "purse": 5000,
             "players": [
               "p1791885686812",
               "p1791884920982_42",
@@ -42,7 +42,8 @@
               "p1791884920982_1",
               "p1791884920982_25",
               "p1791894918763",
-              "p1791884920982_2"
+              "p1791884920982_2",
+              "p1791894956070"
             ]
           },
           {
@@ -531,9 +532,9 @@
             "name": "Raghu Shetty",
             "category": "All-rounder",
             "base": 1000,
-            "status": "available",
-            "soldTo": null,
-            "price": 0
+            "status": "sold",
+            "soldTo": "t1",
+            "price": 1000
           },
           {
             "id": "p1791895011573",
