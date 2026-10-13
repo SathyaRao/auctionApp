@@ -25,9 +25,19 @@ const Store = {
   LOCAL_KEY: 'cricket-auction-state-v1',
   CONFIG_KEY: 'cricket-auction-gh-config',
   TOKEN_KEY: 'github_token',
+  ACTIVE_KEY: 'cricket-auction-active-id',
+
+  // --- Multi-auction container schema ---
+  // The GitHub data file holds a container:
+  //   { schema:'multi-v1', activeId, order:[id...], auctions:{ id:{ id, name, state } } }
+  // where each `state` is a single-auction state object (the shape app.js uses).
+  // Legacy files that are a bare state object are migrated into one auction on load.
+  SCHEMA: 'multi-v1',
 
   // --- Internal state ---
-  _data: null,
+  _data: null,        // the ACTIVE auction's state (what app.js reads/writes)
+  _container: null,   // the full multi-auction container
+  _activeId: null,    // id of the active auction within the container
   _sha: null,
   _loading: false,
 
@@ -73,6 +83,71 @@ const Store = {
   },
 
   /* ------------------------------------------------------------------ */
+  /* Multi-auction container helpers                                     */
+  /* ------------------------------------------------------------------ */
+  _newId() {
+    return 'a' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  },
+
+  // Wrap a single state object into a fresh container with one auction.
+  _wrapState(state, name) {
+    const id = this._newId();
+    const container = { schema: this.SCHEMA, activeId: id, order: [id], auctions: {} };
+    container.auctions[id] = { id: id, name: name || 'Auction 1', state: state || this._default() };
+    return container;
+  },
+
+  // Return true if the parsed object is already a multi-auction container.
+  _isContainer(obj) {
+    return !!(obj && obj.schema === this.SCHEMA && obj.auctions && typeof obj.auctions === 'object');
+  },
+
+  // Normalize any parsed file content into a valid container.
+  // Legacy bare-state files are migrated into a single auction.
+  _toContainer(obj) {
+    if (this._isContainer(obj)) {
+      if (!Array.isArray(obj.order)) obj.order = Object.keys(obj.auctions);
+      if (!obj.activeId || !obj.auctions[obj.activeId]) obj.activeId = obj.order[0] || null;
+      return obj;
+    }
+    // Legacy single-auction state (or null) -> wrap into a one-auction container.
+    return this._wrapState(obj || this._default(), 'Auction 1');
+  },
+
+  // Pick which auction id should be active: a remembered local preference if it
+  // still exists in the container, otherwise the container's own activeId.
+  _resolveActiveId(container) {
+    const preferred = localStorage.getItem(this.ACTIVE_KEY);
+    if (preferred && container.auctions[preferred]) return preferred;
+    if (container.activeId && container.auctions[container.activeId]) return container.activeId;
+    return container.order[0] || null;
+  },
+
+  // Point internal pointers at the given auction id and sync container.activeId.
+  _activate(id) {
+    if (!this._container || !this._container.auctions[id]) return;
+    this._activeId = id;
+    this._container.activeId = id;
+    this._data = this._container.auctions[id].state;
+    localStorage.setItem(this.ACTIVE_KEY, id);
+  },
+
+  getActiveId() {
+    return this._activeId;
+  },
+
+  // List auctions for the picker: [{ id, name, configured }] in container order.
+  listAuctions() {
+    if (!this._container) return [];
+    return this._container.order
+      .filter((id) => this._container.auctions[id])
+      .map((id) => {
+        const a = this._container.auctions[id];
+        return { id: id, name: a.name, configured: !!(a.state && a.state.configured) };
+      });
+  },
+
+  /* ------------------------------------------------------------------ */
   /* Default data                                                        */
   /* ------------------------------------------------------------------ */
   _default() {
@@ -92,7 +167,9 @@ const Store = {
   /* ------------------------------------------------------------------ */
   _saveLocal() {
     try {
-      localStorage.setItem(this.LOCAL_KEY, JSON.stringify(this._data));
+      // Persist the whole container so all auctions survive a refresh offline.
+      const toStore = this._container || this._wrapState(this._data || this._default(), 'Auction 1');
+      localStorage.setItem(this.LOCAL_KEY, JSON.stringify(toStore));
     } catch (e) {
       console.warn('Local snapshot failed', e);
     }
@@ -125,18 +202,22 @@ const Store = {
 
       if (!response.ok) {
         console.warn('GitHub load failed (' + response.status + '), using local/default.');
-        this._data = this._loadLocal() || this._default();
+        this._container = this._toContainer(this._loadLocal());
+        this._activate(this._resolveActiveId(this._container));
         return this._data;
       }
 
       const json = await response.json();
       this._sha = json.sha;
       const content = atob((json.content || '').replace(/\n/g, ''));
-      this._data = JSON.parse(decodeURIComponent(escape(content)));
+      const parsed = JSON.parse(decodeURIComponent(escape(content)));
+      this._container = this._toContainer(parsed);
+      this._activate(this._resolveActiveId(this._container));
       this._saveLocal();
     } catch (error) {
       console.error('Error loading from GitHub:', error);
-      this._data = this._data || this._loadLocal() || this._default();
+      this._container = this._toContainer(this._container || this._loadLocal());
+      this._activate(this._resolveActiveId(this._container));
     } finally {
       this._loading = false;
     }
@@ -147,7 +228,22 @@ const Store = {
   /* ------------------------------------------------------------------ */
   /* Save to GitHub (always writes local snapshot too)                   */
   /* ------------------------------------------------------------------ */
+  // Fold the active in-memory state (_data) back into the container so the
+  // container is the single source of truth before persisting.
+  _syncActiveIntoContainer() {
+    if (!this._container) {
+      this._container = this._wrapState(this._data || this._default(), 'Auction 1');
+      this._activeId = this._container.activeId;
+    }
+    if (this._activeId && this._container.auctions[this._activeId]) {
+      this._container.auctions[this._activeId].state = this._data;
+      this._container.activeId = this._activeId;
+    }
+  },
+
   async save() {
+    // Make sure the container reflects the latest active-auction edits.
+    this._syncActiveIntoContainer();
     // Always keep a local snapshot so nothing is lost if the remote write fails.
     this._saveLocal();
 
@@ -160,7 +256,9 @@ const Store = {
       const url = `https://api.github.com/repos/${this.OWNER}/${this.REPO}/contents/${this.FILE_PATH}`;
       const token = this.getToken();
 
-      // Refresh SHA to avoid conflicts.
+      // Refresh SHA AND merge: re-fetch the remote container so a concurrent edit
+      // to a DIFFERENT auction (from another device) is not clobbered. We only
+      // overwrite the active auction's slot; all other auctions keep remote state.
       const getResp = await fetch(`${url}?ref=${this.BRANCH}&_=${Date.now()}`, {
         headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' },
         cache: 'no-store'
@@ -168,9 +266,20 @@ const Store = {
       if (getResp.ok) {
         const existing = await getResp.json();
         this._sha = existing.sha;
+        try {
+          const remoteRaw = atob((existing.content || '').replace(/\n/g, ''));
+          const remote = this._toContainer(JSON.parse(decodeURIComponent(escape(remoteRaw))));
+          // Start from the remote container, then apply our active auction.
+          remote.auctions[this._activeId] = this._container.auctions[this._activeId];
+          if (remote.order.indexOf(this._activeId) === -1) remote.order.push(this._activeId);
+          remote.activeId = this._activeId;
+          this._container = remote;
+        } catch (mergeErr) {
+          console.warn('Could not merge remote container; writing local container.', mergeErr);
+        }
       }
 
-      const content = btoa(unescape(encodeURIComponent(JSON.stringify(this._data, null, 2))));
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(this._container, null, 2))));
       const body = {
         message: `Auction update - ${new Date().toLocaleString()}`,
         content: content,
@@ -220,6 +329,68 @@ const Store = {
   async set(data) {
     this._data = data;
     return this.save();
+  },
+
+  /* ------------------------------------------------------------------ */
+  /* Auction management (multiple auctions)                              */
+  /* ------------------------------------------------------------------ */
+
+  // Create a new, empty auction, make it active, and persist. Returns its id.
+  async createAuction(name) {
+    this._syncActiveIntoContainer();
+    const id = this._newId();
+    const label = (name && name.trim()) || ('Auction ' + (this._container.order.length + 1));
+    this._container.auctions[id] = { id: id, name: label, state: this._default() };
+    this._container.order.push(id);
+    this._activate(id);
+    await this.save();
+    return id;
+  },
+
+  // Activate an auction in memory only, WITHOUT saving (used by spectators who
+  // must not write). Returns the active state, or null if the id is unknown.
+  selectAuctionLocal(id) {
+    if (!this._container || !this._container.auctions[id]) return null;
+    this._syncActiveIntoContainer();
+    this._activate(id);
+    return this._data;
+  },
+
+  // Switch the active auction. Returns the newly active state (or null if unknown id).
+  async switchAuction(id) {
+    if (!this._container || !this._container.auctions[id]) return null;
+    this._syncActiveIntoContainer();
+    this._activate(id);
+    // Persist the activeId change (also lets other devices see the switch).
+    await this.save();
+    return this._data;
+  },
+
+  // Rename an auction (defaults to the active one).
+  async renameAuction(id, name) {
+    const targetId = id || this._activeId;
+    if (!this._container || !this._container.auctions[targetId]) return false;
+    const label = (name && name.trim());
+    if (!label) return false;
+    this._container.auctions[targetId].name = label;
+    await this.save();
+    return true;
+  },
+
+  // Delete an auction. Refuses to delete the last remaining one. If the active
+  // auction is deleted, activates the first remaining auction. Returns the new
+  // active id, or null on failure.
+  async deleteAuction(id) {
+    const targetId = id || this._activeId;
+    if (!this._container || !this._container.auctions[targetId]) return null;
+    if (this._container.order.length <= 1) return null; // keep at least one
+    delete this._container.auctions[targetId];
+    this._container.order = this._container.order.filter((x) => x !== targetId);
+    if (this._activeId === targetId) {
+      this._activate(this._container.order[0]);
+    }
+    await this.save();
+    return this._activeId;
   },
 
   // Test the current GitHub connection. Returns { ok, status, message }.

@@ -941,6 +941,48 @@
     win.document.close();
   }
 
+  // Export the full player pool: every player with category, base, status,
+  // team (if sold) and sold price. Sorted by status then name.
+  function exportPlayersPdf() {
+    if (!state.players || state.players.length === 0) {
+      return toast('No players to export', 'error');
+    }
+    var statusRank = { available: 0, sold: 1, unsold: 2 };
+    var players = state.players.slice().sort(function (a, b) {
+      var ra = statusRank[a.status] != null ? statusRank[a.status] : 3;
+      var rb = statusRank[b.status] != null ? statusRank[b.status] : 3;
+      if (ra !== rb) return ra - rb;
+      return (a.name || '').localeCompare(b.name || '');
+    });
+
+    var now = new Date().toLocaleString();
+    var counts = players.reduce(function (acc, p) {
+      acc[p.status] = (acc[p.status] || 0) + 1;
+      return acc;
+    }, {});
+
+    var body = '<h1>Cricket Auction — Players List</h1>' +
+      '<div class="meta">Generated ' + escapeHtml(now) +
+      ' &nbsp;|&nbsp; ' + players.length + ' players &nbsp;|&nbsp; ' +
+      (counts.available || 0) + ' available, ' + (counts.sold || 0) + ' sold, ' +
+      (counts.unsold || 0) + ' unsold</div>';
+
+    body += '<table><thead><tr><th>#</th><th>Player</th><th>Category</th>' +
+      '<th class="num">Base</th><th>Status</th><th>Team</th>' +
+      '<th class="num">Sold price</th></tr></thead><tbody>';
+    players.forEach(function (p, i) {
+      var team = p.soldTo ? getTeam(p.soldTo) : null;
+      body += '<tr><td>' + (i + 1) + '</td><td>' + escapeHtml(p.name) +
+        '</td><td>' + escapeHtml(p.category) + '</td><td class="num">' +
+        escapeHtml(fmt(p.base)) + '</td><td>' + escapeHtml(p.status || '-') +
+        '</td><td>' + escapeHtml(team ? team.name : '-') + '</td><td class="num">' +
+        escapeHtml(p.status === 'sold' ? fmt(p.price) : '-') + '</td></tr>';
+    });
+    body += '</tbody></table>';
+
+    openPrintDocument('Players List', body);
+  }
+
   // Export the final team list: each team with its roster + spent/purse.
   function exportTeamsPdf() {
     if (!state.teams || state.teams.length === 0) {
@@ -1403,6 +1445,114 @@
   }
 
   /* ==========================================================
+     MULTIPLE AUCTIONS - picker
+     ========================================================== */
+  // Populate the auction dropdown from the Store and show the picker (admins only).
+  function renderAuctionPicker() {
+    var picker = $('auctionPicker');
+    var select = $('auctionSelect');
+    if (!picker || !select) return;
+    if (VIEW_ONLY) { picker.hidden = true; return; }
+
+    var auctions = Store.listAuctions();
+    var activeId = Store.getActiveId();
+    select.innerHTML = '';
+    auctions.forEach(function (a) {
+      var opt = el('option');
+      opt.value = a.id;
+      opt.textContent = a.name + (a.configured ? '' : ' (not started)');
+      if (a.id === activeId) opt.selected = true;
+      select.appendChild(opt);
+    });
+    // Only reveal the picker once we have loaded auctions.
+    picker.hidden = auctions.length === 0;
+    // Disable Delete when only one auction remains.
+    var delBtn = $('deleteAuctionBtn');
+    if (delBtn) delBtn.disabled = auctions.length <= 1;
+  }
+
+  // Switch to another auction: swap the in-memory state and re-render the right view.
+  function switchToAuction(id) {
+    if (!id || id === Store.getActiveId()) return;
+    setSyncBadge('saving');
+    Store.switchAuction(id).then(function (newState) {
+      if (!newState) {
+        toast('Could not switch auction', 'error');
+        renderAuctionPicker();
+        return;
+      }
+      state = newState;
+      Store._data = state;
+      setSyncBadge(Store.isConfigured() ? 'synced' : 'local');
+      applyActiveAuctionToUI();
+      renderAuctionPicker();
+    });
+  }
+
+  // Show the correct view for the currently active auction's state.
+  function applyActiveAuctionToUI() {
+    if (state && state.configured) {
+      $('tabs').hidden = false;
+      setIncrement((state.auction && state.auction.increment) || 1000);
+      showView('auction');
+      renderAll();
+    } else {
+      $('tabs').hidden = true;
+      prefillSetup();
+      showView('setup');
+    }
+  }
+
+  function createNewAuction() {
+    var name = (window.prompt('Name for the new auction:', 'Auction ' + (Store.listAuctions().length + 1)) || '').trim();
+    if (name === '') return; // cancelled or empty
+    setSyncBadge('saving');
+    Store.createAuction(name).then(function () {
+      state = Store.get();
+      Store._data = state;
+      setSyncBadge(Store.isConfigured() ? 'synced' : 'local');
+      applyActiveAuctionToUI();
+      renderAuctionPicker();
+      toast('Created auction "' + name + '"', 'success');
+    });
+  }
+
+  function renameCurrentAuction() {
+    var current = Store.listAuctions().filter(function (a) { return a.id === Store.getActiveId(); })[0];
+    var name = (window.prompt('Rename auction:', current ? current.name : '') || '').trim();
+    if (name === '') return;
+    Store.renameAuction(Store.getActiveId(), name).then(function (ok) {
+      if (ok) {
+        renderAuctionPicker();
+        toast('Auction renamed', 'success');
+      }
+    });
+  }
+
+  function deleteCurrentAuction() {
+    var auctions = Store.listAuctions();
+    if (auctions.length <= 1) {
+      return toast('Cannot delete the only auction', 'error');
+    }
+    var current = auctions.filter(function (a) { return a.id === Store.getActiveId(); })[0];
+    var label = current ? current.name : 'this auction';
+    if (!confirm('Delete "' + label + '"? This permanently removes its teams, players and results.')) return;
+    setSyncBadge('saving');
+    Store.deleteAuction(Store.getActiveId()).then(function (newActiveId) {
+      if (!newActiveId) {
+        toast('Could not delete auction', 'error');
+        return;
+      }
+      state = Store.get();
+      Store._data = state;
+      setSyncBadge(Store.isConfigured() ? 'synced' : 'local');
+      applyActiveAuctionToUI();
+      renderAuctionPicker();
+      toast('Auction "' + label + '" deleted', 'success');
+    });
+  }
+
+  /* ==========================================================
      SETTINGS
      ========================================================== */
   function prefillSettingsForm() {
@@ -1618,10 +1768,24 @@
     if (expTeamsBtn) expTeamsBtn.addEventListener('click', exportTeamsPdf);
     var expSoldBtn = $('exportSoldPdfBtn');
     if (expSoldBtn) expSoldBtn.addEventListener('click', exportSoldPdf);
+    var expPlayersBtn = $('exportPlayersPdfBtn');
+    if (expPlayersBtn) expPlayersBtn.addEventListener('click', exportPlayersPdf);
 
     // Spectator link
     var watchBtn = $('watchLinkBtn');
     if (watchBtn) watchBtn.addEventListener('click', shareViewLink);
+
+    // Multiple auctions - picker controls
+    var auctionSelect = $('auctionSelect');
+    if (auctionSelect) auctionSelect.addEventListener('change', function (e) {
+      switchToAuction(e.target.value);
+    });
+    var newAuctionBtn = $('newAuctionBtn');
+    if (newAuctionBtn) newAuctionBtn.addEventListener('click', createNewAuction);
+    var renameAuctionBtn = $('renameAuctionBtn');
+    if (renameAuctionBtn) renameAuctionBtn.addEventListener('click', renameCurrentAuction);
+    var deleteAuctionBtn = $('deleteAuctionBtn');
+    if (deleteAuctionBtn) deleteAuctionBtn.addEventListener('click', deleteCurrentAuction);
 
     // No-token banner -> jump to Settings
     var noTokenLink = $('noTokenBannerLink');
@@ -1966,7 +2130,21 @@
      ========================================================== */
   function buildViewLink() {
     var base = window.location.href.split('#')[0].split('?')[0];
-    return base + '?mode=view';
+    var link = base + '?mode=view';
+    // Point spectators at the auction the admin is currently viewing.
+    var activeId = Store.getActiveId && Store.getActiveId();
+    if (activeId) link += '&auction=' + encodeURIComponent(activeId);
+    return link;
+  }
+
+  // Read the auction id a spectator link requested (?auction=<id>), or '' if none.
+  function getAuctionIdFromUrl() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      return (params.get('auction') || '').trim();
+    } catch (e) {
+      return '';
+    }
   }
 
   function shareViewLink() {
@@ -2014,6 +2192,13 @@
       if (document.hidden) return;
       Store.load().then(function (data) {
         if (!data) return;
+        // Keep spectators pinned to the auction their link requested, since
+        // load() otherwise resolves to the container's default active auction.
+        var wantedId = getAuctionIdFromUrl();
+        if (wantedId) {
+          var picked = Store.selectAuctionLocal(wantedId);
+          if (picked) data = picked;
+        }
         state = data;
         Store._data = state;
         // If the auction has started, make sure the live views are shown.
@@ -2053,18 +2238,22 @@
       applyViewOnlyMode();
       state = defaultState();
       showView('auction');
-      load().then(function (configured) {
-        if (configured && state && state.configured) {
-          $('tabs').hidden = false;
-          setIncrement((state.auction && state.auction.increment) || 1000);
-          showView('auction');
-          renderAll();
-        } else {
-          // Auction not started yet - show the waiting state.
-          $('tabs').hidden = false;
-          showView('auction');
-          renderAll();
+      load().then(function () {
+        // Spectators can be pointed at a specific auction via ?auction=<id>.
+        var wantedId = getAuctionIdFromUrl();
+        if (wantedId) {
+          var picked = Store.selectAuctionLocal(wantedId);
+          if (picked) {
+            state = picked;
+            Store._data = state;
+          }
         }
+        $('tabs').hidden = false;
+        if (state && state.configured) {
+          setIncrement((state.auction && state.auction.increment) || 1000);
+        }
+        showView('auction');
+        renderAll();
       });
       return;
     }
@@ -2089,6 +2278,7 @@
     showView('setup');
 
     load().then(function (configured) {
+      renderAuctionPicker();
       if (configured && state && state.configured) {
         $('tabs').hidden = false;
         setIncrement((state.auction && state.auction.increment) || 1000);

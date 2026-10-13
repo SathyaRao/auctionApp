@@ -630,3 +630,45 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
   /* Spectator banner / no-token banner text a touch smaller. */
   .spectator-banner, .no-token-banner { font-size: 13px; }
 }
+
+/* ---------- Multiple auctions: header picker ---------- */
+.auction-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.auction-picker label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.auction-picker select {
+  background: var(--card-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  min-width: 150px;
+  max-width: 240px;
+}
+.auction-picker select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.auction-picker .picker-btn {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+.auction-picker .picker-btn.danger {
+  color: #ff8f8f;
+  border-color: #5a2a2a;
+}
+.auction-picker .picker-btn.danger:hover {
+  border-color: var(--danger);
+}
+/* Spectators never see the picker. */
+body.view-only .auction-picker { display: none !important; }

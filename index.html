@@ -36,6 +36,13 @@
       <span class="brand-icon">&#127951;</span>
       <h1>Cricket Auction</h1>
     </div>
+    <div class="auction-picker admin-only" id="auctionPicker" hidden>
+      <label for="auctionSelect">Auction</label>
+      <select id="auctionSelect" title="Switch between auctions"></select>
+      <button class="btn ghost picker-btn" id="newAuctionBtn" title="Create a new auction">+ New</button>
+      <button class="btn ghost picker-btn" id="renameAuctionBtn" title="Rename this auction">Rename</button>
+      <button class="btn ghost picker-btn danger" id="deleteAuctionBtn" title="Delete this auction">Delete</button>
+    </div>
     <nav class="tabs" id="tabs" hidden>
       <button class="tab-btn active" data-view="auction">Auction</button>
       <button class="tab-btn" data-view="teams">Teams</button>
@@ -221,6 +228,7 @@
           <div class="players-header-actions admin-only">
             <button class="btn primary" id="addPlayerBtn">Add player</button>
             <button class="btn ghost" id="bulkUploadBtn">Bulk upload</button>
+            <button class="btn ghost" id="exportPlayersPdfBtn">Export list (PDF)</button>
             <button class="btn warn" id="deleteAllPlayersBtn">Delete all</button>
           </div>
         </div>
