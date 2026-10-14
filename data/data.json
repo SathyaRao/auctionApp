@@ -639,10 +639,9 @@
           {
             "id": "t4",
             "name": "Siyarya Fighters",
-            "purse": 7000,
+            "purse": 13000,
             "players": [
               "p1791802523128",
-              "p1791802833483",
               "p1791802587965",
               "p1791802481618",
               "p1791802467354",
@@ -1010,9 +1009,9 @@
             "name": "Avin",
             "category": "Batsman",
             "base": 1000,
-            "status": "sold",
-            "soldTo": "t4",
-            "price": 6000
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           },
           {
             "id": "p1791803880969",
