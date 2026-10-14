@@ -592,14 +592,13 @@
           {
             "id": "t1",
             "name": "Black Fort Friends",
-            "purse": 15000,
+            "purse": 18000,
             "players": [
               "p1791802538682",
               "p1791802552454",
               "p1791802749431",
               "p1791802730313",
               "p1791802590383",
-              "p1791802682821",
               "p1791802648319",
               "p1791802741375",
               "p1791824921454"
@@ -894,9 +893,9 @@
             "name": "Pavan",
             "category": "All-rounder",
             "base": 1000,
-            "status": "sold",
-            "soldTo": "t1",
-            "price": 3000
+            "status": "available",
+            "soldTo": null,
+            "price": 0
           },
           {
             "id": "p1791802721488",
